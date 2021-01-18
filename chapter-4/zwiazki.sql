@@ -16,8 +16,13 @@ ALTER TABLE Post ADD (
     CONSTRAINT postArrivalAddressFK FOREIGN KEY (arrivalAddressKey)
     REFERENCES Address ON DELETE CASCADE,
     CONSTRAINT postDepartureAddressFK FOREIGN KEY (departureAddressKey)
-    REFERENCES Address ON DELETE CASCADE,
-    CONSTRAINT postPostStatusFK FOREIGN KEY (postStatusKey) REFERENCES PostStatus
+    REFERENCES Address ON DELETE CASCADE
+);
+
+-- PostStatusHistory
+ALTER TABLE PostStatusHistory ADD (
+    CONSTRAINT postStatusHistoryPostFK FOREIGN KEY (postKey) REFERENCES Post,
+    CONSTRAINT postStatusHistoryPostStatusFK FOREIGN KEY (postStatusKey) REFERENCES PostStatus
 );
 
 -- Address
@@ -52,5 +57,5 @@ ALTER TABLE BlaBlaUser ADD (
 -- BlaBlaUserStatusHistory
 ALTER TABLE BlaBlaUserStatusHistory ADD (
     CONSTRAINT blaBlaUserStatusHistoryBlaBlaUserFK FOREIGN KEY (blaBlaUserKey) REFERENCES BlaBlaUser,
-    CONSTRAINT blaBlaUserStatusHistoryBlaBlaUserStatusFK FOREIGN KEY (blaBlaUserStatusKey) REFERENCES BlaBlaUser
+    CONSTRAINT blaBlaUserStatusHistoryBlaBlaUserStatusFK FOREIGN KEY (blaBlaUserStatusKey) REFERENCES BlaBlaUserStatus
 );

@@ -46,6 +46,11 @@ ALTER TABLE PostStatus ADD (
     CONSTRAINT postStatusNameUN UNIQUE (postStatusName)
 );
 
+-- PostStatusHistory
+ALTER TABLE PostStatusHistory ADD (
+    CONSTRAINT postStatusHistoryPK PRIMARY KEY (postStatusHistoryKey)
+);
+
 -- Post
 ALTER TABLE Post ADD (
     CONSTRAINT postPK PRIMARY KEY (postKey)

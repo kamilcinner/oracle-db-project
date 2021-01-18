@@ -64,6 +64,14 @@ CREATE TABLE PostStatus (
     postStatusName VARCHAR(20)
 );
 
+-- PostStatusHistory
+CREATE TABLE PostStatusHistory (
+    postStatusHistoryKey NUMBER(4),
+    changeDateTime TIMESTAMP,
+    postKey NUMBER(10),
+    postStatusKey NUMBER(4)
+);
+
 -- Post
 CREATE TABLE Post (
     postKey NUMBER(10),
