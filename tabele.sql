@@ -1,100 +1,109 @@
 -- CarColor
 CREATE TABLE CarColor(
-    CarColorKey NUMBER(4),
-    CarColorName VARCHAR(40)
+    carColorKey NUMBER(4),
+    carColorName VARCHAR(40)
 );
 
 -- CarMark
 CREATE TABLE CarMark(
-    CarMarkKey NUMBER(4),
-    CarMarkName VARCHAR(40)
+    carMarkKey NUMBER(4),
+    carMarkName VARCHAR(40)
 );
 
 -- Car
 CREATE TABLE Car(
-    CarKey NUMBER(10),
-    CarRegNumber VARCHAR(255),
-    ProdYear CHAR(4),
-    SeatsCount NUMBER(10),
-    BlaBlaUserKey NUMBER(10),
-    CarMarkKey NUMBER(4),
-    CarColorKey NUMBER(4)
+    carKey NUMBER(10),
+    carRegNumber VARCHAR(255),
+    prodYear CHAR(4),
+    seatsCount NUMBER(10),
+    blaBlaUserKey NUMBER(10),
+    carMarkKey NUMBER(4),
+    carColorKey NUMBER(4)
 );
 
--- create blabla user table
-CREATE TABLE blabla_user(
-blabla_user_id NUMBER(10) PRIMARY KEY,
-login VARCHAR(255) NOT NULL unique,
-hashed_password VARCHAR(255) NOT NULL,
-salt VARCHAR(255) NOT NULL,
-email VARCHAR(255) NOT NULL unique,
-firstname VARCHAR(255) NOT NULL,
-middlename VARCHAR(255),
-surname VARCHAR(255) NOT NULL,
-date_of_birth date NOT NULL,
-phone_NUMBER VARCHAR(255) NOT NULL,
-address_id NUMBER(10) NOT NULL);
-
--- create post status table
-CREATE TABLE post_status(
-post_status_id NUMBER(4) PRIMARY KEY,
-name VARCHAR(255) NOT NULL unique);
-
--- create post table
-CREATE TABLE post(
-post_id NUMBER(10) PRIMARY KEY,
-departure_datetime timestamp NOT NULL,
-arrival_datetime timestamp NOT NULL,
-seats_free_count NUMBER(10) NOT NULL,
-seat_price NUMBER(10, 2) NOT NULL,
-post_status_id NUMBER(4) NOT NULL,
-departure_address_id NUMBER(10) NOT NULL,
-arrival_address_id NUMBER(10) NOT NULL,
-car_id NUMBER(10) NOT NULL);
-
--- create address table
-CREATE TABLE address(
-address_id NUMBER(10) PRIMARY KEY,
-post_code VARCHAR(255) NOT NULL,
-street VARCHAR(255) NOT NULL,
-house_NUMBER VARCHAR(255) NOT NULL,
-flat_NUMBER VARCHAR(255),
-city_id NUMBER(10) NOT NULL);
-
--- create city table
-CREATE TABLE city(
-city_id NUMBER(10) PRIMARY KEY,
-name VARCHAR(255) UNIQUE NOT NULL,
-country_id NUMBER(10) NOT NULL);
-
--- create country table
-CREATE TABLE country(
-country_id NUMBER(10) PRIMARY KEY,
-name VARCHAR(255) UNIQUE NOT NULL);
-
--- create payment method table
-CREATE TABLE payment_method(
-payment_method_id NUMBER(4) PRIMARY KEY,
-name VARCHAR2(255) NOT NULL unique);
-
--- create payment status table
-CREATE TABLE payment_status(
-payment_status_id NUMBER(4) PRIMARY KEY,
-name VARCHAR2(255) NOT NULL unique);
-
--- create payment table
-CREATE TABLE payment(
-payment_id NUMBER(10) PRIMARY KEY,
-total_amount NUMBER(10, 2) NOT NULL,
-paid_datetime TIMESTAMP NOT NULL,
-payment_method_id NUMBER(4) NOT NULL,
-payment_status_id NUMBER(4) NOT NULL,
-travel_id NUMBER(10) NOT NULL
+-- BlaBlaUser
+CREATE TABLE BlaBlaUser(
+    blaBlaUserKey NUMBER(10),
+    username VARCHAR(20),
+    hashedPassword VARCHAR(100),
+    salt VARCHAR(100),
+    email VARCHAR(30),
+    firstname VARCHAR(20),
+    middlename VARCHAR(20),
+    surname VARCHAR(20),
+    dateOfBirth date,
+    phoneNumber VARCHAR(9),
+    addressKey NUMBER(10)
 );
 
--- create travel table
+-- PostStatus
+CREATE TABLE PostStatus(
+    postStatusKey NUMBER(4),
+    postStatusName VARCHAR(20)
+);
+
+-- Post
+CREATE TABLE Post(
+    postKey NUMBER(10),
+    departureDateTime timestamp,
+    arrivalDateTime timestamp,
+    seatsCount NUMBER(10),
+    seatPrice NUMBER(10, 2),
+    postStatusKey NUMBER(4),
+    departureAddressKey NUMBER(10),
+    arrivalAddressKey NUMBER(10),
+    carKey NUMBER(10)
+);
+
+-- Address
+CREATE TABLE Address(
+    addressKey NUMBER(10),
+    postCode VARCHAR(5),
+    street VARCHAR(20),
+    houseNumber VARCHAR(20),
+    flatNumber VARCHAR(20),
+    cityKey NUMBER(10)
+);
+
+-- City
+CREATE TABLE City(
+    cityKey NUMBER(10),
+    cityName VARCHAR(20),
+    countryKey NUMBER(10)
+);
+
+-- Country
+CREATE TABLE Country(
+    countryKey NUMBER(10),
+    countryName VARCHAR(20)
+);
+
+-- PaymentMethod
+CREATE TABLE PaymentMethod(
+    paymentMethodKey NUMBER(4),
+    paymentMethodName VARCHAR2(20)
+);
+
+-- PaymentStatus
+CREATE TABLE PaymentStatus(
+    paymentStatusKey NUMBER(4),
+    paymentStatusName VARCHAR2(20)
+);
+
+-- Payment
+CREATE TABLE Payment(
+    paymentKey NUMBER(10),
+    totalAmount NUMBER(10, 2),
+    paidDateTime TIMESTAMP,
+    paymentMethodKey NUMBER(4),
+    paymentStatusKey NUMBER(4),
+    travelKey NUMBER(10)
+);
+
+-- Travel
 CREATE TABLE travel(
-travel_id NUMBER(10) PRIMARY KEY,
-seats_count NUMBER(10) NOT NULL,
-post_id NUMBER(10) NOT NULL,
-blabla_user_id NUMBER(10) NOT NULL);
+    postKey NUMBER(10),
+    blaBlaUserKey NUMBER(10),
+    travelKey NUMBER(10),
+    seatsCount NUMBER(10)
+);
