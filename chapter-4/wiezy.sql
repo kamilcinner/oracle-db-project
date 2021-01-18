@@ -22,22 +22,22 @@ ALTER TABLE Car ADD (
     CONSTRAINT carRegNumberUN UNIQUE (regNumber)
 );
 
--- BlaBlaUser
-ALTER TABLE BlaBlaUser ADD (
-    CONSTRAINT blaBlaUserPK PRIMARY KEY (blaBlaUserKey),
-    CONSTRAINT blaBlaUserUsernameUN UNIQUE (username),
-    CONSTRAINT blaBlaUserEmailUN UNIQUE (email)
+-- User
+ALTER TABLE "USER" ADD (
+    CONSTRAINT userPK PRIMARY KEY (userKey),
+    CONSTRAINT userUsernameUN UNIQUE (username),
+    CONSTRAINT userEmailUN UNIQUE (email)
 );
 
--- BlaBlaUserStatus
-ALTER TABLE BlaBlaUserStatus ADD (
-    CONSTRAINT blaBlaUserStatusPK PRIMARY KEY (blaBlaUserStatusKey),
-    CONSTRAINT blaBlaUserStatusNameUN UNIQUE (blaBlaUserStatusName)
+-- UserStatus
+ALTER TABLE userStatus ADD (
+    CONSTRAINT userStatusPK PRIMARY KEY (userStatusKey),
+    CONSTRAINT userStatusNameUN UNIQUE (userStatusName)
 );
 
--- BlaBlaUserStatusHistory
-ALTER TABLE BlaBlaUserStatusHistory ADD (
-    CONSTRAINT blaBlaUserStatusHistoryPK PRIMARY KEY (blaBlaUserStatusHistoryKey)
+-- UserStatusHistory
+ALTER TABLE userStatusHistory ADD (
+    CONSTRAINT userStatusHistoryPK PRIMARY KEY (userStatusHistoryKey)
 );
 
 -- PostStatus
@@ -92,5 +92,5 @@ ALTER TABLE Payment ADD (
 
 -- Travel
 ALTER TABLE Travel ADD (
-    CONSTRAINT travelPK PRIMARY KEY (postKey, blaBlaUserKey)
+    CONSTRAINT travelPK PRIMARY KEY (postKey, userKey)
 );

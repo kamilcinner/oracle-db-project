@@ -23,14 +23,14 @@ CREATE TABLE Car (
     regNumber VARCHAR(20),
     prodYear CHAR(4),
     seatsCount NUMBER(10),
-    blaBlaUserKey NUMBER(10),
+    userKey NUMBER(10),
     carMarkKey NUMBER(4),
     carColorKey NUMBER(4)
 );
 
--- BlaBlaUser
-CREATE TABLE BlaBlaUser (
-    blaBlaUserKey NUMBER(10),
+-- User
+CREATE TABLE "USER" (
+    userKey NUMBER(10),
     username VARCHAR(20),
     hashedPassword VARCHAR(100),
     salt VARCHAR(100),
@@ -132,7 +132,7 @@ CREATE TABLE Payment (
 -- Travel
 CREATE TABLE travel (
     postKey NUMBER(10),
-    blaBlaUserKey NUMBER(10),
+    userKey NUMBER(10),
     seatsCount NUMBER(10),
     paymentKey NUMBER(10)
 );

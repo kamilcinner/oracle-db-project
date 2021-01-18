@@ -2,7 +2,7 @@
 CREATE INDEX postPostStatusKeyIDX ON Post(postStatusKey);
 
 -- User
-CREATE INDEX blaBlaUserFirstnameSurnameIDX ON BlaBlaUser(firstname, surname);
+CREATE INDEX userFirstnameSurnameIDX ON "USER"(firstname, surname);
 
 -- Car
 CREATE INDEX carMarkKeyIDX ON Car(carMarkKey);

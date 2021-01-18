@@ -5,7 +5,7 @@ ALTER TABLE CarColor ADD (
 
 -- Car
 ALTER TABLE Car ADD (
-    CONSTRAINT carBlaBlaUserFK FOREIGN KEY (blaBlaUserKey) REFERENCES BlaBlaUser,
+    CONSTRAINT carUserFK FOREIGN KEY (UserKey) REFERENCES "USER",
     CONSTRAINT carCarColorFK FOREIGN KEY (carColorKey) REFERENCES CarColor,
     CONSTRAINT carCarMarkFK FOREIGN KEY (carMarkKey) REFERENCES CarMark
 );
@@ -44,18 +44,18 @@ ALTER TABLE Payment ADD (
 -- Travel
 ALTER TABLE Travel ADD (
     CONSTRAINT travelPostFK FOREIGN KEY (postKey) REFERENCES Post,
-    CONSTRAINT travelBlaBlaUserFK FOREIGN KEY (blaBlaUserKey) REFERENCES BlaBlaUser,
+    CONSTRAINT travelUserFK FOREIGN KEY (UserKey) REFERENCES "USER",
     CONSTRAINT travelPaymentFK FOREIGN KEY (paymentKey) REFERENCES Payment
 );
 
--- BlaBlaUser
-ALTER TABLE BlaBlaUser ADD (
-    CONSTRAINT blaBlaUserAddressFK FOREIGN KEY (addressKey)
+-- User
+ALTER TABLE "USER" ADD (
+    CONSTRAINT userAddressFK FOREIGN KEY (addressKey)
     REFERENCES Address ON DELETE CASCADE
 );
 
--- BlaBlaUserStatusHistory
-ALTER TABLE BlaBlaUserStatusHistory ADD (
-    CONSTRAINT blaBlaUserStatusHistoryBlaBlaUserFK FOREIGN KEY (blaBlaUserKey) REFERENCES BlaBlaUser,
-    CONSTRAINT blaBlaUserStatusHistoryBlaBlaUserStatusFK FOREIGN KEY (blaBlaUserStatusKey) REFERENCES BlaBlaUserStatus
+-- UserStatusHistory
+ALTER TABLE UserStatusHistory ADD (
+    CONSTRAINT userStatusHistoryUserFK FOREIGN KEY (userKey) REFERENCES "USER",
+    CONSTRAINT userStatusHistoryUserStatusFK FOREIGN KEY (userStatusKey) REFERENCES userStatus
 );
