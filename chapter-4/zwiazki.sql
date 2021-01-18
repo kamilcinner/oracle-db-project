@@ -1,3 +1,8 @@
+-- Color
+ALTER TABLE CarColor ADD (
+    CONSTRAINT carColorTypeFK FOREIGN KEY (carColorTypeKey) REFERENCES CarColorType
+);
+
 -- Car
 ALTER TABLE Car ADD (
     CONSTRAINT carBlaBlaUserFK FOREIGN KEY (blaBlaUserKey) REFERENCES BlaBlaUser,
