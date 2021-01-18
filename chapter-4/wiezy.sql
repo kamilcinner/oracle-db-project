@@ -30,13 +30,13 @@ ALTER TABLE BlaBlaUser ADD (
 );
 
 -- BlaBlaUserStatus
-ALTER TABLE BlaBlaUserStatus (
+ALTER TABLE BlaBlaUserStatus ADD (
     CONSTRAINT blaBlaUserStatusPK PRIMARY KEY (blaBlaUserStatusKey),
     CONSTRAINT blaBlaUserStatusNameUN UNIQUE (blaBlaUserStatusName)
 );
 
 -- BlaBlaUserStatusHistory
-ALTER TABLE BlaBlaUserStatusHistory (
+ALTER TABLE BlaBlaUserStatusHistory ADD (
     CONSTRAINT blaBlaUserStatusHistoryPK PRIMARY KEY (blaBlaUserStatusHistoryKey)
 );
 
