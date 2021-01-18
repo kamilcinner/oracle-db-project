@@ -1,17 +1,24 @@
 -- CarColor
-CREATE TABLE CarColor(
+CREATE TABLE CarColor (
     carColorKey NUMBER(4),
-    carColorName VARCHAR(40)
+    carColorName VARCHAR(40),
+    carColorTypeKey NUMBER(4)
+);
+
+-- CarColorType
+CREATE TABLE CarColorType (
+    carColorTypeKey NUMBER(4),
+    carColorTypeName VARCHAR(40)
 );
 
 -- CarMark
-CREATE TABLE CarMark(
+CREATE TABLE CarMark (
     carMarkKey NUMBER(4),
     carMarkName VARCHAR(40)
 );
 
 -- Car
-CREATE TABLE Car(
+CREATE TABLE Car (
     carKey NUMBER(10),
     regNumber VARCHAR(20),
     prodYear CHAR(4),
@@ -22,7 +29,7 @@ CREATE TABLE Car(
 );
 
 -- BlaBlaUser
-CREATE TABLE BlaBlaUser(
+CREATE TABLE BlaBlaUser (
     blaBlaUserKey NUMBER(10),
     username VARCHAR(20),
     hashedPassword VARCHAR(100),
@@ -37,13 +44,13 @@ CREATE TABLE BlaBlaUser(
 );
 
 -- PostStatus
-CREATE TABLE PostStatus(
+CREATE TABLE PostStatus (
     postStatusKey NUMBER(4),
     postStatusName VARCHAR(20)
 );
 
 -- Post
-CREATE TABLE Post(
+CREATE TABLE Post (
     postKey NUMBER(10),
     departureDateTime timestamp,
     arrivalDateTime timestamp,
@@ -56,7 +63,7 @@ CREATE TABLE Post(
 );
 
 -- Address
-CREATE TABLE Address(
+CREATE TABLE Address (
     addressKey NUMBER(10),
     postCode VARCHAR(5),
     street VARCHAR(20),
@@ -66,32 +73,32 @@ CREATE TABLE Address(
 );
 
 -- City
-CREATE TABLE City(
+CREATE TABLE City (
     cityKey NUMBER(10),
     cityName VARCHAR(20),
     countryKey NUMBER(10)
 );
 
 -- Country
-CREATE TABLE Country(
+CREATE TABLE Country (
     countryKey NUMBER(10),
     countryName VARCHAR(20)
 );
 
 -- PaymentMethod
-CREATE TABLE PaymentMethod(
+CREATE TABLE PaymentMethod (
     paymentMethodKey NUMBER(4),
     paymentMethodName VARCHAR2(20)
 );
 
 -- PaymentStatus
-CREATE TABLE PaymentStatus(
+CREATE TABLE PaymentStatus (
     paymentStatusKey NUMBER(4),
     paymentStatusName VARCHAR2(20)
 );
 
 -- Payment
-CREATE TABLE Payment(
+CREATE TABLE Payment (
     paymentKey NUMBER(10),
     totalAmount NUMBER(10, 2),
     paidDateTime TIMESTAMP,
@@ -100,7 +107,7 @@ CREATE TABLE Payment(
 );
 
 -- Travel
-CREATE TABLE travel(
+CREATE TABLE travel (
     postKey NUMBER(10),
     blaBlaUserKey NUMBER(10),
     seatsCount NUMBER(10),
