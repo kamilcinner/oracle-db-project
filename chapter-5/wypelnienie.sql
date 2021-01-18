@@ -36,11 +36,11 @@ SELECT * FROM DUAL;
 
 -- City
 INSERT ALL
-    INTO City (cityKey, cityName) VALUES (1, 'Warsaw')
-    INTO City (cityKey, cityName) VALUES (2, 'Lublin')
-    INTO City (cityKey, cityName) VALUES (3, 'Wroclaw')
-    INTO City (cityKey, cityName) VALUES (4, 'Cracow')
-    INTO City (cityKey, cityName) VALUES (5, 'Gdansk')
+    INTO City (cityKey, cityName, countryKey) VALUES (1, 'Warsaw', 1)
+    INTO City (cityKey, cityName, countryKey) VALUES (2, 'Lublin', 1)
+    INTO City (cityKey, cityName, countryKey) VALUES (3, 'Wroclaw', 1)
+    INTO City (cityKey, cityName, countryKey) VALUES (4, 'Cracow', 1)
+    INTO City (cityKey, cityName, countryKey) VALUES (5, 'Gdansk', 1)
 SELECT * FROM DUAL;
 
 -- Address
