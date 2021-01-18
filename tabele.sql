@@ -13,7 +13,7 @@ CREATE TABLE CarMark(
 -- Car
 CREATE TABLE Car(
     carKey NUMBER(10),
-    carRegNumber VARCHAR(255),
+    regNumber VARCHAR(20),
     prodYear CHAR(4),
     seatsCount NUMBER(10),
     blaBlaUserKey NUMBER(10),
