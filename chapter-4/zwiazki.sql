@@ -8,8 +8,10 @@ ALTER TABLE Car ADD (
 -- Post
 ALTER TABLE Post ADD (
     CONSTRAINT postCarFK FOREIGN KEY (carKey) REFERENCES Car,
-    CONSTRAINT postArrivalAddressFK FOREIGN KEY (arrivalAddressKey) REFERENCES Address,
-    CONSTRAINT postDepartureAddressFK FOREIGN KEY (departureAddressKey) REFERENCES Address,
+    CONSTRAINT postArrivalAddressFK FOREIGN KEY (arrivalAddressKey)
+    REFERENCES Address ON DELETE CASCADE,
+    CONSTRAINT postDepartureAddressFK FOREIGN KEY (departureAddressKey)
+    REFERENCES Address ON DELETE CASCADE,
     CONSTRAINT postPostStatusFK FOREIGN KEY (postStatusKey) REFERENCES PostStatus
 );
 
@@ -38,5 +40,6 @@ ALTER TABLE Travel ADD (
 
 -- BlaBlaUser
 ALTER TABLE BlaBlaUser ADD (
-    CONSTRAINT blaBlaUserAddressFK FOREIGN KEY (addressKey) REFERENCES Address
+    CONSTRAINT blaBlaUserAddressFK FOREIGN KEY (addressKey)
+    REFERENCES Address ON DELETE CASCADE
 );
