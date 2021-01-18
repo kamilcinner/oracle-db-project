@@ -38,14 +38,14 @@ ALTER TABLE City ADD (
 -- Payment
 ALTER TABLE Payment ADD (
     CONSTRAINT paymentPaymentMethodFK FOREIGN KEY (paymentMethodKey) REFERENCES PaymentMethod,
-    CONSTRAINT paymentPaymentStatusFK FOREIGN KEY (paymentStatusKey) REFERENCES PaymentStatus
+    CONSTRAINT paymentPaymentStatusFK FOREIGN KEY (paymentStatusKey) REFERENCES PaymentStatus,
+    CONSTRAINT paymentTravelKeyFK FOREIGN KEY (travelKey) REFERENCES Travel
 );
 
 -- Travel
 ALTER TABLE Travel ADD (
     CONSTRAINT travelPostFK FOREIGN KEY (postKey) REFERENCES Post,
-    CONSTRAINT travelUserFK FOREIGN KEY (UserKey) REFERENCES "USER",
-    CONSTRAINT travelPaymentFK FOREIGN KEY (paymentKey) REFERENCES Payment
+    CONSTRAINT travelUserFK FOREIGN KEY (UserKey) REFERENCES "USER"
 );
 
 -- User

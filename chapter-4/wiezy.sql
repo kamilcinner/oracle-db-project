@@ -92,5 +92,5 @@ ALTER TABLE Payment ADD (
 
 -- Travel
 ALTER TABLE Travel ADD (
-    CONSTRAINT travelPK PRIMARY KEY (postKey, userKey)
+    CONSTRAINT travelPK PRIMARY KEY (travelKey)
 );

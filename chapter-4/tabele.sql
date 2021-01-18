@@ -126,13 +126,14 @@ CREATE TABLE Payment (
     totalAmount NUMBER(10, 2),
     paidDateTime TIMESTAMP,
     paymentMethodKey NUMBER(4),
-    paymentStatusKey NUMBER(4)
+    paymentStatusKey NUMBER(4),
+    travelkey NUMBER(10)
 );
 
 -- Travel
 CREATE TABLE travel (
-    postKey NUMBER(10),
-    userKey NUMBER(10),
+    travelKey NUMBER(10),
     seatsCount NUMBER(10),
-    paymentKey NUMBER(10)
+    postKey NUMBER(10),
+    userKey NUMBER(10)
 );
