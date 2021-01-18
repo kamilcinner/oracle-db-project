@@ -8,3 +8,6 @@ Gdzie dodać NOT NULL?
 1. Dodać rodzaj do koloru (CarColorType).
 2. Dodać BlaBlaUserStatus z historią.
 3. Dodać historię do PostStatus.
+
+# Aktualny model
+![alt text](model.png "Title")
