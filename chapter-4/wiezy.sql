@@ -12,7 +12,8 @@ ALTER TABLE CarMark ADD (
 
 -- Car
 ALTER TABLE Car ADD (
-    CONSTRAINT carPK PRIMARY KEY (carKey)
+    CONSTRAINT carPK PRIMARY KEY (carKey),
+    CONSTRAINT carRegNumberUN UNIQUE (carRegNumber)
 );
 
 -- BlaBlaUser
