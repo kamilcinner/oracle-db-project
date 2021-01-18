@@ -43,19 +43,19 @@ CREATE TABLE "USER" (
     addressKey NUMBER(10)
 );
 
--- BlaBlaUserStatus
-CREATE TABLE BlaBlaUserStatus (
-    blaBlaUserStatusKey NUMBER(4),
-    blaBlaUserStatusName VARCHAR(20),
-    blaBlaUserStatusDescription VARCHAR(100)
+-- UserStatus
+CREATE TABLE UserStatus (
+    userStatusKey NUMBER(4),
+    userStatusName VARCHAR(20),
+    userStatusDescription VARCHAR(100)
 );
 
--- BlaBlaUserStatusHistory
-CREATE TABLE BlaBlaUserStatusHistory (
-    blaBlaUserStatusHistoryKey NUMBER(4),
+-- UserStatusHistory
+CREATE TABLE UserStatusHistory (
+    userStatusHistoryKey NUMBER(4),
     changeDateTime TIMESTAMP,
-    blaBlaUserKey NUMBER(10),
-    blaBlaUserStatusKey NUMBER(4)
+    userKey NUMBER(10),
+    userStatusKey NUMBER(4)
 );
 
 -- PostStatus

@@ -30,13 +30,13 @@ ALTER TABLE "USER" ADD (
 );
 
 -- UserStatus
-ALTER TABLE userStatus ADD (
+ALTER TABLE UserStatus ADD (
     CONSTRAINT userStatusPK PRIMARY KEY (userStatusKey),
     CONSTRAINT userStatusNameUN UNIQUE (userStatusName)
 );
 
 -- UserStatusHistory
-ALTER TABLE userStatusHistory ADD (
+ALTER TABLE UserStatusHistory ADD (
     CONSTRAINT userStatusHistoryPK PRIMARY KEY (userStatusHistoryKey)
 );
 
