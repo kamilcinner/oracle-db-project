@@ -47,8 +47,7 @@ ALTER TABLE Country ADD (
 -- City
 ALTER TABLE City ADD (
     CONSTRAINT cityPK PRIMARY KEY (cityKey),
-    CONSTRAINT cityNameUN UNIQUE (cityName),
-    CONSTRAINT cityCountryFK FOREIGN KEY (countryKey) REFERENCES Country
+    CONSTRAINT cityNameUN UNIQUE (cityName)
 );
 
 -- PaymentMethod
