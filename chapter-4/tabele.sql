@@ -38,9 +38,24 @@ CREATE TABLE BlaBlaUser (
     firstname VARCHAR(20),
     middlename VARCHAR(20),
     surname VARCHAR(20),
-    dateOfBirth date,
+    dateOfBirth DATE,
     phoneNumber VARCHAR(9),
     addressKey NUMBER(10)
+);
+
+-- BlaBlaUserStatus
+CREATE TABLE BlaBlaUserStatus (
+    blaBlaUserStatusKey NUMBER(4),
+    blaBlaUserStatusName VARCHAR(20),
+    blaBlaUserStatusDescription VARCHAR(100)
+);
+
+-- BlaBlaUserStatusHistory
+CREATE TABLE BlaBlaUserStatusHistory (
+    blaBlaUserStatusHistoryKey NUMBER(4),
+    changeDateTime TIMESTAMP,
+    blaBlaUserKey NUMBER(10),
+    blaBlaUserStatusKey NUMBER(4)
 );
 
 -- PostStatus
@@ -52,8 +67,8 @@ CREATE TABLE PostStatus (
 -- Post
 CREATE TABLE Post (
     postKey NUMBER(10),
-    departureDateTime timestamp,
-    arrivalDateTime timestamp,
+    departureDateTime TIMESTAMP,
+    arrivalDateTime TIMESTAMP,
     seatsCount NUMBER(10),
     seatPrice NUMBER(10, 2),
     postStatusKey NUMBER(4),

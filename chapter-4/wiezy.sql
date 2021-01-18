@@ -4,6 +4,12 @@ ALTER TABLE CarColor ADD (
     CONSTRAINT carColorNameUN UNIQUE (carColorName)
 );
 
+-- CarColorType
+ALTER TABLE CarColorType ADD (
+    CONSTRAINT carColorTypePK PRIMARY KEY (carColorTypeKey),
+    CONSTRAINT carColorTypeNameUN UNIQUE (carColorTypeName)
+);
+
 -- CarMark
 ALTER TABLE CarMark ADD (
     CONSTRAINT carMarkPK PRIMARY KEY (carMarkKey),
@@ -21,6 +27,17 @@ ALTER TABLE BlaBlaUser ADD (
     CONSTRAINT blaBlaUserPK PRIMARY KEY (blaBlaUserKey),
     CONSTRAINT blaBlaUserUsernameUN UNIQUE (username),
     CONSTRAINT blaBlaUserEmailUN UNIQUE (email)
+);
+
+-- BlaBlaUserStatus
+ALTER TABLE BlaBlaUserStatus (
+    CONSTRAINT blaBlaUserStatusPK PRIMARY KEY (blaBlaUserStatusKey),
+    CONSTRAINT blaBlaUserStatusNameUN UNIQUE (blaBlaUserStatusName)
+);
+
+-- BlaBlaUserStatusHistory
+ALTER TABLE BlaBlaUserStatusHistory (
+    CONSTRAINT blaBlaUserStatusHistoryPK PRIMARY KEY (blaBlaUserStatusHistoryKey)
 );
 
 -- PostStatus

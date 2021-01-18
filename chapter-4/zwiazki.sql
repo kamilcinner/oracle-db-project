@@ -48,3 +48,9 @@ ALTER TABLE BlaBlaUser ADD (
     CONSTRAINT blaBlaUserAddressFK FOREIGN KEY (addressKey)
     REFERENCES Address ON DELETE CASCADE
 );
+
+-- BlaBlaUserStatusHistory
+ALTER TABLE BlaBlaUserStatusHistory ADD (
+    CONSTRAINT blaBlaUserStatusHistoryBlaBlaUserFK FOREIGN KEY (blaBlaUserKey) REFERENCES BlaBlaUser,
+    CONSTRAINT blaBlaUserStatusHistoryBlaBlaUserStatusFK FOREIGN KEY (blaBlaUserStatusKey) REFERENCES BlaBlaUser
+);
