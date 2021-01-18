@@ -10,4 +10,4 @@ Gdzie dodać NOT NULL?
 3. Dodać historię do PostStatus.
 
 # Aktualny model
-![alt text](model.png "Title")
+![alt text](model.png "Model")
