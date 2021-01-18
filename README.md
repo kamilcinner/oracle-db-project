@@ -5,9 +5,9 @@ Project for oracle db classes.
 Gdzie dodać NOT NULL?
 
 # TODO
-1. Dodać rodzaj do koloru (CarColorType).
-2. Dodać BlaBlaUserStatus z historią.
-3. Dodać historię do PostStatus.
+1. ~~Dodać rodzaj do koloru (CarColorType). DONE~~
+2. ~~Dodać BlaBlaUserStatus z historią. DONE~~
+3. ~~Dodać historię do PostStatus. DONE~~
 
 # Aktualny model
 ![alt text](model.png "Model")
