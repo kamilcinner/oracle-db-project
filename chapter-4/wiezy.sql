@@ -13,14 +13,14 @@ ALTER TABLE CarMark ADD (
 -- Car
 ALTER TABLE Car ADD (
     CONSTRAINT carPK PRIMARY KEY (carKey),
-    CONSTRAINT carRegNumberUN UNIQUE (carRegNumber)
+    CONSTRAINT carRegNumberUN UNIQUE (regNumber)
 );
 
 -- BlaBlaUser
 ALTER TABLE BlaBlaUser ADD (
     CONSTRAINT blaBlaUserPK PRIMARY KEY (blaBlaUserKey),
     CONSTRAINT blaBlaUserUsernameUN UNIQUE (username),
-    CONSTRAINT blaBlaUserEmailUN UNIQUE (email),
+    CONSTRAINT blaBlaUserEmailUN UNIQUE (email)
 );
 
 -- PostStatus
@@ -70,5 +70,5 @@ ALTER TABLE Payment ADD (
 
 -- Travel
 ALTER TABLE Travel ADD (
-    CONSTRAINT travelPK PRIMARY KEY (travelKey, blaBlaUserKey)
+    CONSTRAINT travelPK PRIMARY KEY (postKey, blaBlaUserKey)
 );
