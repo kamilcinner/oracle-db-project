@@ -20,3 +20,10 @@ DROP TABLE PaymentStatus CASCADE CONSTRAINTS;
 DROP TABLE "USER" CASCADE CONSTRAINTS;
 DROP TABLE UserStatusHistory CASCADE CONSTRAINTS;
 DROP TABLE UserStatus CASCADE CONSTRAINTS;
+
+-- Git commands
+git add .
+git status
+git commit -m 'komentarz'
+git push origin master
+git pull origin master
