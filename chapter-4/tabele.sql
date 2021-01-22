@@ -20,12 +20,12 @@ CREATE TABLE CarMark (
 -- Car
 CREATE TABLE Car (
     carKey NUMBER(10),
-    regNumber VARCHAR(20),
-    prodYear CHAR(4),
-    seatsCount NUMBER(10),
-    userKey NUMBER(10),
-    carMarkKey NUMBER(4),
-    carColorKey NUMBER(4)
+    regNumber VARCHAR(20) NOT NULL,
+    prodYear CHAR(4) NOT NULL,
+    seatsCount NUMBER(10) NOT NULL,
+    userKey NUMBER(10) NOT NULL,
+    carMarkKey NUMBER(4) NOT NULL,
+    carColorKey NUMBER(4) NOT NULL
 );
 
 -- User
