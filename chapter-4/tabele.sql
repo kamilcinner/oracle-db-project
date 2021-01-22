@@ -1,7 +1,7 @@
 -- CarColor
 CREATE TABLE CarColor (
     carColorKey NUMBER(4),
-    carColorName VARCHAR(40),
+    carColorName VARCHAR(40) NOT NULL,
     carColorTypeKey NUMBER(4)
 );
 
