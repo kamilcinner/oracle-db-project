@@ -27,3 +27,12 @@ git status
 git commit -m 'komentarz'
 git push origin master
 git pull origin master
+
+git checkout -b nazwa_brancha
+git push origin nazwa_brancha
+git checkout master
+git pull origin master
+git merge nazwa_brancha
+git push origin master
+git branch -d nazwa_brancha
+git push origin --delete nazwa_brancha
