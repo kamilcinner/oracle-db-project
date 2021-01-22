@@ -12,6 +12,7 @@ Gdzie dodać NOT NULL?
 5. Dodac system rabatow, moze tabele Promo i userom by sie przypisywalo rabaty do wykorzystania przy platnosic.
 6. Dodac cos ala externalPaymentNumber do platnosci, w razie co zeby to zewnetrzny system obslugiwal platnosc a nasz system przechowywal id tej platnosci a system jako rodzaj platnosci.
 7. ~~Moze zmieniec travel i payment tak zeby to payment przechowywal informacje o travelKey (postKey, userKey). DONE~~
+8. Dodac model do Car.
 
 # Aktualny model
 ![alt text](model.png "Model")
