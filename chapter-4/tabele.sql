@@ -46,53 +46,53 @@ CREATE TABLE "USER" (
 -- UserStatus
 CREATE TABLE UserStatus (
     userStatusKey NUMBER(4),
-    userStatusName VARCHAR(20),
+    userStatusName VARCHAR(20) NOT NULL,
     userStatusDescription VARCHAR(100)
 );
 
 -- UserStatusHistory
 CREATE TABLE UserStatusHistory (
     userStatusHistoryKey NUMBER(4),
-    changeDateTime TIMESTAMP,
-    userKey NUMBER(10),
-    userStatusKey NUMBER(4)
+    changeDateTime TIMESTAMP NOT NULL,
+    userKey NUMBER(10) NOT NULL,
+    userStatusKey NUMBER(4) NOT NULL
 );
 
 -- PostStatus
 CREATE TABLE PostStatus (
     postStatusKey NUMBER(4),
-    postStatusName VARCHAR(20)
+    postStatusName VARCHAR(20) NOT NULL
 );
 
 -- PostStatusHistory
 CREATE TABLE PostStatusHistory (
     postStatusHistoryKey NUMBER(4),
-    changeDateTime TIMESTAMP,
-    postKey NUMBER(10),
-    postStatusKey NUMBER(4)
+    changeDateTime TIMESTAMP NOT NULL,
+    postKey NUMBER(10) NOT NULL,
+    postStatusKey NUMBER(4) NOT NULL
 );
 
 -- Post
 CREATE TABLE Post (
     postKey NUMBER(10),
-    departureDateTime TIMESTAMP,
-    arrivalDateTime TIMESTAMP,
-    seatsCount NUMBER(10),
-    seatPrice NUMBER(10, 2),
+    departureDateTime TIMESTAMP NOT NULL,
+    arrivalDateTime TIMESTAMP NOT NULL,
+    seatsCount NUMBER(10) NOT NULL,
+    seatPrice NUMBER(10, 2) NOT NULL,
     postStatusKey NUMBER(4),
-    departureAddressKey NUMBER(10),
-    arrivalAddressKey NUMBER(10),
-    carKey NUMBER(10)
+    departureAddressKey NUMBER(10) NOT NULL,
+    arrivalAddressKey NUMBER(10) NOT NULL,
+    carKey NUMBER(10) NOT NULL
 );
 
 -- Address
 CREATE TABLE Address (
     addressKey NUMBER(10),
-    postCode VARCHAR(5),
-    street VARCHAR(20),
-    houseNumber VARCHAR(20),
+    postCode VARCHAR(5) NOT NULL,
+    street VARCHAR(20) NOT NULL,
+    houseNumber VARCHAR(20) NOT NULL,
     flatNumber VARCHAR(20),
-    cityKey NUMBER(10)
+    cityKey NUMBER(10) NOT NULL
 );
 
 -- City
