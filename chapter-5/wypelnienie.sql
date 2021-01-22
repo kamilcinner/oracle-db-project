@@ -51,7 +51,7 @@ SELECT * FROM DUAL;
 -- UserStatus
 INSERT ALL
     INTO UserStatus (userStatusKey, userStatusName) VALUES (1, 'Active')
-    INTO UserStatus (userStatusKey, userStatusName) VALUES (2, 'Verified')
+    INTO UserStatus (userStatusKey, userStatusName) VALUES (2, 'Restricted')
     INTO UserStatus (userStatusKey, userStatusName, userStatusDescription)
     VALUES (3, 'Disabled', 'Account is no longer accessible')
     INTO UserStatus (userStatusKey, userStatusName) VALUES (4, 'Blocked')

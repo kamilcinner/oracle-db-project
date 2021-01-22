@@ -13,6 +13,10 @@ Gdzie dodać NOT NULL?
 6. Dodac cos ala externalPaymentNumber do platnosci, w razie co zeby to zewnetrzny system obslugiwal platnosc a nasz system przechowywal id tej platnosci a system jako rodzaj platnosci.
 7. ~~Moze zmieniec travel i payment tak zeby to payment przechowywal informacje o travelKey (postKey, userKey). DONE~~
 8. Dodac model do Car.
+9. Dodac tabele CarType np Bus, Osobowy, ciezarowy, limuzyna.
+10. DOdac status do Travel i jego historie.
+11. Dodac reservationDateTime do Travel.
+12. Zaktualizowac status Post (wypelnienie danymi).
 
 # Aktualny model
 ![alt text](model.png "Model")
