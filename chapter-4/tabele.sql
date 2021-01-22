@@ -8,7 +8,7 @@ CREATE TABLE CarColor (
 -- CarColorType
 CREATE TABLE CarColorType (
     carColorTypeKey NUMBER(4),
-    carColorTypeName VARCHAR(40)
+    carColorTypeName VARCHAR(40) NOT NULL
 );
 
 -- CarMark
