@@ -31,16 +31,16 @@ CREATE TABLE Car (
 -- User
 CREATE TABLE "USER" (
     userKey NUMBER(10),
-    username VARCHAR(20),
-    hashedPassword VARCHAR(100),
-    salt VARCHAR(100),
-    email VARCHAR(30),
-    firstname VARCHAR(20),
+    username VARCHAR(20) NOT NULL,
+    hashedPassword VARCHAR(100) NOT NULL,
+    salt VARCHAR(100) NOT NULL,
+    email VARCHAR(30) NOT NULL,
+    firstname VARCHAR(20) NOT NULL,
     middlename VARCHAR(20),
-    surname VARCHAR(20),
-    dateOfBirth DATE,
-    phoneNumber VARCHAR(9),
-    addressKey NUMBER(10)
+    surname VARCHAR(20) NOT NULL,
+    dateOfBirth DATE NOT NULL,
+    phoneNumber VARCHAR(9) NOT NULL,
+    addressKey NUMBER(10) NOT NULL
 );
 
 -- UserStatus
