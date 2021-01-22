@@ -36,3 +36,5 @@ git merge nazwa_brancha
 git push origin master
 git branch -d nazwa_brancha
 git push origin --delete nazwa_brancha
+
+git remote update --prune
