@@ -127,12 +127,12 @@ CREATE TABLE Payment (
     paidDateTime TIMESTAMP,
     paymentMethodKey NUMBER(4),
     paymentStatusKey NUMBER(4),
-    travelkey NUMBER(10)
+    reservationkey NUMBER(10)
 );
 
--- Travel
-CREATE TABLE travel (
-    travelKey NUMBER(10),
+-- Reservation
+CREATE TABLE Reservation (
+    reservationKey NUMBER(10),
     seatsCount NUMBER(10),
     postKey NUMBER(10),
     userKey NUMBER(10)

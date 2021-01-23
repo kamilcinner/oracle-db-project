@@ -90,7 +90,7 @@ ALTER TABLE Payment ADD (
     CONSTRAINT paymentPK PRIMARY KEY (paymentKey)
 );
 
--- Travel
-ALTER TABLE Travel ADD (
-    CONSTRAINT travelPK PRIMARY KEY (travelKey)
+-- Reservation
+ALTER TABLE Reservation ADD (
+    CONSTRAINT reservationPK PRIMARY KEY (reservationKey)
 );
