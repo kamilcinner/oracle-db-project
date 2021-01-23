@@ -2,7 +2,7 @@
 Project for oracle db classes.
 
 # Pytania
-Gdzie dodać NOT NULL?
+
 
 # TODO
 1. ~~Dodać rodzaj do koloru (CarColorType). DONE~~
@@ -16,6 +16,7 @@ Gdzie dodać NOT NULL?
 9.  DOdac status do Travel i jego historie.
 10. Dodac reservationDateTime do Travel.
 11. Zaktualizowac status Post (wypelnienie danymi).
+12. Dodać NOT NULLe
 # Other options
 1. Dodac system rabatow, moze tabele Promo i userom by sie przypisywalo rabaty do wykorzystania przy platnosic.
 # Aktualny model
