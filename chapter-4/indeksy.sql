@@ -1,9 +1,9 @@
 -- Post
-CREATE INDEX postPostStatusKeyIDX ON Post(postStatusKey);
+CREATE INDEX post_postStatusKey_IDX ON Post(postStatusKey);
 
 -- User
-CREATE INDEX userFirstnameSurnameIDX ON "USER"(firstname, surname);
+CREATE INDEX user_firstnameSurname_IDX ON "USER"(firstname, surname);
 
 -- Car
-CREATE INDEX carMarkKeyIDX ON Car(carMarkKey);
-CREATE INDEX carColorKeyIDX ON Car(carColorKey);
+CREATE INDEX car_markKey_IDX ON Car(carMarkKey);
+CREATE INDEX car_colorKey_IDX ON Car(carColorKey);

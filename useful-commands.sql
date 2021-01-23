@@ -42,3 +42,6 @@ git push origin --delete nazwa_brancha
 git remote update --prune
 
 git reset --soft HEAD~1
+
+-- copy caret in VSCode
+ctrl + alt + shift + arrow_bottom/arrow_up
