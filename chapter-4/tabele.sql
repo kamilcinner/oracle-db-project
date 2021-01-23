@@ -129,7 +129,7 @@ CREATE TABLE Payment (
     externalPaymentNumber VARCHAR(40) NOT NULL,
     paymentMethodKey NUMBER(4) NOT NULL,
     paymentStatusKey NUMBER(4) NOT NULL,
-    reservationkey NUMBER(10) NOT NULL
+    reservationKey NUMBER(10) NOT NULL
 );
 
 -- ReservationStatus
