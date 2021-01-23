@@ -154,3 +154,9 @@ CREATE TABLE Reservation (
     postKey NUMBER(10) NOT NULL,
     userKey NUMBER(10) NOT NULL
 );
+
+-- CarType
+CREATE TABLE CarType(
+carTypeKey NUMBER(10) NOT NULL,
+cartypeName VARCHAR(20) NOT NULL
+);

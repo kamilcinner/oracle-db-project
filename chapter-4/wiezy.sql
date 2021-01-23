@@ -105,3 +105,9 @@ ALTER TABLE ReservationStatusHistory ADD (
 ALTER TABLE Reservation ADD (
     CONSTRAINT reservationPK PRIMARY KEY (reservationKey)
 );
+
+
+-- CarType
+ALTER TABLE CarType ADD (
+    CONSTRAINT carTypePK PRIMARY KEY (carTypeKey),
+);
