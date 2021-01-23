@@ -16,6 +16,11 @@ ALTER TABLE CarMark ADD (
     CONSTRAINT carMarkNameUN UNIQUE (carMarkName)
 );
 
+-- CarType
+ALTER TABLE CarType ADD (
+    CONSTRAINT carTypePK PRIMARY KEY (carTypeKey),
+);
+
 -- Car
 ALTER TABLE Car ADD (
     CONSTRAINT carPK PRIMARY KEY (carKey),
@@ -104,10 +109,4 @@ ALTER TABLE ReservationStatusHistory ADD (
 -- Reservation
 ALTER TABLE Reservation ADD (
     CONSTRAINT reservationPK PRIMARY KEY (reservationKey)
-);
-
-
--- CarType
-ALTER TABLE CarType ADD (
-    CONSTRAINT carTypePK PRIMARY KEY (carTypeKey),
 );

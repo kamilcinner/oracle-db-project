@@ -17,6 +17,12 @@ CREATE TABLE CarMark (
     carMarkName VARCHAR(40) NOT NULL
 );
 
+-- CarType
+CREATE TABLE CarType(
+carTypeKey NUMBER(10),
+cartypeName VARCHAR(20) NOT NULL
+);
+
 -- Car
 CREATE TABLE Car (
     carKey NUMBER(10),
@@ -153,10 +159,4 @@ CREATE TABLE Reservation (
     seatsCount NUMBER(10) NOT NULL,
     postKey NUMBER(10) NOT NULL,
     userKey NUMBER(10) NOT NULL
-);
-
--- CarType
-CREATE TABLE CarType(
-carTypeKey NUMBER(10),
-cartypeName VARCHAR(20) NOT NULL
 );
