@@ -157,6 +157,6 @@ CREATE TABLE Reservation (
 
 -- CarType
 CREATE TABLE CarType(
-carTypeKey NUMBER(10) NOT NULL,
-cartypeName VARCHAR(20) NOT NULL
+carTypeKey NUMBER(10),
+cartypeName VARCHAR(20) 
 );
