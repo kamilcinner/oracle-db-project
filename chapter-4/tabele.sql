@@ -130,6 +130,20 @@ CREATE TABLE Payment (
     reservationkey NUMBER(10)
 );
 
+-- ReservationStatus
+CREATE TABLE ReservationStatus (
+    reservationStatusKey NUMBER(4),
+    reservationStatusName VARCHAR(20) NOT NULL
+);
+
+-- ReservationStatusHistory
+CREATE TABLE ReservationStatusHistory (
+    reservationStatusHistoryKey NUMBER(4),
+    changeDateTime TIMESTAMP NOT NULL,
+    reservationKey NUMBER(10) NOT NULL,
+    reservationStatusKey NUMBER(4) NOT NULL
+);
+
 -- Reservation
 CREATE TABLE Reservation (
     reservationKey NUMBER(10),

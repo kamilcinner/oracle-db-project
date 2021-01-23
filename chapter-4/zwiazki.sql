@@ -48,6 +48,12 @@ ALTER TABLE Reservation ADD (
     CONSTRAINT reservationUserFK FOREIGN KEY (UserKey) REFERENCES "USER"
 );
 
+-- ReservationStatusHistory
+ALTER TABLE ReservationStatusHistory ADD (
+    CONSTRAINT reservationStatusHistoryReservationFK FOREIGN KEY (reservationKey) REFERENCES Reservation,
+    CONSTRAINT reservationStatusHistoryReservationStatusFK FOREIGN KEY (reservationStatusKey) REFERENCES ReservationStatus
+);
+
 -- User
 ALTER TABLE "USER" ADD (
     CONSTRAINT userAddressFK FOREIGN KEY (addressKey)

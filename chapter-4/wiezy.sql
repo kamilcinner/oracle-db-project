@@ -90,6 +90,17 @@ ALTER TABLE Payment ADD (
     CONSTRAINT paymentPK PRIMARY KEY (paymentKey)
 );
 
+-- ReservationStatus
+ALTER TABLE ReservationStatus ADD (
+    CONSTRAINT reservationStatusPK PRIMARY KEY (reservationStatusKey),
+    CONSTRAINT reservationStatusNameUN UNIQUE (reservationStatusName)
+);
+
+-- ReservationStatusHistory
+ALTER TABLE ReservationStatusHistory ADD (
+    CONSTRAINT reservationStatusHistoryPK PRIMARY KEY (reservationStatusHistoryKey)
+);
+
 -- Reservation
 ALTER TABLE Reservation ADD (
     CONSTRAINT reservationPK PRIMARY KEY (reservationKey)
