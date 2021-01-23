@@ -126,6 +126,7 @@ CREATE TABLE Payment (
     paymentKey NUMBER(10),
     totalAmount NUMBER(10, 2) NOT NULL,
     paidDateTime TIMESTAMP NOT NULL,
+    externalPaymentNumber VARCHAR(40) NOT NULL,
     paymentMethodKey NUMBER(4) NOT NULL,
     paymentStatusKey NUMBER(4) NOT NULL,
     reservationkey NUMBER(10) NOT NULL
