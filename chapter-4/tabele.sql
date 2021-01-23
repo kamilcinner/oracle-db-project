@@ -137,3 +137,9 @@ CREATE TABLE travel (
     postKey NUMBER(10),
     userKey NUMBER(10)
 );
+
+-- CarType
+CREATE TABLE CarType(
+carTypeKey NUMBER(10) NOT NULL,
+cartypeName VARCHAR(20) NOT NULL
+);

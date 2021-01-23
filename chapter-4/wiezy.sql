@@ -94,3 +94,9 @@ ALTER TABLE Payment ADD (
 ALTER TABLE Travel ADD (
     CONSTRAINT travelPK PRIMARY KEY (travelKey)
 );
+
+
+-- CarType
+ALTER TABLE CarType ADD (
+    CONSTRAINT carTypePK PRIMARY KEY (carTypeKey),
+);
