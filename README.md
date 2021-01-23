@@ -14,8 +14,8 @@ Project for oracle db classes.
 7. Dodac pole model do Car. -**adam**
 8. Dodac tabele CarType np Bus, Osobowy, ciezarowy, limuzyna. -**magda**
 9.  DOdac status do Travel i jego historie. -**kamil**
-10. Zmiana nazwy z Teavel na Reservation -**kamil**
-11. Dodac reservationDateTime do Travel. -**kamil**
+10. ~~Zmiana nazwy z Travel na Reservation -**kamil** DONE~~
+11. ~~Dodac reservationDateTime do Travel. -**kamil** DONE~~
 12. Zaktualizowac status Post (wypelnienie danymi).
 13. Dodać NOT NULLe -**adam**
 14. Dodanie indexów

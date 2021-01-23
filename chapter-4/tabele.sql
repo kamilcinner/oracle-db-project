@@ -133,6 +133,7 @@ CREATE TABLE Payment (
 -- Reservation
 CREATE TABLE Reservation (
     reservationKey NUMBER(10),
+    reservationDateTime TIMESTAMP NOT NULL,
     seatsCount NUMBER(10),
     postKey NUMBER(10),
     userKey NUMBER(10)
