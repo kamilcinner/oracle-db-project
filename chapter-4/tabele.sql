@@ -25,6 +25,7 @@ CREATE TABLE Car (
     seatsCount NUMBER(10) NOT NULL,
     userKey NUMBER(10) NOT NULL,
     carMarkKey NUMBER(4) NOT NULL,
+    model VARCHAR(30) NOT NULL,
     carColorKey NUMBER(4) NOT NULL
 );
 
