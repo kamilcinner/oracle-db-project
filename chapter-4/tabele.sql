@@ -2,7 +2,7 @@
 CREATE TABLE CarColor (
     carColorKey NUMBER(4),
     carColorName VARCHAR(40) NOT NULL,
-    carColorTypeKey NUMBER(4)
+    carColorTypeKey NUMBER(4) NOT NULL
 );
 
 -- CarColorType
@@ -79,7 +79,7 @@ CREATE TABLE Post (
     arrivalDateTime TIMESTAMP NOT NULL,
     seatsCount NUMBER(10) NOT NULL,
     seatPrice NUMBER(10, 2) NOT NULL,
-    postStatusKey NUMBER(4),
+    postStatusKey NUMBER(4) NOT NULL,
     departureAddressKey NUMBER(10) NOT NULL,
     arrivalAddressKey NUMBER(10) NOT NULL,
     carKey NUMBER(10) NOT NULL
@@ -98,36 +98,36 @@ CREATE TABLE Address (
 -- City
 CREATE TABLE City (
     cityKey NUMBER(10),
-    cityName VARCHAR(20),
-    countryKey NUMBER(10)
+    cityName VARCHAR(20) NOT NULL,
+    countryKey NUMBER(10) NOT NULL
 );
 
 -- Country
 CREATE TABLE Country (
     countryKey NUMBER(10),
-    countryName VARCHAR(20)
+    countryName VARCHAR(20) NOT NULL
 );
 
 -- PaymentMethod
 CREATE TABLE PaymentMethod (
     paymentMethodKey NUMBER(4),
-    paymentMethodName VARCHAR2(20)
+    paymentMethodName VARCHAR2(20) NOT NULL
 );
 
 -- PaymentStatus
 CREATE TABLE PaymentStatus (
     paymentStatusKey NUMBER(4),
-    paymentStatusName VARCHAR2(20)
+    paymentStatusName VARCHAR2(20) NOT NULL
 );
 
 -- Payment
 CREATE TABLE Payment (
     paymentKey NUMBER(10),
-    totalAmount NUMBER(10, 2),
-    paidDateTime TIMESTAMP,
-    paymentMethodKey NUMBER(4),
-    paymentStatusKey NUMBER(4),
-    reservationkey NUMBER(10)
+    totalAmount NUMBER(10, 2) NOT NULL,
+    paidDateTime TIMESTAMP NOT NULL,
+    paymentMethodKey NUMBER(4) NOT NULL,
+    paymentStatusKey NUMBER(4) NOT NULL,
+    reservationkey NUMBER(10) NOT NULL
 );
 
 -- ReservationStatus
@@ -148,7 +148,7 @@ CREATE TABLE ReservationStatusHistory (
 CREATE TABLE Reservation (
     reservationKey NUMBER(10),
     reservationDateTime TIMESTAMP NOT NULL,
-    seatsCount NUMBER(10),
-    postKey NUMBER(10),
-    userKey NUMBER(10)
+    seatsCount NUMBER(10) NOT NULL,
+    postKey NUMBER(10) NOT NULL,
+    userKey NUMBER(10) NOT NULL
 );
