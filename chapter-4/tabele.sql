@@ -87,7 +87,6 @@ CREATE TABLE Post (
     arrivalDateTime TIMESTAMP NOT NULL,
     seatsCount NUMBER(10) NOT NULL,
     seatPrice NUMBER(10, 2) NOT NULL,
-    postStatusKey NUMBER(4) NOT NULL,
     departureAddressKey NUMBER(10) NOT NULL,
     arrivalAddressKey NUMBER(10) NOT NULL,
     carKey NUMBER(10) NOT NULL
