@@ -60,7 +60,7 @@ INSERT ALL
     INTO Address (addressKey, postCode, street, houseNumber, cityKey) VALUES (4, '04081', 'Czapelska', '143B', 1)
     INTO Address (addressKey, postCode, street, houseNumber, flatNumber, cityKey) VALUES (5, '04365', 'Wiatraczna', '11', '56', 1)
     INTO Address (addressKey, postCode, street, houseNumber, flatNumber, cityKey) VALUES (6, '04855', 'Bajkowa', '76', '101', 1)
-    INTO Address (addressKey, postCode, street, houseNumber, cityKey) VALUES (7, '30-348', 'Drukarska', '211', 3)
+    INTO Address (addressKey, postCode, street, houseNumber, cityKey) VALUES (7, '30348', 'Drukarska', '211', 3)
     INTO Address (addressKey, postCode, street, houseNumber, cityKey) VALUES (8, '70200', 'Puchmajerova', '2', 4)
     INTO Address (addressKey, postCode, street, houseNumber, flatNumber, cityKey) VALUES (9, '70200', 'Subertova', '10', '2', 4)
     INTO Address (addressKey, postCode, street, houseNumber, cityKey) VALUES (10, '11901', 'Goldenlane', '9', 5)
