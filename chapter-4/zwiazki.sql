@@ -70,3 +70,9 @@ ALTER TABLE UserStatusHistory ADD (
     CONSTRAINT userStatusHistory_user_FK FOREIGN KEY (userKey) REFERENCES "USER",
     CONSTRAINT userStatusHistory_userStatus_FK FOREIGN KEY (userStatusKey) REFERENCES userStatus
 );
+
+-- UserRole
+ALTER TABLE UserRole ADD (
+    CONSTRAINT userRole_user_FK FOREIGN KEY (userKey) REFERENCES "USER",
+    CONSTRAINT userRole_role_FK FOREIGN KEY (roleKey) REFERENCES "ROLE"
+);
