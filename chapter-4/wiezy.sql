@@ -1,112 +1,112 @@
 -- CarColor
 ALTER TABLE CarColor ADD (
-    CONSTRAINT carColorPK PRIMARY KEY (carColorKey),
-    CONSTRAINT carColorNameUN UNIQUE (carColorName)
+    CONSTRAINT carColor_PK PRIMARY KEY (carColorKey),
+    CONSTRAINT carColor_name_UN UNIQUE (carColorName)
 );
 
 -- CarColorType
 ALTER TABLE CarColorType ADD (
-    CONSTRAINT carColorTypePK PRIMARY KEY (carColorTypeKey),
-    CONSTRAINT carColorTypeNameUN UNIQUE (carColorTypeName)
+    CONSTRAINT carColorType_PK PRIMARY KEY (carColorTypeKey),
+    CONSTRAINT carColorType_name_UN UNIQUE (carColorTypeName)
 );
 
 -- CarMark
 ALTER TABLE CarMark ADD (
-    CONSTRAINT carMarkPK PRIMARY KEY (carMarkKey),
-    CONSTRAINT carMarkNameUN UNIQUE (carMarkName)
+    CONSTRAINT carMark_PK PRIMARY KEY (carMarkKey),
+    CONSTRAINT carMark_name_UN UNIQUE (carMarkName)
 );
 
 -- CarType
 ALTER TABLE CarType ADD (
-    CONSTRAINT carTypePK PRIMARY KEY (carTypeKey),
+    CONSTRAINT carType_PK PRIMARY KEY (carTypeKey),
 );
 
 -- Car
 ALTER TABLE Car ADD (
-    CONSTRAINT carPK PRIMARY KEY (carKey),
-    CONSTRAINT carRegNumberUN UNIQUE (regNumber)
+    CONSTRAINT car_PK PRIMARY KEY (carKey),
+    CONSTRAINT car_regNumber_UN UNIQUE (regNumber)
 );
 
 -- User
 ALTER TABLE "USER" ADD (
-    CONSTRAINT userPK PRIMARY KEY (userKey),
-    CONSTRAINT userUsernameUN UNIQUE (username),
-    CONSTRAINT userEmailUN UNIQUE (email)
+    CONSTRAINT user_PK PRIMARY KEY (userKey),
+    CONSTRAINT user_username_UN UNIQUE (username),
+    CONSTRAINT user_email_UN UNIQUE (email)
 );
 
 -- UserStatus
 ALTER TABLE UserStatus ADD (
-    CONSTRAINT userStatusPK PRIMARY KEY (userStatusKey),
-    CONSTRAINT userStatusNameUN UNIQUE (userStatusName)
+    CONSTRAINT userStatus_PK PRIMARY KEY (userStatusKey),
+    CONSTRAINT userStatus_name_UN UNIQUE (userStatusName)
 );
 
 -- UserStatusHistory
 ALTER TABLE UserStatusHistory ADD (
-    CONSTRAINT userStatusHistoryPK PRIMARY KEY (userStatusHistoryKey)
+    CONSTRAINT userStatusHistory_PK PRIMARY KEY (userStatusHistoryKey)
 );
 
 -- PostStatus
 ALTER TABLE PostStatus ADD (
-    CONSTRAINT postStatusPK PRIMARY KEY (postStatusKey),
-    CONSTRAINT postStatusNameUN UNIQUE (postStatusName)
+    CONSTRAINT postStatus_PK PRIMARY KEY (postStatusKey),
+    CONSTRAINT postStatus_name_UN UNIQUE (postStatusName)
 );
 
 -- PostStatusHistory
 ALTER TABLE PostStatusHistory ADD (
-    CONSTRAINT postStatusHistoryPK PRIMARY KEY (postStatusHistoryKey)
+    CONSTRAINT postStatusHistory_PK PRIMARY KEY (postStatusHistoryKey)
 );
 
 -- Post
 ALTER TABLE Post ADD (
-    CONSTRAINT postPK PRIMARY KEY (postKey)
+    CONSTRAINT post_PK PRIMARY KEY (postKey)
 );
 
 -- Address
 ALTER TABLE Address ADD (
-    CONSTRAINT addressPK PRIMARY KEY (addressKey)
+    CONSTRAINT address_PK PRIMARY KEY (addressKey)
 );
 
 -- Country
 ALTER TABLE Country ADD (
-    CONSTRAINT countryPK PRIMARY KEY (countryKey),
-    CONSTRAINT countryNameUN UNIQUE (countryName)
+    CONSTRAINT country_PK PRIMARY KEY (countryKey),
+    CONSTRAINT country_name_UN UNIQUE (countryName)
 );
 
 -- City
 ALTER TABLE City ADD (
-    CONSTRAINT cityPK PRIMARY KEY (cityKey),
-    CONSTRAINT cityNameUN UNIQUE (cityName)
+    CONSTRAINT city_PK PRIMARY KEY (cityKey),
+    CONSTRAINT city_name_UN UNIQUE (cityName)
 );
 
 -- PaymentMethod
 ALTER TABLE PaymentMethod ADD (
-    CONSTRAINT paymentMethodPK PRIMARY KEY (paymentMethodKey),
-    CONSTRAINT paymentMethodNameUN UNIQUE (paymentMethodName)
+    CONSTRAINT paymentMethod_PK PRIMARY KEY (paymentMethodKey),
+    CONSTRAINT paymentMethod_name_UN UNIQUE (paymentMethodName)
 );
 
 -- PaymentStatus
 ALTER TABLE PaymentStatus ADD (
-    CONSTRAINT paymentStatusPK PRIMARY KEY (paymentStatusKey),
-    CONSTRAINT paymentStatusNameUN UNIQUE (paymentStatusName)
+    CONSTRAINT paymentStatus_PK PRIMARY KEY (paymentStatusKey),
+    CONSTRAINT paymentStatus_name_UN UNIQUE (paymentStatusName)
 );
 
 -- Payment
 ALTER TABLE Payment ADD (
-    CONSTRAINT paymentPK PRIMARY KEY (paymentKey)
+    CONSTRAINT payment_PK PRIMARY KEY (paymentKey)
 );
 
 -- ReservationStatus
 ALTER TABLE ReservationStatus ADD (
-    CONSTRAINT reservationStatusPK PRIMARY KEY (reservationStatusKey),
-    CONSTRAINT reservationStatusNameUN UNIQUE (reservationStatusName)
+    CONSTRAINT reservationStatus_PK PRIMARY KEY (reservationStatusKey),
+    CONSTRAINT reservationStatus_name_UN UNIQUE (reservationStatusName)
 );
 
 -- ReservationStatusHistory
 ALTER TABLE ReservationStatusHistory ADD (
-    CONSTRAINT reservationStatusHistoryPK PRIMARY KEY (reservationStatusHistoryKey)
+    CONSTRAINT reservationStatusHistory_PK PRIMARY KEY (reservationStatusHistoryKey)
 );
 
 -- Reservation
 ALTER TABLE Reservation ADD (
-    CONSTRAINT reservationPK PRIMARY KEY (reservationKey)
+    CONSTRAINT reservation_PK PRIMARY KEY (reservationKey)
 );
