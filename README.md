@@ -2,5 +2,7 @@
 Project for oracle db classes.
 # Questions
 no questions
-# Updated model
-![alt text](model.png "Model")
+# Relational model
+![alt text](relational.png "Relational model")
+# Logical model
+![alt text](logical.png "Logical model")
