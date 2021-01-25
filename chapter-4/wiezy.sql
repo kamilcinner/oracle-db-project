@@ -119,7 +119,8 @@ ALTER TABLE Reservation ADD (
 
 -- Role
 ALTER TABLE "ROLE" ADD (
-    CONSTRAINT role_PK PRIMARY KEY (roleKey)
+    CONSTRAINT role_PK PRIMARY KEY (roleKey),
+    CONSTRAINT role_name_UQ UNIQUE (roleName)
 );
 
 -- UserRole
