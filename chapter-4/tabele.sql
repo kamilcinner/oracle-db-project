@@ -20,7 +20,7 @@ CREATE TABLE CarMark (
 -- CarType
 CREATE TABLE CarType(
     carTypeKey NUMBER(4),
-    cartypeName VARCHAR(20) NOT NULL
+    carTypeName VARCHAR(20) NOT NULL
 );
 
 -- Car

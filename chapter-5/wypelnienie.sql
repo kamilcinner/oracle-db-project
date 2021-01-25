@@ -27,7 +27,11 @@ SELECT * FROM DUAL;
 
 -- CarType
 INSERT ALL
-
+    INTO CarType (carTypeKey, carTypeName) VALUES (1, 'Passenger car')
+    INTO CarType (carTypeKey, carTypeName) VALUES (2, 'Bus')
+    INTO CarType (carTypeKey, carTypeName) VALUES (3, 'Limousine')
+    INTO CarType (carTypeKey, carTypeName) VALUES (4, 'Van')
+    INTO CarType (carTypeKey, carTypeName) VALUES (5, 'Truck')
 SELECT * FROM DUAL;
 
 -- Country
