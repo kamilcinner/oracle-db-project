@@ -128,14 +128,20 @@ CREATE TABLE PaymentStatus (
     paymentStatusName VARCHAR2(20) NOT NULL
 );
 
+-- PaymentStatusHistory
+CREATE TABLE PaymentStatusHistory (
+    paymentStatusHistoryKey NUMBER(10),
+    changeDateTime TIMESTAMP NOT NULL,
+    paymentKey NUMBER(10) NOT NULL,
+    paymentStatusKey NUMBER(4) NOT NULL
+);
+
 -- Payment
 CREATE TABLE Payment (
     paymentKey NUMBER(10),
     totalAmount NUMBER(10, 2) NOT NULL,
-    paidDateTime TIMESTAMP NOT NULL,
     externalPaymentNumber VARCHAR(40) NOT NULL,
     paymentMethodKey NUMBER(4) NOT NULL,
-    paymentStatusKey NUMBER(4) NOT NULL,
     reservationKey NUMBER(10) NOT NULL
 );
 

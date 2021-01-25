@@ -43,6 +43,12 @@ ALTER TABLE Payment ADD (
     CONSTRAINT payment_reservation_FK FOREIGN KEY (reservationKey) REFERENCES Reservation
 );
 
+-- PaymentStatusHistory
+ALTER TABLE PaymentStatusHistory ADD (
+    CONSTRAINT paymentStatusHistory_payment_FK FOREIGN KEY (paymentKey) REFERENCES Payment,
+    CONSTRAINT paymentStatusHistory_paymentStatus_FK FOREIGN KEY (paymentStatusKey) REFERENCES PaymentStatus
+);
+
 -- Reservation
 ALTER TABLE Reservation ADD (
     CONSTRAINT reservation_post_FK FOREIGN KEY (postKey) REFERENCES Post,

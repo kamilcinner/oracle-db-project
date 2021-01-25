@@ -91,6 +91,11 @@ ALTER TABLE PaymentStatus ADD (
     CONSTRAINT paymentStatus_name_UN UNIQUE (paymentStatusName)
 );
 
+-- PaymentStatusHistory
+ALTER TABLE PaymentStatusHistory ADD (
+    CONSTRAINT paymentStatusHistory_PK PRIMARY KEY (paymentStatusHistoryKey)
+);
+
 -- Payment
 ALTER TABLE Payment ADD (
     CONSTRAINT payment_PK PRIMARY KEY (paymentKey)
