@@ -43,14 +43,23 @@ SELECT * FROM DUAL;
 INSERT ALL
     INTO City (cityKey, cityName, countryKey) VALUES (1, 'Warsaw', 1)
     INTO City (cityKey, cityName, countryKey) VALUES (2, 'Lublin', 1)
-    INTO City (cityKey, cityName, countryKey) VALUES (3, 'Wroclaw', 1)
-    INTO City (cityKey, cityName, countryKey) VALUES (4, 'Cracow', 1)
-    INTO City (cityKey, cityName, countryKey) VALUES (5, 'Gdansk', 1)
+    INTO City (cityKey, cityName, countryKey) VALUES (3, 'Cracow', 1)
+    INTO City (cityKey, cityName, countryKey) VALUES (4, 'Ostrava', 5)
+    INTO City (cityKey, cityName, countryKey) VALUES (5, 'Prague', 5)
 SELECT * FROM DUAL;
 
 -- Address (City)
 INSERT ALL
-
+    INTO address (addressKey, postCode, street, houseNumber, flatNumber, cityKey) VALUES (1, '20501', 'Nadbystrzycka', '45', '11', 2)
+    INTO address (addressKey, postCode, street, houseNumber, cityKey) VALUES (2, '20533', 'Romantyczna', '32', 2)
+    INTO address (addressKey, postCode, street, houseNumber, cityKey) VALUES (3, '20016', 'Narutowicza', '7', 2)
+    INTO address (addressKey, postCode, street, houseNumber, cityKey) VALUES (4, '04081', 'Czapelska', '143B', 1)
+    INTO address (addressKey, postCode, street, houseNumber, flatNumber, cityKey) VALUES (5, '04365', 'Wiatraczna', '11', '56', 1)
+    INTO address (addressKey, postCode, street, houseNumber, flatNumber, cityKey) VALUES (6, '04855', 'Bajkowa', '76', '101', 1)
+    INTO address (addressKey, postCode, street, houseNumber, cityKey) VALUES (7, '30-348', 'Drukarska', '211', 3)
+    INTO address (addressKey, postCode, street, houseNumber, cityKey) VALUES (8, '70200', 'Puchmajerova', '2', 4)
+    INTO address (addressKey, postCode, street, houseNumber, flatNumber, cityKey) VALUES (9, '70200', 'Subertova', '10', '2', 4)
+    INTO address (addressKey, postCode, street, houseNumber, cityKey) VALUES (10, '11901', 'Goldenlane', '9', 5)
 SELECT * FROM DUAL;
 
 -- UserStatus
@@ -131,7 +140,9 @@ SELECT * FROM DUAL;
 
 -- Post (Car, Address)
 INSERT ALL
-
+    INTO post (postKey, departureDateTime, arrivalDateTime, seatsCount, seatPrice, postStatusKey, departureAddressKey, arrivalAddressKey, carKey) VALUES (,)
+    INTO post (postKey, departureDateTime, arrivalDateTime, seatsCount, seatPrice, postStatusKey, departureAddressKey, arrivalAddressKey, carKey) VALUES (,)
+    INTO post (postKey, departureDateTime, arrivalDateTime, seatsCount, seatPrice, postStatusKey, departureAddressKey, arrivalAddressKey, carKey) VALUES (,)
 SELECT * FROM DUAL;
 
 -- PostStatusHistory (Post, PostStatus)
