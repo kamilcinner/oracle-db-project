@@ -7,7 +7,7 @@ INSERT ALL
     INTO CarColorType (carColorTypeKey, carColorTypeName) VALUES (5, 'Custom')
 SELECT * FROM DUAL;
 
--- CarColor
+-- CarColor (CarColorType)
 INSERT ALL
     INTO CarColor (carColorKey, carColorName, carColorTypeKey) VALUES (1, 'Red', 1)
     INTO CarColor (carColorKey, carColorName, carColorTypeKey) VALUES (2, 'Blue', 2)
@@ -25,6 +25,11 @@ INSERT ALL
     INTO CarMark (carMarkKey, carMarkName) VALUES (5, 'Ford')
 SELECT * FROM DUAL;
 
+-- CarType
+INSERT ALL
+
+SELECT * FROM DUAL;
+
 -- Country
 INSERT ALL
     INTO Country (countryKey, countryName) VALUES (1, 'Poland')
@@ -34,7 +39,7 @@ INSERT ALL
     INTO Country (countryKey, countryName) VALUES (5, 'Czech Republic')
 SELECT * FROM DUAL;
 
--- City
+-- City (Country)
 INSERT ALL
     INTO City (cityKey, cityName, countryKey) VALUES (1, 'Warsaw', 1)
     INTO City (cityKey, cityName, countryKey) VALUES (2, 'Lublin', 1)
@@ -43,7 +48,7 @@ INSERT ALL
     INTO City (cityKey, cityName, countryKey) VALUES (5, 'Gdansk', 1)
 SELECT * FROM DUAL;
 
--- Address
+-- Address (City)
 INSERT ALL
 
 SELECT * FROM DUAL;
@@ -58,17 +63,46 @@ INSERT ALL
     INTO UserStatus (userStatusKey, userStatusName) VALUES (5, 'Waiting')
 SELECT * FROM DUAL;
 
--- UserStatusHistory
+-- User (Address)
 INSERT ALL
+    INTO "USER" (userKey, username, hashedPassword, salt, email,
+        firstname, surname, dateOfBirth, phoneNumber, addressKey)
+    VALUES (1, 'kamilcinner', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
+        'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'kamilcinner@blabla.car', 'Kamil', 'Cinner',
+        to_date('01-01-1974', 'dd-mm-yyyy'), '482659314', 1)
 
+    INTO "USER" (userKey, username, hashedPassword, salt, email,
+        firstname, surname, dateOfBirth, phoneNumber, addressKey)
+    VALUES (2, 'longBow137', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
+        'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'longBow137@blabla.car', 'Legolas', 'Legolas',
+        to_date('01-01-1974', 'dd-mm-yyyy'), '206489451', 2)
+
+    INTO "USER" (userKey, username, hashedPassword, salt, email,
+        firstname, surname, dateOfBirth, phoneNumber, addressKey)
+    VALUES (3, 'sherman123', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
+        'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'sherman123@blabla.car', 'Sherlock', 'Holmes',
+        to_date('01-01-1974', 'dd-mm-yyyy'), '051095714', 3)
+
+    INTO "USER" (userKey, username, hashedPassword, salt, email,
+        firstname, surname, dateOfBirth, phoneNumber, addressKey)
+    VALUES (4, 'magdalenalenart', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
+        'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'magdalenalenart@blabla.car', 'Magdalena', 'Lenart',
+        to_date('01-01-1974', 'dd-mm-yyyy'), '275629056', 4)
+
+    INTO "USER" (userKey, username, hashedPassword, salt, email,
+        firstname, surname, dateOfBirth, phoneNumber, addressKey)
+    VALUES (5, 'adamlipinski', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
+        'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'adamlipinski@blabla.car', 'Adam', 'Lipiński',
+        to_date('01-01-1974', 'dd-mm-yyyy'), '018365932', 5)
 SELECT * FROM DUAL;
 
--- User
+-- UserStatusHistory (User, UserStatus)
 INSERT ALL
-
+    INTO UserStatusHistory (userStatusHistoryKey, changeDateTime, userKey, userStatusKey)
+    VALUES (1, '25-01-2021 17:38:00', 1, 1)
 SELECT * FROM DUAL;
 
--- Car
+-- Car (CarMark, CarColor, User)
 INSERT ALL
 
 SELECT * FROM DUAL;
@@ -83,12 +117,27 @@ INSERT ALL
     INTO PostStatus (postStatusKey, postStatusName) VALUES (6, 'Canceled')
 SELECT * FROM DUAL;
 
--- PostStatusHistory
+-- Post (Car, Address)
 INSERT ALL
 
 SELECT * FROM DUAL;
 
--- Post
+-- PostStatusHistory (Post, PostStatus)
+INSERT ALL
+
+SELECT * FROM DUAL;
+
+-- ReservationStatus
+INSERT ALL
+
+SELECT * FROM DUAL;
+
+-- Reservation (Post, User)
+INSERT ALL
+
+SELECT * FROM DUAL;
+
+-- ReservationStatusHistory (Reservation, ReservationStatus)
 INSERT ALL
 
 SELECT * FROM DUAL;
@@ -111,12 +160,7 @@ INSERT ALL
     INTO PaymentStatus (paymentStatusKey, paymentStatusName) VALUES (5, 'New')
 SELECT * FROM DUAL;
 
--- Payment
-INSERT ALL
-
-SELECT * FROM DUAL;
-
--- Travel
+-- Payment (PaymentStatus, PaymentMethod, Reservation)
 INSERT ALL
 
 SELECT * FROM DUAL;
