@@ -27,7 +27,11 @@ SELECT * FROM DUAL;
 
 -- CarType
 INSERT ALL
-
+    INTO CarType (carTypeKey, carTypeName) VALUES (1, 'Passenger car')
+    INTO CarType (carTypeKey, carTypeName) VALUES (2, 'Bus')
+    INTO CarType (carTypeKey, carTypeName) VALUES (3, 'Limousine')
+    INTO CarType (carTypeKey, carTypeName) VALUES (4, 'Van')
+    INTO CarType (carTypeKey, carTypeName) VALUES (5, 'Truck')
 SELECT * FROM DUAL;
 
 -- Country
@@ -116,7 +120,20 @@ SELECT * FROM DUAL;
 
 -- Car (CarMark, CarColor, User)
 INSERT ALL
+    INTO Car (carKey, regNumber, prodYear, seatsCount, userKey, carMarkKey, model, carColorKey, carTypeKey) 
+    VALUES (1, 'WA84P23', '2002', 4, 1, 5, 'Explorer', 2, 1)
 
+    INTO Car (carKey, regNumber, prodYear, seatsCount, userKey, carMarkKey, model, carColorKey, carTypeKey) 
+    VALUES (2, 'KR2J614', '2005', 4, 2, 2, 'CX-30', 2, 1)
+
+    INTO Car (carKey, regNumber, prodYear, seatsCount, userKey, carMarkKey, model, carColorKey, carTypeKey) 
+    VALUES (3, 'LU93P2S', '2010', 4, 3, 2, 'CX-8', 1, 1)
+
+    INTO Car (carKey, regNumber, prodYear, seatsCount, userKey, carMarkKey, model, carColorKey, carTypeKey) 
+    VALUES (4, 'WA12E34', '2012', 6, 4, 2, 'MPV', 3, 4)
+
+    INTO Car (carKey, regNumber, prodYear, seatsCount, userKey, carMarkKey, model, carColorKey, carTypeKey) 
+    VALUES (5, 'WA23ER4', '2004', 4, 5, 5, 'Edge', 1, 1)
 SELECT * FROM DUAL;
 
 -- PostStatus
