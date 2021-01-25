@@ -19,7 +19,7 @@ ALTER TABLE CarMark ADD (
 -- CarType
 ALTER TABLE CarType ADD (
     CONSTRAINT carType_PK PRIMARY KEY (carTypeKey),
-    CONSTRAINT carTypeName_UN UNIQUE (carTypeName)
+    CONSTRAINT carType_name_UN UNIQUE (carTypeName)
 );
 
 -- Car
