@@ -47,6 +47,9 @@ CREATE INDEX post_postStatus_IDX ON Post (postStatusKey);
 -- PaymentStatus
 
 
+-- PaymentStatusHistory
+
+
 -- Payment
 
 
