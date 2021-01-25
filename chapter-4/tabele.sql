@@ -48,7 +48,7 @@ CREATE TABLE "USER" (
     surname VARCHAR(20) NOT NULL,
     dateOfBirth DATE NOT NULL,
     phoneNumber VARCHAR(9) NOT NULL,
-    addressKey NUMBER(10) NOT NULL
+    addressKey NUMBER(10)
 );
 
 -- UserStatus

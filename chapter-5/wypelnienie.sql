@@ -150,19 +150,19 @@ SELECT * FROM DUAL;
 -- Reservation (Post, User)
 INSERT ALL
     INTO Reservation (reservationKey, reservationDateTime, seatsCount, postKey, userKey)
-    VALUES (1, to_timestamp('05-01-2021 03:02:01', 'DD-MM-YYYY HH24:MI:SS', 1, 2, 1))
+    VALUES (1, to_timestamp('05-01-2021 03:02:01', 'DD-MM-YYYY HH24:MI:SS'), 1, 2, 1)
 
     INTO Reservation (reservationKey, reservationDateTime, seatsCount, postKey, userKey)
-    VALUES (1, to_timestamp('07-01-2021 21:00:04', 'DD-MM-YYYY HH24:MI:SS', 1, 1, 2))
+    VALUES (1, to_timestamp('07-01-2021 21:00:04', 'DD-MM-YYYY HH24:MI:SS'), 1, 1, 2)
 
     INTO Reservation (reservationKey, reservationDateTime, seatsCount, postKey, userKey)
-    VALUES (1, to_timestamp('09-01-2021 13:51:31', 'DD-MM-YYYY HH24:MI:SS', 1, 3, 3))
+    VALUES (1, to_timestamp('09-01-2021 13:51:31', 'DD-MM-YYYY HH24:MI:SS'), 1, 3, 3)
 
     INTO Reservation (reservationKey, reservationDateTime, seatsCount, postKey, userKey)
-    VALUES (1, to_timestamp('11-01-2021 16:52:31', 'DD-MM-YYYY HH24:MI:SS', 1, 5, 4))
+    VALUES (1, to_timestamp('11-01-2021 16:52:31', 'DD-MM-YYYY HH24:MI:SS'), 1, 5, 4)
 
     INTO Reservation (reservationKey, reservationDateTime, seatsCount, postKey, userKey)
-    VALUES (1, to_timestamp('17-01-2021 18:54:31', 'DD-MM-YYYY HH24:MI:SS', 1, 4, 5))
+    VALUES (1, to_timestamp('17-01-2021 18:54:31', 'DD-MM-YYYY HH24:MI:SS'), 1, 4, 5)
 SELECT * FROM DUAL;
 
 -- ReservationStatusHistory (Reservation, ReservationStatus)
