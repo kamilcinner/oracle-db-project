@@ -122,7 +122,7 @@ SELECT * FROM DUAL;
 -- PostStatus
 INSERT ALL
     INTO PostStatus (postStatusKey, postStatusName) VALUES (1, 'Active')
-    INTO PostStatus (postStatusKey, postStatusName) VALUES (2, 'Inactive')
+    INTO PostStatus (postStatusKey, postStatusName) VALUES (2, 'Finished')
     INTO PostStatus (postStatusKey, postStatusName) VALUES (3, 'Blocked')
     INTO PostStatus (postStatusKey, postStatusName) VALUES (4, 'Full')
     INTO PostStatus (postStatusKey, postStatusName) VALUES (5, 'Waiting')
