@@ -11,17 +11,17 @@
 
 
 -- Car
-CREATE INDEX car_markKey_IDX ON Car(carMarkKey);
-CREATE INDEX car_colorKey_IDX ON Car(carColorKey);
+CREATE INDEX car_carMark_IDX ON Car (carMarkKey);
+CREATE INDEX car_carColor_IDX ON Car (carColorKey);
 
 -- User
-CREATE INDEX user_firstnameSurname_IDX ON "USER"(firstname, surname);
+CREATE INDEX user_firstnameSurname_IDX ON "USER" (firstname, surname);
 
 -- UserStatus
 
 
 -- UserStatusHistory
-
+CREATE INDEX userStatusHistory_user_IDX ON UserStatusHistory (userKey);
 
 -- PostStatus
 
@@ -30,7 +30,7 @@ CREATE INDEX user_firstnameSurname_IDX ON "USER"(firstname, surname);
 
 
 -- Post
-CREATE INDEX post_postStatusKey_IDX ON Post(postStatusKey);
+CREATE INDEX post_postStatus_IDX ON Post(postStatusKey);
 
 -- Address
 
