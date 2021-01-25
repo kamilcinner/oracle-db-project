@@ -39,7 +39,6 @@ ALTER TABLE City ADD (
 -- Payment
 ALTER TABLE Payment ADD (
     CONSTRAINT payment_paymentMethod_FK FOREIGN KEY (paymentMethodKey) REFERENCES PaymentMethod,
-    CONSTRAINT payment_paymentStatus_FK FOREIGN KEY (paymentStatusKey) REFERENCES PaymentStatus,
     CONSTRAINT payment_reservation_FK FOREIGN KEY (reservationKey) REFERENCES Reservation
 );
 
