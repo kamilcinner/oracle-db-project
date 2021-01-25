@@ -100,18 +100,28 @@ SELECT * FROM DUAL;
 INSERT ALL
     INTO UserStatusHistory (userStatusHistoryKey, changeDateTime, userKey, userStatusKey)
     VALUES (1, to_timestamp('03-01-2021 17:38:00', 'DD-MM-YYYY HH24:MI:SS'), 1, 5)
+    INTO UserStatusHistory (userStatusHistoryKey, changeDateTime, userKey, userStatusKey)
+    VALUES (6, to_timestamp('03-01-2021 17:39:00', 'DD-MM-YYYY HH24:MI:SS'), 1, 1)
 
     INTO UserStatusHistory (userStatusHistoryKey, changeDateTime, userKey, userStatusKey)
-    VALUES (1, to_timestamp('03-01-2021 17:39:00', 'DD-MM-YYYY HH24:MI:SS'), 2, 5)
+    VALUES (2, to_timestamp('03-01-2021 17:39:00', 'DD-MM-YYYY HH24:MI:SS'), 2, 5)
+    INTO UserStatusHistory (userStatusHistoryKey, changeDateTime, userKey, userStatusKey)
+    VALUES (7, to_timestamp('03-01-2021 17:40:00', 'DD-MM-YYYY HH24:MI:SS'), 2, 1)
 
     INTO UserStatusHistory (userStatusHistoryKey, changeDateTime, userKey, userStatusKey)
-    VALUES (1, to_timestamp('03-01-2021 17:40:00', 'DD-MM-YYYY HH24:MI:SS'), 3, 5)
+    VALUES (3, to_timestamp('03-01-2021 17:40:00', 'DD-MM-YYYY HH24:MI:SS'), 3, 5)
+    INTO UserStatusHistory (userStatusHistoryKey, changeDateTime, userKey, userStatusKey)
+    VALUES (8, to_timestamp('03-01-2021 17:41:00', 'DD-MM-YYYY HH24:MI:SS'), 3, 1)
 
     INTO UserStatusHistory (userStatusHistoryKey, changeDateTime, userKey, userStatusKey)
-    VALUES (1, to_timestamp('03-01-2021 17:41:00', 'DD-MM-YYYY HH24:MI:SS'), 4, 5)
+    VALUES (4, to_timestamp('03-01-2021 17:41:00', 'DD-MM-YYYY HH24:MI:SS'), 4, 5)
+    INTO UserStatusHistory (userStatusHistoryKey, changeDateTime, userKey, userStatusKey)
+    VALUES (9, to_timestamp('03-01-2021 17:42:00', 'DD-MM-YYYY HH24:MI:SS'), 4, 1)
 
     INTO UserStatusHistory (userStatusHistoryKey, changeDateTime, userKey, userStatusKey)
-    VALUES (1, to_timestamp('03-01-2021 17:42:00', 'DD-MM-YYYY HH24:MI:SS'), 5, 5)
+    VALUES (5, to_timestamp('03-01-2021 17:42:00', 'DD-MM-YYYY HH24:MI:SS'), 5, 5)
+    INTO UserStatusHistory (userStatusHistoryKey, changeDateTime, userKey, userStatusKey)
+    VALUES (10, to_timestamp('03-01-2021 17:43:00', 'DD-MM-YYYY HH24:MI:SS'), 5, 1)
 SELECT * FROM DUAL;
 
 -- Car (CarMark, CarColor, User)
@@ -238,4 +248,29 @@ INSERT ALL
 
     INTO PaymentStatusHistory (paymentStatusHistoryKey, changeDateTime, paymentKey, paymentStatusKey)
     VALUES (5, to_timestamp('17-01-2021 19:04:31', 'DD-MM-YYYY HH24:MI:SS'), 5, 2)
+SELECT * FROM DUAL;
+
+-- Role
+INSERT ALL
+    INTO "ROLE" (roleKey, rolename) VALUES (1, 'DRIVER')
+    INTO "ROLE" (roleKey, rolename) VALUES (2, 'PASSENGER')
+    INTO "ROLE" (roleKey, rolename) VALUES (3, 'ADMIN')
+SELECT * FROM DUAL;
+
+-- UserRole
+INSERT ALL
+    INTO UserRole (userRoleKey, userKey, roleKey) VALUES (1, 1, 1)
+    INTO UserRole (userRoleKey, userKey, roleKey) VALUES (2, 1, 2)
+
+    INTO UserRole (userRoleKey, userKey, roleKey) VALUES (3, 2, 1)
+    INTO UserRole (userRoleKey, userKey, roleKey) VALUES (4, 2, 2)
+
+    INTO UserRole (userRoleKey, userKey, roleKey) VALUES (5, 3, 1)
+    INTO UserRole (userRoleKey, userKey, roleKey) VALUES (6, 3, 2)
+
+    INTO UserRole (userRoleKey, userKey, roleKey) VALUES (7, 4, 1)
+    INTO UserRole (userRoleKey, userKey, roleKey) VALUES (8, 4, 2)
+
+    INTO UserRole (userRoleKey, userKey, roleKey) VALUES (9, 5, 1)
+    INTO UserRole (userRoleKey, userKey, roleKey) VALUES (10, 5, 2)
 SELECT * FROM DUAL;

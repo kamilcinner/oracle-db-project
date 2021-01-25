@@ -116,3 +116,13 @@ ALTER TABLE ReservationStatusHistory ADD (
 ALTER TABLE Reservation ADD (
     CONSTRAINT reservation_PK PRIMARY KEY (reservationKey)
 );
+
+-- Role
+ALTER TABLE "ROLE" ADD (
+    CONSTRAINT role_PK PRIMARY KEY (roleKey)
+);
+
+-- UserRole
+ALTER TABLE UserRole ADD (
+    CONSTRAINT userRole_PK PRIMARY KEY (userRoleKey)
+);
