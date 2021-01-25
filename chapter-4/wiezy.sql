@@ -31,7 +31,8 @@ ALTER TABLE Car ADD (
 ALTER TABLE "USER" ADD (
     CONSTRAINT user_PK PRIMARY KEY (userKey),
     CONSTRAINT user_username_UN UNIQUE (username),
-    CONSTRAINT user_email_UN UNIQUE (email)
+    CONSTRAINT user_email_UN UNIQUE (email),
+    CONSTRAINT user_phoneNumber_UN UNIQUE (phoneNumber)
 );
 
 -- UserStatus
