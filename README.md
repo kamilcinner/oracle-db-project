@@ -2,5 +2,5 @@
 Project for oracle db classes.
 # Questions
 no questions
-# Not quite updated model
+# Updated model
 ![alt text](model.png "Model")

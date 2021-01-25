@@ -19,8 +19,8 @@ CREATE TABLE CarMark (
 
 -- CarType
 CREATE TABLE CarType(
-carTypeKey NUMBER(10),
-cartypeName VARCHAR(20) NOT NULL
+    carTypeKey NUMBER(4),
+    cartypeName VARCHAR(20) NOT NULL
 );
 
 -- Car
@@ -32,7 +32,8 @@ CREATE TABLE Car (
     userKey NUMBER(10) NOT NULL,
     carMarkKey NUMBER(4) NOT NULL,
     model VARCHAR(30) NOT NULL,
-    carColorKey NUMBER(4) NOT NULL
+    carColorKey NUMBER(4) NOT NULL,
+    carTypeKey NUMBER(4) NOT NULL
 );
 
 -- User
