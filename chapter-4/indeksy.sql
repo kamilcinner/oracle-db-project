@@ -30,7 +30,7 @@ CREATE INDEX userStatusHistory_user_IDX ON UserStatusHistory (userKey);
 
 
 -- Post
-CREATE INDEX post_postStatus_IDX ON Post (postStatusKey);
+
 
 -- Address
 
