@@ -143,6 +143,8 @@ INSERT ALL
     INTO post (postKey, departureDateTime, arrivalDateTime, seatsCount, seatPrice, postStatusKey, departureAddressKey, arrivalAddressKey, carKey) VALUES (,)
     INTO post (postKey, departureDateTime, arrivalDateTime, seatsCount, seatPrice, postStatusKey, departureAddressKey, arrivalAddressKey, carKey) VALUES (,)
     INTO post (postKey, departureDateTime, arrivalDateTime, seatsCount, seatPrice, postStatusKey, departureAddressKey, arrivalAddressKey, carKey) VALUES (,)
+    INTO post (postKey, departureDateTime, arrivalDateTime, seatsCount, seatPrice, postStatusKey, departureAddressKey, arrivalAddressKey, carKey) VALUES (,)
+    INTO post (postKey, departureDateTime, arrivalDateTime, seatsCount, seatPrice, postStatusKey, departureAddressKey, arrivalAddressKey, carKey) VALUES (,)
 SELECT * FROM DUAL;
 
 -- PostStatusHistory (Post, PostStatus)
