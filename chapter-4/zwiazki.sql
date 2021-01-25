@@ -22,7 +22,7 @@ ALTER TABLE Post ADD (
 
 -- PostStatusHistory
 ALTER TABLE PostStatusHistory ADD (
-    CONSTRAINT postStatusHistory_post_FK FOREIGN KEY (postKey) REFERENCES Post,
+    CONSTRAINT postStatusHistory_post_FK FOREIGN KEY (postKey) REFERENCES Post ON DELETE CASCADE,
     CONSTRAINT postStatusHistory_postStatus_FK FOREIGN KEY (postStatusKey) REFERENCES PostStatus
 );
 
@@ -44,7 +44,7 @@ ALTER TABLE Payment ADD (
 
 -- PaymentStatusHistory
 ALTER TABLE PaymentStatusHistory ADD (
-    CONSTRAINT paymentStatusHistory_payment_FK FOREIGN KEY (paymentKey) REFERENCES Payment,
+    CONSTRAINT paymentStatusHistory_payment_FK FOREIGN KEY (paymentKey) REFERENCES Payment ON DELETE CASCADE,
     CONSTRAINT paymentStatusHistory_paymentStatus_FK FOREIGN KEY (paymentStatusKey) REFERENCES PaymentStatus
 );
 
@@ -56,7 +56,7 @@ ALTER TABLE Reservation ADD (
 
 -- ReservationStatusHistory
 ALTER TABLE ReservationStatusHistory ADD (
-    CONSTRAINT reservationStatusHistory_reservation_FK FOREIGN KEY (reservationKey) REFERENCES Reservation,
+    CONSTRAINT reservationStatusHistory_reservation_FK FOREIGN KEY (reservationKey) REFERENCES Reservation ON DELETE CASCADE,
     CONSTRAINT reservationStatusHistory_reservationStatus_FK FOREIGN KEY (reservationStatusKey) REFERENCES ReservationStatus
 );
 
@@ -67,7 +67,7 @@ ALTER TABLE "USER" ADD (
 
 -- UserStatusHistory
 ALTER TABLE UserStatusHistory ADD (
-    CONSTRAINT userStatusHistory_user_FK FOREIGN KEY (userKey) REFERENCES "USER",
+    CONSTRAINT userStatusHistory_user_FK FOREIGN KEY (userKey) REFERENCES "USER" ON DELETE CASCADE,
     CONSTRAINT userStatusHistory_userStatus_FK FOREIGN KEY (userStatusKey) REFERENCES userStatus
 );
 
