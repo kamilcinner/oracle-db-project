@@ -166,3 +166,16 @@ CREATE TABLE Reservation (
     postKey NUMBER(10) NOT NULL,
     userKey NUMBER(10) NOT NULL
 );
+
+-- Role
+CREATE TABLE "ROLE" (
+    roleKey NUMBER(4),
+    roleName VARCHAR(20) NOT NULL
+);
+
+-- UserRole
+CREATE TABLE UserRole (
+    userRoleKey NUMBER(10),
+    userKey NUMBER(10) NOT NULL,
+    roleKey NUMBER(4) NOT NULL
+);
