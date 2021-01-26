@@ -230,19 +230,19 @@ SELECT * FROM DUAL;
 -- Reservation (Post, User)
 INSERT ALL
     INTO Reservation (reservationKey, reservationDateTime, seatsCount, postKey, userKey)
-    VALUES (1, to_timestamp('05-01-2021 03:02:01', 'DD-MM-YYYY HH24:MI:SS'), 1, 2, 1)
+    VALUES (1, to_timestamp('05-01-2021 03:02:01', 'DD-MM-YYYY HH24:MI:SS'), 2, 1, 1)
 
     INTO Reservation (reservationKey, reservationDateTime, seatsCount, postKey, userKey)
-    VALUES (1, to_timestamp('07-01-2021 21:00:04', 'DD-MM-YYYY HH24:MI:SS'), 1, 1, 2)
+    VALUES (2, to_timestamp('07-01-2021 21:00:04', 'DD-MM-YYYY HH24:MI:SS'), 1, 1, 2)
 
     INTO Reservation (reservationKey, reservationDateTime, seatsCount, postKey, userKey)
-    VALUES (1, to_timestamp('09-01-2021 13:51:31', 'DD-MM-YYYY HH24:MI:SS'), 1, 3, 3)
+    VALUES (3, to_timestamp('09-01-2021 13:51:31', 'DD-MM-YYYY HH24:MI:SS'), 4, 3, 3)
 
     INTO Reservation (reservationKey, reservationDateTime, seatsCount, postKey, userKey)
-    VALUES (1, to_timestamp('11-01-2021 16:52:31', 'DD-MM-YYYY HH24:MI:SS'), 1, 3, 4)
+    VALUES (4, to_timestamp('11-01-2021 16:52:31', 'DD-MM-YYYY HH24:MI:SS'), 1, 2, 4)
 
     INTO Reservation (reservationKey, reservationDateTime, seatsCount, postKey, userKey)
-    VALUES (1, to_timestamp('17-01-2021 18:54:31', 'DD-MM-YYYY HH24:MI:SS'), 1, 4, 5)
+    VALUES (5, to_timestamp('17-01-2021 18:54:31', 'DD-MM-YYYY HH24:MI:SS'), 1, 4, 5)
 SELECT * FROM DUAL;
 
 -- ReservationStatusHistory (Reservation, ReservationStatus)
@@ -287,19 +287,19 @@ SELECT * FROM DUAL;
 -- Payment (PaymentMethod, Reservation)
 INSERT ALL
     INTO Payment (paymentKey, totalAmount, externalPaymentNumber, paymentMethodkey, reservationkey)
-    VALUES (1, 25.00, 'sdfsftstyft238y4324hb23h423h4v23h4dv234d', 1, 1)
+    VALUES (1, 61.00, 'sdfsftstyft238y4324hb23h423h4v23h4dv234d', 1, 1)
 
     INTO Payment (paymentKey, totalAmount, externalPaymentNumber, paymentMethodkey, reservationkey)
-    VALUES (2, 100.00, '234dt23sdfsftstyf23h423h4v23h4dv8y4324hb', 2, 2)
+    VALUES (2, 30.50, '234dt23sdfsftstyf23h423h4v23h4dv8y4324hb', 2, 2)
 
     INTO Payment (paymentKey, totalAmount, externalPaymentNumber, paymentMethodkey, reservationkey)
-    VALUES (3, 27.80, 'tyft238y4324hb23sdfsftsh423h4v23h4dv234d', 3, 3)
+    VALUES (3, 520.00, 'tyft238y4324hb23sdfsftsh423h4v23h4dv234d', 3, 3)
 
     INTO Payment (paymentKey, totalAmount, externalPaymentNumber, paymentMethodkey, reservationkey)
-    VALUES (4, 35.00, 'hbdv23h423h4v23h4sdfsftstyft238y4324234d', 4, 4)
+    VALUES (4, 25.90, 'hbdv23h423h4v23h4sdfsftstyft238y4324234d', 4, 4)
 
     INTO Payment (paymentKey, totalAmount, externalPaymentNumber, paymentMethodkey, reservationkey)
-    VALUES (5, 40.99, 'yft238y4324hb23h423h4vsdfsftst23h4dv234d', 5, 5)
+    VALUES (5, 150.00, 'yft238y4324hb23h423h4vsdfsftst23h4dv234d', 5, 5)
 SELECT * FROM DUAL;
 
 -- PaymentStatusHistory (Payment, PaymentStatus)
