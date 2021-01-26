@@ -7,4 +7,4 @@ no questions
 # Logical model
 ![alt text](chapter-2/logiczny.png "Logical model")
 # Mentor of the project
-![alt text](pobrane.jpg "Mentor")
+![alt text](mentor.jpg "Mentor")
