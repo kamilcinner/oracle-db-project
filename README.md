@@ -1,5 +1,5 @@
 # oracle-db-project
-Database project created for oracle db classes by awesome team.
+Relational database project created for oracle db classes by awesome team.
 # Questions
 no questions
 # Relational model
