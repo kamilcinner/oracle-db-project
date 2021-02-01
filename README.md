@@ -6,5 +6,3 @@ no questions
 ![alt text](chapter-3/relacyjny.png "Relational model")
 # Logical model
 ![alt text](chapter-2/logiczny.png "Logical model")
-# Mentor of the project
-![alt text](mentor.jpg "Mentor")
