@@ -4,12 +4,6 @@ ALTER TABLE CarColor ADD (
     CONSTRAINT carColor_name_UN UNIQUE (carColorName)
 );
 
--- CarColorType
-ALTER TABLE CarColorType ADD (
-    CONSTRAINT carColorType_PK PRIMARY KEY (carColorTypeKey),
-    CONSTRAINT carColorType_name_UN UNIQUE (carColorTypeName)
-);
-
 -- CarMark
 ALTER TABLE CarMark ADD (
     CONSTRAINT carMark_PK PRIMARY KEY (carMarkKey),
@@ -29,7 +23,7 @@ ALTER TABLE Car ADD (
 );
 
 -- User
-ALTER TABLE "USER" ADD (
+ALTER TABLE `User` ADD (
     CONSTRAINT user_PK PRIMARY KEY (userKey),
     CONSTRAINT user_username_UN UNIQUE (username),
     CONSTRAINT user_email_UN UNIQUE (email),
@@ -119,7 +113,7 @@ ALTER TABLE Reservation ADD (
 );
 
 -- Role
-ALTER TABLE "ROLE" ADD (
+ALTER TABLE `Role` ADD (
     CONSTRAINT role_PK PRIMARY KEY (roleKey),
     CONSTRAINT role_name_UQ UNIQUE (roleName)
 );
