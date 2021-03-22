@@ -1,14 +1,9 @@
--- Color
-ALTER TABLE CarColor ADD (
-    CONSTRAINT carColor_carColorType_FK FOREIGN KEY (carColorTypeKey) REFERENCES CarColorType
-);
-
 -- Car
 ALTER TABLE Car ADD (
-    CONSTRAINT car_user_FK FOREIGN KEY (UserKey) REFERENCES "USER",
-    CONSTRAINT car_carColor_FK FOREIGN KEY (carColorKey) REFERENCES CarColor,
-    CONSTRAINT car_carMark_FK FOREIGN KEY (carMarkKey) REFERENCES CarMark,
-    CONSTRAINT car_carType_FK FOREIGN KEY (carTypeKey) REFERENCES CarType
+    CONSTRAINT car_user_FK FOREIGN KEY (UserKey) REFERENCES `User`(UserKey),
+    CONSTRAINT car_carColor_FK FOREIGN KEY (carColorKey) REFERENCES CarColor(carColorKey),
+    CONSTRAINT car_carMark_FK FOREIGN KEY (carMarkKey) REFERENCES CarMark(carMarkKey),
+    CONSTRAINT car_carType_FK FOREIGN KEY (carTypeKey) REFERENCES CarType(carTypeKey)
 );
 
 -- Post
@@ -51,7 +46,7 @@ ALTER TABLE PaymentStatusHistory ADD (
 -- Reservation
 ALTER TABLE Reservation ADD (
     CONSTRAINT reservation_post_FK FOREIGN KEY (postKey) REFERENCES Post,
-    CONSTRAINT reservation_user_FK FOREIGN KEY (UserKey) REFERENCES "USER"
+    CONSTRAINT reservation_user_FK FOREIGN KEY (UserKey) REFERENCES `User`
 );
 
 -- ReservationStatusHistory
@@ -61,18 +56,18 @@ ALTER TABLE ReservationStatusHistory ADD (
 );
 
 -- User
-ALTER TABLE "USER" ADD (
+ALTER TABLE `User` ADD (
     CONSTRAINT user_address_FK FOREIGN KEY (addressKey) REFERENCES Address ON DELETE CASCADE
 );
 
 -- UserStatusHistory
 ALTER TABLE UserStatusHistory ADD (
-    CONSTRAINT userStatusHistory_user_FK FOREIGN KEY (userKey) REFERENCES "USER" ON DELETE CASCADE,
+    CONSTRAINT userStatusHistory_user_FK FOREIGN KEY (userKey) REFERENCES `User` ON DELETE CASCADE,
     CONSTRAINT userStatusHistory_userStatus_FK FOREIGN KEY (userStatusKey) REFERENCES userStatus
 );
 
 -- UserRole
 ALTER TABLE UserRole ADD (
-    CONSTRAINT userRole_user_FK FOREIGN KEY (userKey) REFERENCES "USER",
-    CONSTRAINT userRole_role_FK FOREIGN KEY (roleKey) REFERENCES "ROLE"
+    CONSTRAINT userRole_user_FK FOREIGN KEY (userKey) REFERENCES `User`,
+    CONSTRAINT userRole_role_FK FOREIGN KEY (roleKey) REFERENCES `Role`
 );
