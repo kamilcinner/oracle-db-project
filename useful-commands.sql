@@ -3,6 +3,7 @@ CREATE USER testUser1 IDENTIFIED BY tu1;
 GRANT DBA to testUser1;
 
 -- Drop all tables
+SET foreign_key_checks = 0;
 DROP TABLE IF EXISTS Car;
 DROP TABLE IF EXISTS CarColor;
 DROP TABLE IF EXISTS CarColorType;
@@ -21,11 +22,12 @@ DROP TABLE IF EXISTS PostStatusHistory;
 DROP TABLE IF EXISTS PostStatus;
 DROP TABLE IF EXISTS PaymentStatusHistory;
 DROP TABLE IF EXISTS PaymentStatus;
-DROP TABLE IF EXISTS `USER`;
+DROP TABLE IF EXISTS `User`;
 DROP TABLE IF EXISTS UserStatusHistory;
 DROP TABLE IF EXISTS UserStatus;
 DROP TABLE IF EXISTS UserRole;
-DROP TABLE IF EXISTS `ROLE`;
+DROP TABLE IF EXISTS `Role`;
+SET foreign_key_checks = 1;
 
 -- Git commands
 git add .
