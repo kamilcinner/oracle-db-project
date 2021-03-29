@@ -4,8 +4,7 @@
 -- CarColor
 CREATE TABLE CarColor (
     carColorKey INT,
-    carColorName VARCHAR(40) NOT NULL,
-    carColorTypeKey INT NOT NULL
+    carColorName VARCHAR(40) NOT NULL
 );
 
 -- CarMark
