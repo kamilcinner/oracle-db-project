@@ -42,11 +42,11 @@ ALTER TABLE UserStatus ADD (
 );
 ALTER TABLE UserStatus CHANGE userStatusKey userStatusKey INT NOT NULL AUTO_INCREMENT;
 
--- UserStatusHistory
-ALTER TABLE UserStatusHistory ADD (
-    CONSTRAINT userStatusHistory_PK PRIMARY KEY (userStatusHistoryKey)
+-- UserStatusChange
+ALTER TABLE UserStatusChange ADD (
+    CONSTRAINT userStatusChange_PK PRIMARY KEY (userStatusChangeKey)
 );
-ALTER TABLE UserStatusHistory CHANGE userStatusHistoryKey userStatusHistoryKey INT NOT NULL AUTO_INCREMENT;
+ALTER TABLE UserStatusChange CHANGE userStatusChangeKey userStatusChangeKey INT NOT NULL AUTO_INCREMENT;
 
 -- PostStatus
 ALTER TABLE PostStatus ADD (
@@ -55,11 +55,11 @@ ALTER TABLE PostStatus ADD (
 );
 ALTER TABLE PostStatus CHANGE postStatusKey postStatusKey INT NOT NULL AUTO_INCREMENT;
 
--- PostStatusHistory
-ALTER TABLE PostStatusHistory ADD (
-    CONSTRAINT postStatusHistory_PK PRIMARY KEY (postStatusHistoryKey)
+-- PostStatusChange
+ALTER TABLE PostStatusChange ADD (
+    CONSTRAINT postStatusChange_PK PRIMARY KEY (postStatusChangeKey)
 );
-ALTER TABLE PostStatusHistory CHANGE postStatusHistoryKey postStatusHistoryKey INT NOT NULL AUTO_INCREMENT;
+ALTER TABLE PostStatusChange CHANGE postStatusChangeKey postStatusChangeKey INT NOT NULL AUTO_INCREMENT;
 
 -- Post
 ALTER TABLE Post ADD (
@@ -101,11 +101,11 @@ ALTER TABLE PaymentStatus ADD (
 );
 ALTER TABLE PaymentStatus CHANGE paymentStatusKey paymentStatusKey INT NOT NULL AUTO_INCREMENT;
 
--- PaymentStatusHistory
-ALTER TABLE PaymentStatusHistory ADD (
-    CONSTRAINT paymentStatusHistory_PK PRIMARY KEY (paymentStatusHistoryKey)
+-- PaymentStatusChange
+ALTER TABLE PaymentStatusChange ADD (
+    CONSTRAINT paymentStatusChange_PK PRIMARY KEY (paymentStatusChangeKey)
 );
-ALTER TABLE PaymentStatusHistory CHANGE paymentStatusHistoryKey paymentStatusHistoryKey INT NOT NULL AUTO_INCREMENT;
+ALTER TABLE PaymentStatusChange CHANGE paymentStatusChangeKey paymentStatusChangeKey INT NOT NULL AUTO_INCREMENT;
 
 -- Payment
 ALTER TABLE Payment ADD (
@@ -120,11 +120,11 @@ ALTER TABLE ReservationStatus ADD (
 );
 ALTER TABLE ReservationStatus CHANGE reservationStatusKey reservationStatusKey INT NOT NULL AUTO_INCREMENT;
 
--- ReservationStatusHistory
-ALTER TABLE ReservationStatusHistory ADD (
-    CONSTRAINT reservationStatusHistory_PK PRIMARY KEY (reservationStatusHistoryKey)
+-- ReservationStatusChange
+ALTER TABLE ReservationStatusChange ADD (
+    CONSTRAINT reservationStatusChange_PK PRIMARY KEY (reservationStatusChangeKey)
 );
-ALTER TABLE ReservationStatusHistory CHANGE reservationStatusHistoryKey reservationStatusHistoryKey INT NOT NULL AUTO_INCREMENT;
+ALTER TABLE ReservationStatusChange CHANGE reservationStatusChangeKey reservationStatusChangeKey INT NOT NULL AUTO_INCREMENT;
 
 -- Reservation
 ALTER TABLE Reservation ADD (

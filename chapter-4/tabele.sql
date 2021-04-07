@@ -54,9 +54,9 @@ CREATE TABLE UserStatus (
     userStatusDescription VARCHAR(100)
 );
 
--- UserStatusHistory
-CREATE TABLE UserStatusHistory (
-    userStatusHistoryKey INT,
+-- UserStatusChange
+CREATE TABLE UserStatusChange (
+    userStatusChangeKey INT,
     changeDateTime TIMESTAMP NOT NULL,
     userKey INT NOT NULL,
     userStatusKey INT NOT NULL
@@ -68,9 +68,9 @@ CREATE TABLE PostStatus (
     postStatusName VARCHAR(20) NOT NULL
 );
 
--- PostStatusHistory
-CREATE TABLE PostStatusHistory (
-    postStatusHistoryKey INT,
+-- PostStatusChange
+CREATE TABLE PostStatusChange (
+    postStatusChangeKey INT,
     changeDateTime TIMESTAMP NOT NULL,
     postKey INT NOT NULL,
     postStatusKey INT NOT NULL
@@ -123,9 +123,9 @@ CREATE TABLE PaymentStatus (
     paymentStatusName VARCHAR(20) NOT NULL
 );
 
--- PaymentStatusHistory
-CREATE TABLE PaymentStatusHistory (
-    paymentStatusHistoryKey INT,
+-- PaymentStatusChange
+CREATE TABLE PaymentStatusChange (
+    paymentStatusChangeKey INT,
     changeDateTime TIMESTAMP NOT NULL,
     paymentKey INT NOT NULL,
     paymentStatusKey INT NOT NULL
@@ -146,9 +146,9 @@ CREATE TABLE ReservationStatus (
     reservationStatusName VARCHAR(20) NOT NULL
 );
 
--- ReservationStatusHistory
-CREATE TABLE ReservationStatusHistory (
-    reservationStatusHistoryKey INT,
+-- ReservationStatusChange
+CREATE TABLE ReservationStatusChange (
+    reservationStatusChangeKey INT,
     changeDateTime TIMESTAMP NOT NULL,
     reservationKey INT NOT NULL,
     reservationStatusKey INT NOT NULL
