@@ -43,62 +43,59 @@ INSERT ALL
     INTO City (cityKey, cityName, countryKey) VALUES (5, 'Prague', 5)
 SELECT * FROM DUAL;
 
--- Address (City)
-INSERT ALL
-    INTO Address (addressKey, postCode, street, houseNumber, flatNumber, cityKey) VALUES (1, '20501', 'Nadbystrzycka', '45', '11', 2)
-    INTO Address (addressKey, postCode, street, houseNumber, cityKey) VALUES (2, '20533', 'Romantyczna', '32', 2)
-    INTO Address (addressKey, postCode, street, houseNumber, cityKey) VALUES (3, '20016', 'Narutowicza', '7', 2)
-    INTO Address (addressKey, postCode, street, houseNumber, cityKey) VALUES (4, '04081', 'Czapelska', '143B', 1)
-    INTO Address (addressKey, postCode, street, houseNumber, flatNumber, cityKey) VALUES (5, '04365', 'Wiatraczna', '11', '56', 1)
-    INTO Address (addressKey, postCode, street, houseNumber, flatNumber, cityKey) VALUES (6, '04855', 'Bajkowa', '76', '101', 1)
-    INTO Address (addressKey, postCode, street, houseNumber, cityKey) VALUES (7, '30348', 'Drukarska', '211', 3)
-    INTO Address (addressKey, postCode, street, houseNumber, cityKey) VALUES (8, '70200', 'Puchmajerova', '2', 4)
-    INTO Address (addressKey, postCode, street, houseNumber, flatNumber, cityKey) VALUES (9, '70200', 'Subertova', '10', '2', 4)
-    INTO Address (addressKey, postCode, street, houseNumber, cityKey) VALUES (10, '11901', 'Goldenlane', '9', 5)
-SELECT * FROM DUAL;
+-- Address (City) //with flatNumber
+INSERT INTO Address (postCode, street, houseNumber, flatNumber, cityKey) VALUES 
+    ('20501', 'Nadbystrzycka', '45', '11', 2),
+    ('04365', 'Wiatraczna', '11', '56', 1),
+    ('04855', 'Bajkowa', '76', '101', 1),
+    ('70200', 'Subertova', '10', '2', 4)
+;
 
--- UserStatus
-INSERT ALL
-    INTO UserStatus (userStatusKey, userStatusName) VALUES (1, 'Active')
-    INTO UserStatus (userStatusKey, userStatusName) VALUES (2, 'Restricted')
-    INTO UserStatus (userStatusKey, userStatusName, userStatusDescription)
-    VALUES (3, 'Disabled', 'Account is no longer accessible')
-    INTO UserStatus (userStatusKey, userStatusName) VALUES (4, 'Blocked')
-    INTO UserStatus (userStatusKey, userStatusName) VALUES (5, 'Waiting')
-SELECT * FROM DUAL;
+-- Address (City) //without flatNumber
+INSERT INTO Address (postCode, street, houseNumber, cityKey) VALUES 
+    ('20533', 'Romantyczna', '32', 2),
+    ('20016', 'Narutowicza', '7', 2),
+    ('04081', 'Czapelska', '143B', 1),
+    ('30348', 'Drukarska', '211', 3),
+    ('70200', 'Puchmajerova', '2', 4),
+    ( '11901', 'Goldenlane', '9', 5)
+;
+
+-- UserStatus //without userStatusDescription
+INSERT INTO UserStatus (userStatusName) VALUES 
+    ('Active'),
+    ('Restricted'),
+    ('Blocked'),
+    ('Waiting')
+;
+
+-- UserStatus //with userStatusDescription
+INSERT INTO UserStatus (userStatusName, userStatusDescription) VALUES 
+    ('Disabled', 'Account is no longer accessible')  
+;
 
 -- User (Address)
-INSERT ALL
-    INTO "USER" (userKey, username, hashedPassword, salt, email,
-        firstname, surname, dateOfBirth, phoneNumber, addressKey)
-    VALUES (1, 'kamilcinner', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
+INSERT INTO `User` (username, hashedPassword, salt, email, firstname, surname, dateOfBirth, phoneNumber, addressKey) VALUES 
+    ('kamilcinner', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
         'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'kamilcinner@blabla.car', 'Kamil', 'Cinner',
-        to_date('01-01-1974', 'DD-MM-YYYY'), '482659314', 1)
+        STR_TO_DATE('01-01-1974', '%d-%m-%Y'), '482659314', 1),
 
-    INTO "USER" (userKey, username, hashedPassword, salt, email,
-        firstname, surname, dateOfBirth, phoneNumber, addressKey)
-    VALUES (2, 'longBow137', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
+    ('longBow137', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
         'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'longBow137@blabla.car', 'Legolas', 'Legolas',
-        to_date('01-01-1974', 'DD-MM-YYYY'), '206489451', 2)
+        STR_TO_DATE('01-01-1974', '%d-%m-%Y'), '206489451', 2),
 
-    INTO "USER" (userKey, username, hashedPassword, salt, email,
-        firstname, surname, dateOfBirth, phoneNumber, addressKey)
-    VALUES (3, 'sherman123', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
+    ('sherman123', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
         'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'sherman123@blabla.car', 'Sherlock', 'Holmes',
-        to_date('01-01-1974', 'DD-MM-YYYY'), '051095714', 3)
+        STR_TO_DATE('01-01-1974', '%d-%m-%Y'), '051095714', 3),
 
-    INTO "USER" (userKey, username, hashedPassword, salt, email,
-        firstname, surname, dateOfBirth, phoneNumber, addressKey)
-    VALUES (4, 'magdalenalenart', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
+    ('magdalenalenart', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
         'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'magdalenalenart@blabla.car', 'Magdalena', 'Lenart',
-        to_date('01-01-1974', 'DD-MM-YYYY'), '275629056', 4)
+        STR_TO_DATE('01-01-1974', '%d-%m-%Y'), '275629056', 4),
 
-    INTO "USER" (userKey, username, hashedPassword, salt, email,
-        firstname, surname, dateOfBirth, phoneNumber, addressKey)
-    VALUES (5, 'adamlipinski', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
+    ('adamlipinski', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
         'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'adamlipinski@blabla.car', 'Adam', 'Lipiński',
-        to_date('01-01-1974', 'DD-MM-YYYY'), '018365932', 5)
-SELECT * FROM DUAL;
+        STR_TO_DATE('01-01-1974', '%d-%m-%Y'), '018365932', 5),
+;
 
 -- UserStatusHistory (User, UserStatus)
 INSERT ALL
