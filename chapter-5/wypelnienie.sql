@@ -1,29 +1,20 @@
--- CarColorType
-INSERT ALL
-    INTO CarColorType (carColorTypeKey, carColorTypeName) VALUES (1, 'Metalic')
-    INTO CarColorType (carColorTypeKey, carColorTypeName) VALUES (2, 'Shiny')
-    INTO CarColorType (carColorTypeKey, carColorTypeName) VALUES (3, 'Mat')
-    INTO CarColorType (carColorTypeKey, carColorTypeName) VALUES (4, 'Opalescent')
-    INTO CarColorType (carColorTypeKey, carColorTypeName) VALUES (5, 'Custom')
-SELECT * FROM DUAL;
-
 -- CarColor (CarColorType)
-INSERT ALL
-    INTO CarColor (carColorKey, carColorName, carColorTypeKey) VALUES (1, 'Red', 1)
-    INTO CarColor (carColorKey, carColorName, carColorTypeKey) VALUES (2, 'Blue', 2)
-    INTO CarColor (carColorKey, carColorName, carColorTypeKey) VALUES (3, 'Navy blue', 3)
-    INTO CarColor (carColorKey, carColorName, carColorTypeKey) VALUES (4, 'White', 4)
-    INTO CarColor (carColorKey, carColorName, carColorTypeKey) VALUES (5, 'Orange', 5)
-SELECT * FROM DUAL;
+INSERT INTO CarColor (carColorName) VALUES 
+    ('Red'),
+    ('Blue'),
+    ('Navy blue'),
+    ('White'),
+    ('Orange')
+;
 
 -- CarMark
-INSERT ALL
-    INTO CarMark (carMarkKey, carMarkName) VALUES (1, 'Chrysler')
-    INTO CarMark (carMarkKey, carMarkName) VALUES (2, 'Mazda')
-    INTO CarMark (carMarkKey, carMarkName) VALUES (3, 'Mercedes')
-    INTO CarMark (carMarkKey, carMarkName) VALUES (4, 'Vauxhall')
-    INTO CarMark (carMarkKey, carMarkName) VALUES (5, 'Ford')
-SELECT * FROM DUAL;
+INSERT INTO CarMark (carMarkName) VALUES
+    ('Chrysler'),
+    ('Mazda'),
+    ('Mercedes'),
+    ('Vauxhall'),
+    ('Ford')
+;
 
 -- CarType
 INSERT ALL
