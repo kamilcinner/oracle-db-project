@@ -30,7 +30,7 @@ INSERT INTO Country (countryName) VALUES
     ('Poland'),
     ('Germany'),
     ('Belarus'),
-    ('Ukraine'),,
+    ('Ukraine'),
     ('Czech Republic')
 ;
 
@@ -94,11 +94,11 @@ INSERT INTO `User` (username, hashedPassword, salt, email, firstname, surname, d
 
     ('adamlipinski', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
         'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'adamlipinski@blabla.car', 'Adam', 'Lipiński',
-        STR_TO_DATE('01-01-1974', '%d-%m-%Y'), '018365932', 5),
+        STR_TO_DATE('01-01-1974', '%d-%m-%Y'), '018365932', 5)
 ;
 
--- UserStatusHistory (User, UserStatus)
-INSERT INTO UserStatusHistory (changeDateTime, userKey, userStatusKey) VALUES
+-- UserStatusChange (User, UserStatus)
+INSERT INTO UserStatusChange (changeDateTime, userKey, userStatusKey) VALUES
     (to_timestamp('03-01-2021 17:38:00', 'DD-MM-YYYY HH24:MI:SS'), 1, 5),
     (to_timestamp('03-01-2021 17:39:00', 'DD-MM-YYYY HH24:MI:SS'), 2, 5),
     (to_timestamp('03-01-2021 17:40:00', 'DD-MM-YYYY HH24:MI:SS'), 3, 5),
@@ -137,10 +137,10 @@ INSERT INTO Post (departureDateTime, arrivalDateTime, seatsCount, seatPrice, dep
     (to_timestamp('11-02-2021 14:30:00', 'DD-MM-YYYY HH24:MI:SS'), to_timestamp('11-02-2021 19:00:00', 'DD-MM-YYYY HH24:MI:SS'), 6, 130.00, 4, 8, 4),
     (to_timestamp('12-02-2021 07:30:00', 'DD-MM-YYYY HH24:MI:SS'), to_timestamp('12-02-2021 12:30:00', 'DD-MM-YYYY HH24:MI:SS'), 1, 150.00, 3, 9, 3),
     (to_timestamp('22-02-2021 06:00:00', 'DD-MM-YYYY HH24:MI:SS'), to_timestamp('22-02-2021 13:20:00', 'DD-MM-YYYY HH24:MI:SS'), 4, 150.50, 5, 10, 5)
-SELECT * FROM DUAL;
+;
 
--- PostStatusHistory (Post, PostStatus)
-INSERT INTO PostStatusHistory (changeDateTime, postKey, postStatusKey) VALUES
+-- PostStatusChange (Post, PostStatus)
+INSERT INTO PostStatusChange (changeDateTime, postKey, postStatusKey) VALUES
     (to_timestamp('03-01-2021 19:37:11', 'DD-MM-YYYY HH24:MI:SS'), 1, 5),
     (to_timestamp('03-01-2021 21:14:31', 'DD-MM-YYYY HH24:MI:SS'), 2, 5),
     (to_timestamp('04-01-2021 08:45:41', 'DD-MM-YYYY HH24:MI:SS'), 3, 5),
@@ -155,11 +155,11 @@ INSERT INTO PostStatusHistory (changeDateTime, postKey, postStatusKey) VALUES
 ;
 
 -- ReservationStatus
-INSERT INTO ReservationStatus ( reservationStatusName)
+INSERT INTO ReservationStatus ( reservationStatusName) VALUES
     ('Canceled'),
     ('Waiting'),
     ('Rejected'),
-    ('Confirmed'),
+    ('Confirmed')
 ;
 
 -- Reservation (Post, User)
@@ -171,8 +171,8 @@ INSERT INTO Reservation (reservationDateTime, seatsCount, postKey, userKey) VALU
     (to_timestamp('17-01-2021 18:54:31', 'DD-MM-YYYY HH24:MI:SS'), 1, 4, 5)
 ;
 
--- ReservationStatusHistory (Reservation, ReservationStatus)
-INSERT INTO ReservationStatusHistory (changeDateTime, reservationKey, reservationStatusKey)
+-- ReservationStatusChange (Reservation, ReservationStatus)
+INSERT INTO ReservationStatusChange (changeDateTime, reservationKey, reservationStatusKey) VALUES
     (to_timestamp('05-01-2021 03:02:01', 'DD-MM-YYYY HH24:MI:SS'), 1, 2),
     (to_timestamp('07-01-2021 21:00:04', 'DD-MM-YYYY HH24:MI:SS'), 2, 2),
     (to_timestamp('09-01-2021 13:51:31', 'DD-MM-YYYY HH24:MI:SS'), 3, 2),
@@ -197,7 +197,7 @@ INSERT INTO PaymentStatus (paymentStatusName) VALUES
 ;
 
 -- Payment (PaymentMethod, Reservation)
-INSERT INTO Payment (totalAmount, externalPaymentNumber, paymentMethodkey, reservationkey)
+INSERT INTO Payment (totalAmount, externalPaymentNumber, paymentMethodkey, reservationkey) VALUES
     (61.00, 'sdfsftstyft238y4324hb23h423h4v23h4dv234d', 1, 1),
     (30.50, '234dt23sdfsftstyf23h423h4v23h4dv8y4324hb', 2, 2),
     (520.00, 'tyft238y4324hb23sdfsftsh423h4v23h4dv234d', 3, 3),
@@ -205,8 +205,8 @@ INSERT INTO Payment (totalAmount, externalPaymentNumber, paymentMethodkey, reser
     (150.00, 'yft238y4324hb23h423h4vsdfsftst23h4dv234d', 5, 5)
 ;
 
--- PaymentStatusHistory (Payment, PaymentStatus)
-INSERT INTO PaymentStatusHistory (changeDateTime, paymentKey, paymentStatusKey)
+-- PaymentStatusChange (Payment, PaymentStatus)
+INSERT INTO PaymentStatusChange (changeDateTime, paymentKey, paymentStatusKey) VALUES
     (to_timestamp('05-01-2021 03:12:01', 'DD-MM-YYYY HH24:MI:SS'), 1, 2),
     (to_timestamp('07-01-2021 21:10:04', 'DD-MM-YYYY HH24:MI:SS'), 2, 2),
     (to_timestamp('09-01-2021 14:01:31', 'DD-MM-YYYY HH24:MI:SS'), 3, 2),
