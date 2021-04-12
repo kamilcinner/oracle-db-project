@@ -17,85 +17,88 @@ INSERT INTO CarMark (carMarkName) VALUES
 ;
 
 -- CarType
-INSERT ALL
-    INTO CarType (carTypeKey, carTypeName) VALUES (1, 'Passenger car')
-    INTO CarType (carTypeKey, carTypeName) VALUES (2, 'Bus')
-    INTO CarType (carTypeKey, carTypeName) VALUES (3, 'Limousine')
-    INTO CarType (carTypeKey, carTypeName) VALUES (4, 'Van')
-    INTO CarType (carTypeKey, carTypeName) VALUES (5, 'Truck')
-SELECT * FROM DUAL;
+INSERT INTO CarType (carTypeName) VALUES
+    ('Passenger car'),
+    ('Bus'),
+    ('Limousine'),
+    ('Van'),
+    ('Truck')
+;
 
 -- Country
-INSERT ALL
-    INTO Country (countryKey, countryName) VALUES (1, 'Poland')
-    INTO Country (countryKey, countryName) VALUES (2, 'Germany')
-    INTO Country (countryKey, countryName) VALUES (3, 'Belarus')
-    INTO Country (countryKey, countryName) VALUES (4, 'Ukraine')
-    INTO Country (countryKey, countryName) VALUES (5, 'Czech Republic')
-SELECT * FROM DUAL;
+INSERT INTO Country (countryName) VALUES
+    ('Poland'),
+    ('Germany'),
+    ('Belarus'),
+    ('Ukraine'),,
+    ('Czech Republic')
+;
 
 -- City (Country)
+INSERT INTO City (cityName, countryKey) VALUES
+    ('Warsaw', 1),
+    ('Lublin', 1),
+    ('Cracow', 1),
+    ('Ostrava', 5),
+    ('Prague', 5)
+;
+
+-- Address (City)
 INSERT ALL
-    INTO City (cityKey, cityName, countryKey) VALUES (1, 'Warsaw', 1)
-    INTO City (cityKey, cityName, countryKey) VALUES (2, 'Lublin', 1)
-    INTO City (cityKey, cityName, countryKey) VALUES (3, 'Cracow', 1)
-    INTO City (cityKey, cityName, countryKey) VALUES (4, 'Ostrava', 5)
-    INTO City (cityKey, cityName, countryKey) VALUES (5, 'Prague', 5)
+    INTO Address (addressKey, postCode, street, houseNumber, flatNumber, cityKey) VALUES (1, '20501', 'Nadbystrzycka', '45', '11', 2)
+    INTO Address (addressKey, postCode, street, houseNumber, cityKey) VALUES (2, '20533', 'Romantyczna', '32', 2)
+    INTO Address (addressKey, postCode, street, houseNumber, cityKey) VALUES (3, '20016', 'Narutowicza', '7', 2)
+    INTO Address (addressKey, postCode, street, houseNumber, cityKey) VALUES (4, '04081', 'Czapelska', '143B', 1)
+    INTO Address (addressKey, postCode, street, houseNumber, flatNumber, cityKey) VALUES (5, '04365', 'Wiatraczna', '11', '56', 1)
+    INTO Address (addressKey, postCode, street, houseNumber, flatNumber, cityKey) VALUES (6, '04855', 'Bajkowa', '76', '101', 1)
+    INTO Address (addressKey, postCode, street, houseNumber, cityKey) VALUES (7, '30348', 'Drukarska', '211', 3)
+    INTO Address (addressKey, postCode, street, houseNumber, cityKey) VALUES (8, '70200', 'Puchmajerova', '2', 4)
+    INTO Address (addressKey, postCode, street, houseNumber, flatNumber, cityKey) VALUES (9, '70200', 'Subertova', '10', '2', 4)
+    INTO Address (addressKey, postCode, street, houseNumber, cityKey) VALUES (10, '11901', 'Goldenlane', '9', 5)
 SELECT * FROM DUAL;
 
--- Address (City) //with flatNumber
-INSERT INTO Address (postCode, street, houseNumber, flatNumber, cityKey) VALUES 
-    ('20501', 'Nadbystrzycka', '45', '11', 2),
-    ('04365', 'Wiatraczna', '11', '56', 1),
-    ('04855', 'Bajkowa', '76', '101', 1),
-    ('70200', 'Subertova', '10', '2', 4)
-;
-
--- Address (City) //without flatNumber
-INSERT INTO Address (postCode, street, houseNumber, cityKey) VALUES 
-    ('20533', 'Romantyczna', '32', 2),
-    ('20016', 'Narutowicza', '7', 2),
-    ('04081', 'Czapelska', '143B', 1),
-    ('30348', 'Drukarska', '211', 3),
-    ('70200', 'Puchmajerova', '2', 4),
-    ( '11901', 'Goldenlane', '9', 5)
-;
-
--- UserStatus //without userStatusDescription
-INSERT INTO UserStatus (userStatusName) VALUES 
-    ('Active'),
-    ('Restricted'),
-    ('Blocked'),
-    ('Waiting')
-;
-
--- UserStatus //with userStatusDescription
-INSERT INTO UserStatus (userStatusName, userStatusDescription) VALUES 
-    ('Disabled', 'Account is no longer accessible')  
-;
+-- UserStatus
+INSERT ALL
+    INTO UserStatus (userStatusKey, userStatusName) VALUES (1, 'Active')
+    INTO UserStatus (userStatusKey, userStatusName) VALUES (2, 'Restricted')
+    INTO UserStatus (userStatusKey, userStatusName, userStatusDescription)
+    VALUES (3, 'Disabled', 'Account is no longer accessible')
+    INTO UserStatus (userStatusKey, userStatusName) VALUES (4, 'Blocked')
+    INTO UserStatus (userStatusKey, userStatusName) VALUES (5, 'Waiting')
+SELECT * FROM DUAL;
 
 -- User (Address)
-INSERT INTO `User` (username, hashedPassword, salt, email, firstname, surname, dateOfBirth, phoneNumber, addressKey) VALUES 
-    ('kamilcinner', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
+INSERT ALL
+    INTO "USER" (userKey, username, hashedPassword, salt, email,
+        firstname, surname, dateOfBirth, phoneNumber, addressKey)
+    VALUES (1, 'kamilcinner', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
         'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'kamilcinner@blabla.car', 'Kamil', 'Cinner',
-        STR_TO_DATE('01-01-1974', '%d-%m-%Y'), '482659314', 1),
+        to_date('01-01-1974', 'DD-MM-YYYY'), '482659314', 1)
 
-    ('longBow137', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
+    INTO "USER" (userKey, username, hashedPassword, salt, email,
+        firstname, surname, dateOfBirth, phoneNumber, addressKey)
+    VALUES (2, 'longBow137', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
         'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'longBow137@blabla.car', 'Legolas', 'Legolas',
-        STR_TO_DATE('01-01-1974', '%d-%m-%Y'), '206489451', 2),
+        to_date('01-01-1974', 'DD-MM-YYYY'), '206489451', 2)
 
-    ('sherman123', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
+    INTO "USER" (userKey, username, hashedPassword, salt, email,
+        firstname, surname, dateOfBirth, phoneNumber, addressKey)
+    VALUES (3, 'sherman123', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
         'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'sherman123@blabla.car', 'Sherlock', 'Holmes',
-        STR_TO_DATE('01-01-1974', '%d-%m-%Y'), '051095714', 3),
+        to_date('01-01-1974', 'DD-MM-YYYY'), '051095714', 3)
 
-    ('magdalenalenart', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
+    INTO "USER" (userKey, username, hashedPassword, salt, email,
+        firstname, surname, dateOfBirth, phoneNumber, addressKey)
+    VALUES (4, 'magdalenalenart', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
         'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'magdalenalenart@blabla.car', 'Magdalena', 'Lenart',
-        STR_TO_DATE('01-01-1974', '%d-%m-%Y'), '275629056', 4),
+        to_date('01-01-1974', 'DD-MM-YYYY'), '275629056', 4)
 
-    ('adamlipinski', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
+    INTO "USER" (userKey, username, hashedPassword, salt, email,
+        firstname, surname, dateOfBirth, phoneNumber, addressKey)
+    VALUES (5, 'adamlipinski', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
         'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'adamlipinski@blabla.car', 'Adam', 'Lipiński',
-        STR_TO_DATE('01-01-1974', '%d-%m-%Y'), '018365932', 5),
-;
+        to_date('01-01-1974', 'DD-MM-YYYY'), '018365932', 5)
+SELECT * FROM DUAL;
 
 -- UserStatusHistory (User, UserStatus)
 INSERT ALL
@@ -154,66 +157,36 @@ INSERT ALL
 SELECT * FROM DUAL;
 
 -- Post (Car, Address)
-INSERT ALL
-    INTO Post (postKey, departureDateTime, arrivalDateTime, seatsCount, seatPrice, departureAddressKey, arrivalAddressKey, carKey) 
-    VALUES (1, to_timestamp('01-02-2021 17:00:00', 'DD-MM-YYYY HH24:MI:SS'), to_timestamp('01-02-2021 19:20:00', 'DD-MM-YYYY HH24:MI:SS'), 4, 30.50, 1, 6, 1)
-    
-    INTO Post (postKey, departureDateTime, arrivalDateTime, seatsCount, seatPrice, departureAddressKey, arrivalAddressKey, carKey) 
-    VALUES (2, to_timestamp('05-02-2021 08:00:00', 'DD-MM-YYYY HH24:MI:SS'), to_timestamp('05-02-2021 13:00:00', 'DD-MM-YYYY HH24:MI:SS'), 2, 25.90, 2, 7, 2)
-    
-    INTO Post (postKey, departureDateTime, arrivalDateTime, seatsCount, seatPrice, departureAddressKey, arrivalAddressKey, carKey) 
-    VALUES (3, to_timestamp('11-02-2021 14:30:00', 'DD-MM-YYYY HH24:MI:SS'), to_timestamp('11-02-2021 19:00:00', 'DD-MM-YYYY HH24:MI:SS'), 6, 130.00, 4, 8, 4)
-    
-    INTO Post (postKey, departureDateTime, arrivalDateTime, seatsCount, seatPrice, departureAddressKey, arrivalAddressKey, carKey) 
-    VALUES (4, to_timestamp('12-02-2021 07:30:00', 'DD-MM-YYYY HH24:MI:SS'), to_timestamp('12-02-2021 12:30:00', 'DD-MM-YYYY HH24:MI:SS'), 1, 150.00, 3, 9, 3)
-    
-    INTO Post (postKey, departureDateTime, arrivalDateTime, seatsCount, seatPrice, departureAddressKey, arrivalAddressKey, carKey) 
-    VALUES (5, to_timestamp('22-02-2021 06:00:00', 'DD-MM-YYYY HH24:MI:SS'), to_timestamp('22-02-2021 13:20:00', 'DD-MM-YYYY HH24:MI:SS'), 4, 150.50, 5, 10, 5)
+INSERT INTO Post (departureDateTime, arrivalDateTime, seatsCount, seatPrice, departureAddressKey, arrivalAddressKey, carKey) VALUES
+    (to_timestamp('01-02-2021 17:00:00', 'DD-MM-YYYY HH24:MI:SS'), to_timestamp('01-02-2021 19:20:00', 'DD-MM-YYYY HH24:MI:SS'), 4, 30.50, 1, 6, 1),
+    (to_timestamp('05-02-2021 08:00:00', 'DD-MM-YYYY HH24:MI:SS'), to_timestamp('05-02-2021 13:00:00', 'DD-MM-YYYY HH24:MI:SS'), 2, 25.90, 2, 7, 2),
+    (to_timestamp('11-02-2021 14:30:00', 'DD-MM-YYYY HH24:MI:SS'), to_timestamp('11-02-2021 19:00:00', 'DD-MM-YYYY HH24:MI:SS'), 6, 130.00, 4, 8, 4),
+    (to_timestamp('12-02-2021 07:30:00', 'DD-MM-YYYY HH24:MI:SS'), to_timestamp('12-02-2021 12:30:00', 'DD-MM-YYYY HH24:MI:SS'), 1, 150.00, 3, 9, 3),
+    (to_timestamp('22-02-2021 06:00:00', 'DD-MM-YYYY HH24:MI:SS'), to_timestamp('22-02-2021 13:20:00', 'DD-MM-YYYY HH24:MI:SS'), 4, 150.50, 5, 10, 5)
 SELECT * FROM DUAL;
 
 -- PostStatusHistory (Post, PostStatus)
-INSERT ALL
-    INTO PostStatusHistory (postStatusHistoryKey, changeDateTime, postKey, postStatusKey)
-    VALUES (1, to_timestamp('03-01-2021 19:37:11', 'DD-MM-YYYY HH24:MI:SS'), 1, 5)
-
-    INTO PostStatusHistory (postStatusHistoryKey, changeDateTime, postKey, postStatusKey)
-    VALUES (2, to_timestamp('03-01-2021 21:14:31', 'DD-MM-YYYY HH24:MI:SS'), 2, 5)
-
-    INTO PostStatusHistory (postStatusHistoryKey, changeDateTime, postKey, postStatusKey)
-    VALUES (3, to_timestamp('04-01-2021 08:45:41', 'DD-MM-YYYY HH24:MI:SS'), 3, 5)
-
-    INTO PostStatusHistory (postStatusHistoryKey, changeDateTime, postKey, postStatusKey)
-    VALUES (4, to_timestamp('04-01-2021 08:47:25', 'DD-MM-YYYY HH24:MI:SS'), 4, 5)
-
-    INTO PostStatusHistory (postStatusHistoryKey, changeDateTime, postKey, postStatusKey)
-    VALUES (5, to_timestamp('04-01-2021 15:22:32', 'DD-MM-YYYY HH24:MI:SS'), 5, 5)
-
-    INTO PostStatusHistory (postStatusHistoryKey, changeDateTime, postKey, postStatusKey)
-    VALUES (6, to_timestamp('04-01-2021 15:23:56', 'DD-MM-YYYY HH24:MI:SS'), 5, 6)
-
-    INTO PostStatusHistory (postStatusHistoryKey, changeDateTime, postKey, postStatusKey)
-    VALUES (7, to_timestamp('03-01-2021 19:38:19', 'DD-MM-YYYY HH24:MI:SS'), 1, 1)
-
-    INTO PostStatusHistory (postStatusHistoryKey, changeDateTime, postKey, postStatusKey)
-    VALUES (8, to_timestamp('03-01-2021 21:16:44', 'DD-MM-YYYY HH24:MI:SS'), 2, 1)
-
-    INTO PostStatusHistory (postStatusHistoryKey, changeDateTime, postKey, postStatusKey)
-    VALUES (9, to_timestamp('04-01-2021 08:46:59', 'DD-MM-YYYY HH24:MI:SS'), 3, 1)
-
-    INTO PostStatusHistory (postStatusHistoryKey, changeDateTime, postKey, postStatusKey)
-    VALUES (10, to_timestamp('04-01-2021 08:49:11', 'DD-MM-YYYY HH24:MI:SS'), 4, 1)
-
-    INTO PostStatusHistory (postStatusHistoryKey, changeDateTime, postKey, postStatusKey)
-    VALUES (11, to_timestamp('06-01-2021 09:50:31', 'DD-MM-YYYY HH24:MI:SS'), 4, 4)
-SELECT * FROM DUAL;
+INSERT INTO PostStatusHistory (changeDateTime, postKey, postStatusKey) VALUES
+    (to_timestamp('03-01-2021 19:37:11', 'DD-MM-YYYY HH24:MI:SS'), 1, 5),
+    (to_timestamp('03-01-2021 21:14:31', 'DD-MM-YYYY HH24:MI:SS'), 2, 5),
+    (to_timestamp('04-01-2021 08:45:41', 'DD-MM-YYYY HH24:MI:SS'), 3, 5),
+    (to_timestamp('04-01-2021 08:47:25', 'DD-MM-YYYY HH24:MI:SS'), 4, 5),
+    (to_timestamp('04-01-2021 15:22:32', 'DD-MM-YYYY HH24:MI:SS'), 5, 5),
+    (to_timestamp('04-01-2021 15:23:56', 'DD-MM-YYYY HH24:MI:SS'), 5, 6),
+    (to_timestamp('03-01-2021 19:38:19', 'DD-MM-YYYY HH24:MI:SS'), 1, 1),
+    (to_timestamp('03-01-2021 21:16:44', 'DD-MM-YYYY HH24:MI:SS'), 2, 1),
+    (to_timestamp('04-01-2021 08:46:59', 'DD-MM-YYYY HH24:MI:SS'), 3, 1),
+    (to_timestamp('04-01-2021 08:49:11', 'DD-MM-YYYY HH24:MI:SS'), 4, 1),
+    (to_timestamp('06-01-2021 09:50:31', 'DD-MM-YYYY HH24:MI:SS'), 4, 4)
+;
 
 -- ReservationStatus
-INSERT ALL
-    INTO ReservationStatus (reservationStatusKey, reservationStatusName) VALUES (1, 'Canceled')
-    INTO ReservationStatus (reservationStatusKey, reservationStatusName) VALUES (2, 'Waiting')
-    INTO ReservationStatus (reservationStatusKey, reservationStatusName) VALUES (3, 'Rejected')
-    INTO ReservationStatus (reservationStatusKey, reservationStatusName) VALUES (4, 'Confirmed')
-SELECT * FROM DUAL;
+INSERT INTO ReservationStatus ( reservationStatusName)
+    ('Canceled'),
+    ('Waiting'),
+    ('Rejected'),
+    ('Confirmed'),
+;
 
 -- Reservation (Post, User)
 INSERT ALL
