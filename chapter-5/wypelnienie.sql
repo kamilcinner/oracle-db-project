@@ -101,60 +101,37 @@ INSERT ALL
 SELECT * FROM DUAL;
 
 -- UserStatusHistory (User, UserStatus)
-INSERT ALL
-    INTO UserStatusHistory (userStatusHistoryKey, changeDateTime, userKey, userStatusKey)
-    VALUES (1, to_timestamp('03-01-2021 17:38:00', 'DD-MM-YYYY HH24:MI:SS'), 1, 5)
-    INTO UserStatusHistory (userStatusHistoryKey, changeDateTime, userKey, userStatusKey)
-    VALUES (6, to_timestamp('03-01-2021 17:39:00', 'DD-MM-YYYY HH24:MI:SS'), 1, 1)
-
-    INTO UserStatusHistory (userStatusHistoryKey, changeDateTime, userKey, userStatusKey)
-    VALUES (2, to_timestamp('03-01-2021 17:39:00', 'DD-MM-YYYY HH24:MI:SS'), 2, 5)
-    INTO UserStatusHistory (userStatusHistoryKey, changeDateTime, userKey, userStatusKey)
-    VALUES (7, to_timestamp('03-01-2021 17:40:00', 'DD-MM-YYYY HH24:MI:SS'), 2, 1)
-
-    INTO UserStatusHistory (userStatusHistoryKey, changeDateTime, userKey, userStatusKey)
-    VALUES (3, to_timestamp('03-01-2021 17:40:00', 'DD-MM-YYYY HH24:MI:SS'), 3, 5)
-    INTO UserStatusHistory (userStatusHistoryKey, changeDateTime, userKey, userStatusKey)
-    VALUES (8, to_timestamp('03-01-2021 17:41:00', 'DD-MM-YYYY HH24:MI:SS'), 3, 1)
-
-    INTO UserStatusHistory (userStatusHistoryKey, changeDateTime, userKey, userStatusKey)
-    VALUES (4, to_timestamp('03-01-2021 17:41:00', 'DD-MM-YYYY HH24:MI:SS'), 4, 5)
-    INTO UserStatusHistory (userStatusHistoryKey, changeDateTime, userKey, userStatusKey)
-    VALUES (9, to_timestamp('03-01-2021 17:42:00', 'DD-MM-YYYY HH24:MI:SS'), 4, 1)
-
-    INTO UserStatusHistory (userStatusHistoryKey, changeDateTime, userKey, userStatusKey)
-    VALUES (5, to_timestamp('03-01-2021 17:42:00', 'DD-MM-YYYY HH24:MI:SS'), 5, 5)
-    INTO UserStatusHistory (userStatusHistoryKey, changeDateTime, userKey, userStatusKey)
-    VALUES (10, to_timestamp('03-01-2021 17:43:00', 'DD-MM-YYYY HH24:MI:SS'), 5, 1)
-SELECT * FROM DUAL;
+INSERT INTO UserStatusHistory (changeDateTime, userKey, userStatusKey) VALUES
+    (to_timestamp('03-01-2021 17:38:00', 'DD-MM-YYYY HH24:MI:SS'), 1, 5),
+    (to_timestamp('03-01-2021 17:39:00', 'DD-MM-YYYY HH24:MI:SS'), 2, 5),
+    (to_timestamp('03-01-2021 17:40:00', 'DD-MM-YYYY HH24:MI:SS'), 3, 5),
+    (to_timestamp('03-01-2021 17:41:00', 'DD-MM-YYYY HH24:MI:SS'), 4, 5),
+    (to_timestamp('03-01-2021 17:42:00', 'DD-MM-YYYY HH24:MI:SS'), 5, 5),
+    (to_timestamp('03-01-2021 17:39:00', 'DD-MM-YYYY HH24:MI:SS'), 1, 1),
+    (to_timestamp('03-01-2021 17:40:00', 'DD-MM-YYYY HH24:MI:SS'), 2, 1),
+    (to_timestamp('03-01-2021 17:41:00', 'DD-MM-YYYY HH24:MI:SS'), 3, 1),
+    (to_timestamp('03-01-2021 17:42:00', 'DD-MM-YYYY HH24:MI:SS'), 4, 1),
+    (to_timestamp('03-01-2021 17:43:00', 'DD-MM-YYYY HH24:MI:SS'), 5, 1)
+;
 
 -- Car (CarMark, CarColor, User)
-INSERT ALL
-    INTO Car (carKey, regNumber, prodYear, seatsCount, userKey, carMarkKey, model, carColorKey, carTypeKey) 
-    VALUES (1, 'WA84P23', '2002', 4, 1, 5, 'Explorer', 2, 1)
-
-    INTO Car (carKey, regNumber, prodYear, seatsCount, userKey, carMarkKey, model, carColorKey, carTypeKey) 
-    VALUES (2, 'KR2J614', '2005', 4, 2, 2, 'CX-30', 2, 1)
-
-    INTO Car (carKey, regNumber, prodYear, seatsCount, userKey, carMarkKey, model, carColorKey, carTypeKey) 
-    VALUES (3, 'LU93P2S', '2010', 4, 3, 2, 'CX-8', 1, 1)
-
-    INTO Car (carKey, regNumber, prodYear, seatsCount, userKey, carMarkKey, model, carColorKey, carTypeKey) 
-    VALUES (4, 'WA12E34', '2012', 6, 4, 2, 'MPV', 3, 4)
-
-    INTO Car (carKey, regNumber, prodYear, seatsCount, userKey, carMarkKey, model, carColorKey, carTypeKey) 
-    VALUES (5, 'WA23ER4', '2004', 4, 5, 5, 'Edge', 1, 1)
-SELECT * FROM DUAL;
+INSERT INTO Car (regNumber, prodYear, seatsCount, userKey, carMarkKey, model, carColorKey, carTypeKey) VALUES
+    ('WA84P23', '2002', 4, 1, 5, 'Explorer', 2, 1),
+    ('KR2J614', '2005', 4, 2, 2, 'CX-30', 2, 1),
+    ('LU93P2S', '2010', 4, 3, 2, 'CX-8', 1, 1),
+    ('WA12E34', '2012', 6, 4, 2, 'MPV', 3, 4),
+    ('WA23ER4', '2004', 4, 5, 5, 'Edge', 1, 1)
+;
 
 -- PostStatus
-INSERT ALL
-    INTO PostStatus (postStatusKey, postStatusName) VALUES (1, 'Active')
-    INTO PostStatus (postStatusKey, postStatusName) VALUES (2, 'Finished')
-    INTO PostStatus (postStatusKey, postStatusName) VALUES (3, 'Blocked')
-    INTO PostStatus (postStatusKey, postStatusName) VALUES (4, 'Full')
-    INTO PostStatus (postStatusKey, postStatusName) VALUES (5, 'Waiting')
-    INTO PostStatus (postStatusKey, postStatusName) VALUES (6, 'Canceled')
-SELECT * FROM DUAL;
+INSERT INTO PostStatus (postStatusKey, postStatusName) VALUES
+    ('Active'),
+    ('Finished'),
+    ('Blocked'),
+    ('Full'),
+    ('Waiting'),
+    ('Canceled')
+;
 
 -- Post (Car, Address)
 INSERT INTO Post (departureDateTime, arrivalDateTime, seatsCount, seatPrice, departureAddressKey, arrivalAddressKey, carKey) VALUES
@@ -189,119 +166,74 @@ INSERT INTO ReservationStatus ( reservationStatusName)
 ;
 
 -- Reservation (Post, User)
-INSERT ALL
-    INTO Reservation (reservationKey, reservationDateTime, seatsCount, postKey, userKey)
-    VALUES (1, to_timestamp('05-01-2021 03:02:01', 'DD-MM-YYYY HH24:MI:SS'), 2, 1, 1)
-
-    INTO Reservation (reservationKey, reservationDateTime, seatsCount, postKey, userKey)
-    VALUES (2, to_timestamp('07-01-2021 21:00:04', 'DD-MM-YYYY HH24:MI:SS'), 1, 1, 2)
-
-    INTO Reservation (reservationKey, reservationDateTime, seatsCount, postKey, userKey)
-    VALUES (3, to_timestamp('09-01-2021 13:51:31', 'DD-MM-YYYY HH24:MI:SS'), 4, 3, 3)
-
-    INTO Reservation (reservationKey, reservationDateTime, seatsCount, postKey, userKey)
-    VALUES (4, to_timestamp('11-01-2021 16:52:31', 'DD-MM-YYYY HH24:MI:SS'), 1, 2, 4)
-
-    INTO Reservation (reservationKey, reservationDateTime, seatsCount, postKey, userKey)
-    VALUES (5, to_timestamp('17-01-2021 18:54:31', 'DD-MM-YYYY HH24:MI:SS'), 1, 4, 5)
-SELECT * FROM DUAL;
+INSERT INTO Reservation (reservationDateTime, seatsCount, postKey, userKey) VALUES
+    (to_timestamp('05-01-2021 03:02:01', 'DD-MM-YYYY HH24:MI:SS'), 2, 1, 1),
+    (to_timestamp('07-01-2021 21:00:04', 'DD-MM-YYYY HH24:MI:SS'), 1, 1, 2),
+    (to_timestamp('09-01-2021 13:51:31', 'DD-MM-YYYY HH24:MI:SS'), 4, 3, 3),
+    (to_timestamp('11-01-2021 16:52:31', 'DD-MM-YYYY HH24:MI:SS'), 1, 2, 4),
+    (to_timestamp('17-01-2021 18:54:31', 'DD-MM-YYYY HH24:MI:SS'), 1, 4, 5)
+;
 
 -- ReservationStatusHistory (Reservation, ReservationStatus)
-INSERT ALL
-    INTO ReservationStatusHistory (reservationStatusHistoryKey, changeDateTime,
-    reservationKey, reservationStatusKey)
-    VALUES (1, to_timestamp('05-01-2021 03:02:01', 'DD-MM-YYYY HH24:MI:SS'), 1, 2)
-
-    INTO ReservationStatusHistory (reservationStatusHistoryKey, changeDateTime,
-    reservationKey, reservationStatusKey)
-    VALUES (2, to_timestamp('07-01-2021 21:00:04', 'DD-MM-YYYY HH24:MI:SS'), 2, 2)
-
-    INTO ReservationStatusHistory (reservationStatusHistoryKey, changeDateTime,
-    reservationKey, reservationStatusKey)
-    VALUES (3, to_timestamp('09-01-2021 13:51:31', 'DD-MM-YYYY HH24:MI:SS'), 3, 2)
-
-    INTO ReservationStatusHistory (reservationStatusHistoryKey, changeDateTime,
-    reservationKey, reservationStatusKey)
-    VALUES (4, to_timestamp('11-01-2021 16:52:31', 'DD-MM-YYYY HH24:MI:SS'), 4, 2)
-
-    INTO ReservationStatusHistory (reservationStatusHistoryKey, changeDateTime,
-    reservationKey, reservationStatusKey)
-    VALUES (5, to_timestamp('17-01-2021 18:54:31', 'DD-MM-YYYY HH24:MI:SS'), 5, 2)
-SELECT * FROM DUAL;
+INSERT INTO ReservationStatusHistory (changeDateTime, reservationKey, reservationStatusKey)
+    (to_timestamp('05-01-2021 03:02:01', 'DD-MM-YYYY HH24:MI:SS'), 1, 2),
+    (to_timestamp('07-01-2021 21:00:04', 'DD-MM-YYYY HH24:MI:SS'), 2, 2),
+    (to_timestamp('09-01-2021 13:51:31', 'DD-MM-YYYY HH24:MI:SS'), 3, 2),
+    (to_timestamp('11-01-2021 16:52:31', 'DD-MM-YYYY HH24:MI:SS'), 4, 2),
+    (to_timestamp('17-01-2021 18:54:31', 'DD-MM-YYYY HH24:MI:SS'), 5, 2)
+;
 
 -- PaymentMethod
-INSERT ALL
-    INTO PaymentMethod (paymentMethodKey, paymentMethodName) VALUES (1, 'Blik')
-    INTO PaymentMethod (paymentMethodKey, paymentMethodName) VALUES (2, 'Visa')
-    INTO PaymentMethod (paymentMethodKey, paymentMethodName) VALUES (3, 'MasterCard')
-    INTO PaymentMethod (paymentMethodKey, paymentMethodName) VALUES (4, 'PayPal')
-    INTO PaymentMethod (paymentMethodKey, paymentMethodName) VALUES (5, 'Bank Transfer')
-SELECT * FROM DUAL;
+INSERT INTO PaymentMethod (paymentMethodName) VALUES
+    ('Blik'),
+    ('Visa'),
+    ('MasterCard'),
+    ('PayPal'),
+    ('Bank Transfer')
+;
 
 -- PaymentStatus
-INSERT ALL
-    INTO PaymentStatus (paymentStatusKey, paymentStatusName) VALUES (1, 'Finished')
-    INTO PaymentStatus (paymentStatusKey, paymentStatusName) VALUES (2, 'Waiting')
-    INTO PaymentStatus (paymentStatusKey, paymentStatusName) VALUES (3, 'Canceled')
-SELECT * FROM DUAL;
+INSERT INTO PaymentStatus (paymentStatusName) VALUES 
+    ('Finished'),
+    ('Waiting'),
+    ('Canceled')
+;
 
 -- Payment (PaymentMethod, Reservation)
-INSERT ALL
-    INTO Payment (paymentKey, totalAmount, externalPaymentNumber, paymentMethodkey, reservationkey)
-    VALUES (1, 61.00, 'sdfsftstyft238y4324hb23h423h4v23h4dv234d', 1, 1)
-
-    INTO Payment (paymentKey, totalAmount, externalPaymentNumber, paymentMethodkey, reservationkey)
-    VALUES (2, 30.50, '234dt23sdfsftstyf23h423h4v23h4dv8y4324hb', 2, 2)
-
-    INTO Payment (paymentKey, totalAmount, externalPaymentNumber, paymentMethodkey, reservationkey)
-    VALUES (3, 520.00, 'tyft238y4324hb23sdfsftsh423h4v23h4dv234d', 3, 3)
-
-    INTO Payment (paymentKey, totalAmount, externalPaymentNumber, paymentMethodkey, reservationkey)
-    VALUES (4, 25.90, 'hbdv23h423h4v23h4sdfsftstyft238y4324234d', 4, 4)
-
-    INTO Payment (paymentKey, totalAmount, externalPaymentNumber, paymentMethodkey, reservationkey)
-    VALUES (5, 150.00, 'yft238y4324hb23h423h4vsdfsftst23h4dv234d', 5, 5)
-SELECT * FROM DUAL;
+INSERT INTO Payment (totalAmount, externalPaymentNumber, paymentMethodkey, reservationkey)
+    (61.00, 'sdfsftstyft238y4324hb23h423h4v23h4dv234d', 1, 1),
+    (30.50, '234dt23sdfsftstyf23h423h4v23h4dv8y4324hb', 2, 2),
+    (520.00, 'tyft238y4324hb23sdfsftsh423h4v23h4dv234d', 3, 3),
+    (25.90, 'hbdv23h423h4v23h4sdfsftstyft238y4324234d', 4, 4),
+    (150.00, 'yft238y4324hb23h423h4vsdfsftst23h4dv234d', 5, 5)
+;
 
 -- PaymentStatusHistory (Payment, PaymentStatus)
-INSERT ALL
-    INTO PaymentStatusHistory (paymentStatusHistoryKey, changeDateTime, paymentKey, paymentStatusKey)
-    VALUES (1, to_timestamp('05-01-2021 03:12:01', 'DD-MM-YYYY HH24:MI:SS'), 1, 2)
-
-    INTO PaymentStatusHistory (paymentStatusHistoryKey, changeDateTime, paymentKey, paymentStatusKey)
-    VALUES (2, to_timestamp('07-01-2021 21:10:04', 'DD-MM-YYYY HH24:MI:SS'), 2, 2)
-
-    INTO PaymentStatusHistory (paymentStatusHistoryKey, changeDateTime, paymentKey, paymentStatusKey)
-    VALUES (3, to_timestamp('09-01-2021 14:01:31', 'DD-MM-YYYY HH24:MI:SS'), 3, 2)
-
-    INTO PaymentStatusHistory (paymentStatusHistoryKey, changeDateTime, paymentKey, paymentStatusKey)
-    VALUES (4, to_timestamp('11-01-2021 17:02:31', 'DD-MM-YYYY HH24:MI:SS'), 4, 2)
-
-    INTO PaymentStatusHistory (paymentStatusHistoryKey, changeDateTime, paymentKey, paymentStatusKey)
-    VALUES (5, to_timestamp('17-01-2021 19:04:31', 'DD-MM-YYYY HH24:MI:SS'), 5, 2)
-SELECT * FROM DUAL;
+INSERT INTO PaymentStatusHistory (changeDateTime, paymentKey, paymentStatusKey)
+    (to_timestamp('05-01-2021 03:12:01', 'DD-MM-YYYY HH24:MI:SS'), 1, 2),
+    (to_timestamp('07-01-2021 21:10:04', 'DD-MM-YYYY HH24:MI:SS'), 2, 2),
+    (to_timestamp('09-01-2021 14:01:31', 'DD-MM-YYYY HH24:MI:SS'), 3, 2),
+    (to_timestamp('11-01-2021 17:02:31', 'DD-MM-YYYY HH24:MI:SS'), 4, 2),
+    (to_timestamp('17-01-2021 19:04:31', 'DD-MM-YYYY HH24:MI:SS'), 5, 2)
+;
 
 -- Role
-INSERT ALL
-    INTO "ROLE" (roleKey, rolename) VALUES (1, 'DRIVER')
-    INTO "ROLE" (roleKey, rolename) VALUES (2, 'PASSENGER')
-    INTO "ROLE" (roleKey, rolename) VALUES (3, 'ADMIN')
-SELECT * FROM DUAL;
+INSERT INTO `Role` (rolename) VALUES
+    ('DRIVER'),
+    ('PASSENGER'),
+    ('ADMIN')
+;
 
 -- UserRole
-INSERT ALL
-    INTO UserRole (userRoleKey, userKey, roleKey) VALUES (1, 1, 1)
-    INTO UserRole (userRoleKey, userKey, roleKey) VALUES (2, 1, 2)
-
-    INTO UserRole (userRoleKey, userKey, roleKey) VALUES (3, 2, 1)
-    INTO UserRole (userRoleKey, userKey, roleKey) VALUES (4, 2, 2)
-
-    INTO UserRole (userRoleKey, userKey, roleKey) VALUES (5, 3, 1)
-    INTO UserRole (userRoleKey, userKey, roleKey) VALUES (6, 3, 2)
-
-    INTO UserRole (userRoleKey, userKey, roleKey) VALUES (7, 4, 1)
-    INTO UserRole (userRoleKey, userKey, roleKey) VALUES (8, 4, 2)
-
-    INTO UserRole (userRoleKey, userKey, roleKey) VALUES (9, 5, 1)
-    INTO UserRole (userRoleKey, userKey, roleKey) VALUES (10, 5, 2)
-SELECT * FROM DUAL;
+INSERT INTO UserRole (userKey, roleKey) VALUES
+    (1, 1),
+    (1, 2),
+    (2, 1),
+    (2, 2),
+    (3, 1),
+    (3, 2),
+    (4, 1),
+    (4, 2),
+    (5, 1),
+    (5, 2)
+;
