@@ -99,16 +99,16 @@ INSERT INTO `User` (username, hashedPassword, salt, email, firstname, surname, d
 
 -- UserStatusChange (User, UserStatus)
 INSERT INTO UserStatusChange (changeDateTime, userKey, userStatusKey) VALUES
-    (to_timestamp('03-01-2021 17:38:00', 'DD-MM-YYYY HH24:MI:SS'), 1, 5),
-    (to_timestamp('03-01-2021 17:39:00', 'DD-MM-YYYY HH24:MI:SS'), 2, 5),
-    (to_timestamp('03-01-2021 17:40:00', 'DD-MM-YYYY HH24:MI:SS'), 3, 5),
-    (to_timestamp('03-01-2021 17:41:00', 'DD-MM-YYYY HH24:MI:SS'), 4, 5),
-    (to_timestamp('03-01-2021 17:42:00', 'DD-MM-YYYY HH24:MI:SS'), 5, 5),
-    (to_timestamp('03-01-2021 17:39:00', 'DD-MM-YYYY HH24:MI:SS'), 1, 1),
-    (to_timestamp('03-01-2021 17:40:00', 'DD-MM-YYYY HH24:MI:SS'), 2, 1),
-    (to_timestamp('03-01-2021 17:41:00', 'DD-MM-YYYY HH24:MI:SS'), 3, 1),
-    (to_timestamp('03-01-2021 17:42:00', 'DD-MM-YYYY HH24:MI:SS'), 4, 1),
-    (to_timestamp('03-01-2021 17:43:00', 'DD-MM-YYYY HH24:MI:SS'), 5, 1)
+    ('2021-01-03 17:38:00', 1, 5),
+    ('2021-01-03 17:39:00', 2, 5),
+    ('2021-01-03 17:40:00', 3, 5),
+    ('2021-01-03 17:41:00', 4, 5),
+    ('2021-01-03 17:42:00', 5, 5),
+    ('2021-01-03 17:39:00', 1, 1),
+    ('2021-01-03 17:40:00', 2, 1),
+    ('2021-01-03 17:41:00', 3, 1),
+    ('2021-01-03 17:42:00', 4, 1),
+    ('2021-01-03 17:43:00', 5, 1)
 ;
 
 -- Car (CarMark, CarColor, User)
@@ -121,7 +121,7 @@ INSERT INTO Car (regNumber, prodYear, seatsCount, userKey, carMarkKey, model, ca
 ;
 
 -- PostStatus
-INSERT INTO PostStatus (postStatusKey, postStatusName) VALUES
+INSERT INTO PostStatus (postStatusName) VALUES
     ('Active'),
     ('Finished'),
     ('Blocked'),
@@ -132,26 +132,26 @@ INSERT INTO PostStatus (postStatusKey, postStatusName) VALUES
 
 -- Post (Car, Address)
 INSERT INTO Post (departureDateTime, arrivalDateTime, seatsCount, seatPrice, departureAddressKey, arrivalAddressKey, carKey) VALUES
-    (to_timestamp('01-02-2021 17:00:00', 'DD-MM-YYYY HH24:MI:SS'), to_timestamp('01-02-2021 19:20:00', 'DD-MM-YYYY HH24:MI:SS'), 4, 30.50, 1, 6, 1),
-    (to_timestamp('05-02-2021 08:00:00', 'DD-MM-YYYY HH24:MI:SS'), to_timestamp('05-02-2021 13:00:00', 'DD-MM-YYYY HH24:MI:SS'), 2, 25.90, 2, 7, 2),
-    (to_timestamp('11-02-2021 14:30:00', 'DD-MM-YYYY HH24:MI:SS'), to_timestamp('11-02-2021 19:00:00', 'DD-MM-YYYY HH24:MI:SS'), 6, 130.00, 4, 8, 4),
-    (to_timestamp('12-02-2021 07:30:00', 'DD-MM-YYYY HH24:MI:SS'), to_timestamp('12-02-2021 12:30:00', 'DD-MM-YYYY HH24:MI:SS'), 1, 150.00, 3, 9, 3),
-    (to_timestamp('22-02-2021 06:00:00', 'DD-MM-YYYY HH24:MI:SS'), to_timestamp('22-02-2021 13:20:00', 'DD-MM-YYYY HH24:MI:SS'), 4, 150.50, 5, 10, 5)
+    ('2021-02-01 17:00:00', '2021-02-01 19:20:00', 4, 30.50, 1, 6, 1),
+    ('2021-02-05 08:00:00', '2021-02-05 13:00:00', 2, 25.90, 2, 7, 2),
+    ('2021-02-11 14:30:00', '2021-02-11 19:00:00', 6, 130.00, 4, 8, 4),
+    ('2021-02-12 07:30:00', '2021-02-12 12:30:00', 1, 150.00, 3, 9, 3),
+    ('2021-02-22 06:00:00', '2021-02-22 13:20:00', 4, 150.50, 5, 10, 5)
 ;
 
 -- PostStatusChange (Post, PostStatus)
 INSERT INTO PostStatusChange (changeDateTime, postKey, postStatusKey) VALUES
-    (to_timestamp('03-01-2021 19:37:11', 'DD-MM-YYYY HH24:MI:SS'), 1, 5),
-    (to_timestamp('03-01-2021 21:14:31', 'DD-MM-YYYY HH24:MI:SS'), 2, 5),
-    (to_timestamp('04-01-2021 08:45:41', 'DD-MM-YYYY HH24:MI:SS'), 3, 5),
-    (to_timestamp('04-01-2021 08:47:25', 'DD-MM-YYYY HH24:MI:SS'), 4, 5),
-    (to_timestamp('04-01-2021 15:22:32', 'DD-MM-YYYY HH24:MI:SS'), 5, 5),
-    (to_timestamp('04-01-2021 15:23:56', 'DD-MM-YYYY HH24:MI:SS'), 5, 6),
-    (to_timestamp('03-01-2021 19:38:19', 'DD-MM-YYYY HH24:MI:SS'), 1, 1),
-    (to_timestamp('03-01-2021 21:16:44', 'DD-MM-YYYY HH24:MI:SS'), 2, 1),
-    (to_timestamp('04-01-2021 08:46:59', 'DD-MM-YYYY HH24:MI:SS'), 3, 1),
-    (to_timestamp('04-01-2021 08:49:11', 'DD-MM-YYYY HH24:MI:SS'), 4, 1),
-    (to_timestamp('06-01-2021 09:50:31', 'DD-MM-YYYY HH24:MI:SS'), 4, 4)
+    ('2021-01-03 19:37:11', 1, 5),
+    ('2021-01-03 21:14:31', 2, 5),
+    ('2021-01-04 08:45:41', 3, 5),
+    ('2021-01-04 08:47:25', 4, 5),
+    ('2021-01-04 15:22:32', 5, 5),
+    ('2021-01-04 15:23:56', 5, 6),
+    ('2021-01-03 19:38:19', 1, 1),
+    ('2021-01-03 21:16:44', 2, 1),
+    ('2021-01-04 08:46:59', 3, 1),
+    ('2021-01-04 08:49:11', 4, 1),
+    ('2021-01-06 09:50:31', 4, 4)
 ;
 
 -- ReservationStatus
@@ -164,20 +164,20 @@ INSERT INTO ReservationStatus ( reservationStatusName) VALUES
 
 -- Reservation (Post, User)
 INSERT INTO Reservation (reservationDateTime, seatsCount, postKey, userKey) VALUES
-    (to_timestamp('05-01-2021 03:02:01', 'DD-MM-YYYY HH24:MI:SS'), 2, 1, 1),
-    (to_timestamp('07-01-2021 21:00:04', 'DD-MM-YYYY HH24:MI:SS'), 1, 1, 2),
-    (to_timestamp('09-01-2021 13:51:31', 'DD-MM-YYYY HH24:MI:SS'), 4, 3, 3),
-    (to_timestamp('11-01-2021 16:52:31', 'DD-MM-YYYY HH24:MI:SS'), 1, 2, 4),
-    (to_timestamp('17-01-2021 18:54:31', 'DD-MM-YYYY HH24:MI:SS'), 1, 4, 5)
+    ('2021-01-05 03:02:01', 2, 1, 1),
+    ('2021-01-07 21:00:04', 1, 1, 2),
+    ('2021-01-09 13:51:31', 4, 3, 3),
+    ('2021-01-11 16:52:31', 1, 2, 4),
+    ('2021-01-17 18:54:31', 1, 4, 5)
 ;
 
 -- ReservationStatusChange (Reservation, ReservationStatus)
 INSERT INTO ReservationStatusChange (changeDateTime, reservationKey, reservationStatusKey) VALUES
-    (to_timestamp('05-01-2021 03:02:01', 'DD-MM-YYYY HH24:MI:SS'), 1, 2),
-    (to_timestamp('07-01-2021 21:00:04', 'DD-MM-YYYY HH24:MI:SS'), 2, 2),
-    (to_timestamp('09-01-2021 13:51:31', 'DD-MM-YYYY HH24:MI:SS'), 3, 2),
-    (to_timestamp('11-01-2021 16:52:31', 'DD-MM-YYYY HH24:MI:SS'), 4, 2),
-    (to_timestamp('17-01-2021 18:54:31', 'DD-MM-YYYY HH24:MI:SS'), 5, 2)
+    ('2021-01-05 03:02:01', 1, 2),
+    ('2021-01-07 21:00:04', 2, 2),
+    ('2021-01-09 13:51:31', 3, 2),
+    ('2021-01-11 16:52:31', 4, 2),
+    ('2021-01-17 18:54:31', 5, 2)
 ;
 
 -- PaymentMethod
@@ -207,11 +207,11 @@ INSERT INTO Payment (totalAmount, externalPaymentNumber, paymentMethodkey, reser
 
 -- PaymentStatusChange (Payment, PaymentStatus)
 INSERT INTO PaymentStatusChange (changeDateTime, paymentKey, paymentStatusKey) VALUES
-    (to_timestamp('05-01-2021 03:12:01', 'DD-MM-YYYY HH24:MI:SS'), 1, 2),
-    (to_timestamp('07-01-2021 21:10:04', 'DD-MM-YYYY HH24:MI:SS'), 2, 2),
-    (to_timestamp('09-01-2021 14:01:31', 'DD-MM-YYYY HH24:MI:SS'), 3, 2),
-    (to_timestamp('11-01-2021 17:02:31', 'DD-MM-YYYY HH24:MI:SS'), 4, 2),
-    (to_timestamp('17-01-2021 19:04:31', 'DD-MM-YYYY HH24:MI:SS'), 5, 2)
+    ('2021-01-05 03:12:01', 1, 2),
+    ('2021-01-07 21:10:04', 2, 2),
+    ('2021-01-09 14:01:31', 3, 2),
+    ('2021-01-11 17:02:31', 4, 2),
+    ('2021-01-17 19:04:31', 5, 2)
 ;
 
 -- Role
