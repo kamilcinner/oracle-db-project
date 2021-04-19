@@ -78,3 +78,6 @@ git reset --soft HEAD~1
 
 -- copy caret in VSCode
 ctrl + alt + shift + arrow_bottom/arrow_up
+
+-- unix
+-- cat delete.sql chapter-4/tabele.sql chapter-4/wiezy.sql chapter-4/zwiazki.sql chapter-5/wypelnienie.sql > test/test.sql
