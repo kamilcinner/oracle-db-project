@@ -11,3 +11,25 @@ WHERE psc.changeDateTime=
 WHERE pscc.postKey=p.postKey
 GROUP BY pscc.postKey) AND ps.postStatusName='Active';
 SELECT * FROM activePostView;
+
+CREATE TRIGGER aaaa BEFORE INSERT ON Reservation
+FOR EACH ROW
+	BEGIN
+           IF NEW.seatsCount < 0 THEN
+               SET NEW.amount = 0;
+           ELSEIF NEW.amount > 100 THEN
+               SET NEW.amount = 100;
+           END IF;
+       END;//
+    
+ SELECT seatsCount- FROM activePostView apv
+ 
+SELECT sum(r.seatsCount) FROM Reservation r JOIN ReservationStatusChange rsc
+ON r.reservationKey=rsc.reservationKey 
+JOIN ReservationStatus rs 
+ON rsc.reservationStatusKey=rs.reservationStatusKey
+WHERE rsc.changeDateTime=
+	(SELECT max(rscc.changeDateTime) FROM ReservationStatusChange rscc
+		WHERE rscc.reservationKey=r.reservationKey)
+AND rs.reservationStatusName NOT IN ('Canceled','Rejected')
+GROUP BY r.postKey
