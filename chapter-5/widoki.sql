@@ -3,8 +3,8 @@ CREATE VIEW avSeatPriceView AS SELECT round(avg(seatPrice),2) AS 'Średnia cena 
 SELECT * FROM avSeatPriceView;
 
 DROP VIEW activePostView;
-CREATE VIEW activePostView AS SELECT * FROM Post p 
-JOIN PostStatusChange psc ON p.postKey=psc.postKey 
+CREATE VIEW activePostView AS SELECT * FROM Post p
+JOIN PostStatusChange psc ON p.postKey=psc.postKey
 JOIN PostStatus ps ON ps.postStatusKey=psc.postStatusKey
 WHERE psc.changeDateTime=
 (SELECT max(pscc.changeDateTime) FROM PostStatusChange pscc
@@ -12,24 +12,48 @@ WHERE pscc.postKey=p.postKey
 GROUP BY pscc.postKey) AND ps.postStatusName='Active';
 SELECT * FROM activePostView;
 
-CREATE TRIGGER aaaa BEFORE INSERT ON Reservation
+DROP VIEW postAvailableSeatsCount;
+CREATE VIEW postAvailableSeatsCount AS SELECT p.postKey, p.seatsCount - (
+    COALESCE (
+        (
+            SELECT sum(r.seatsCount) FROM Reservation r
+            JOIN ReservationStatusChange rsc ON r.reservationKey=rsc.reservationKey
+            JOIN ReservationStatus rs ON rsc.reservationStatusKey=rs.reservationStatusKey
+            WHERE rsc.changeDateTime = (
+                SELECT max(rscc.changeDateTime)
+                FROM ReservationStatusChange rscc
+                WHERE rscc.reservationKey = r.reservationKey
+            )
+            AND rs.reservationStatusName NOT IN ('Canceled','Rejected')
+            AND r.postKey = p.postKey
+            GROUP BY r.postKey
+        ), 0
+    )
+) AS `seatsCount`
+FROM Post p;
+SELECT * FROM postAvailableSeatsCount;
+
+CREATE TRIGGER validateSeatsCount BEFORE INSERT ON Reservation
 FOR EACH ROW
 	BEGIN
-           IF NEW.seatsCount < 0 THEN
-               SET NEW.amount = 0;
-           ELSEIF NEW.amount > 100 THEN
-               SET NEW.amount = 100;
-           END IF;
-       END;//
-    
- SELECT seatsCount- FROM activePostView apv
- 
-SELECT sum(r.seatsCount) FROM Reservation r JOIN ReservationStatusChange rsc
-ON r.reservationKey=rsc.reservationKey 
-JOIN ReservationStatus rs 
-ON rsc.reservationStatusKey=rs.reservationStatusKey
-WHERE rsc.changeDateTime=
-	(SELECT max(rscc.changeDateTime) FROM ReservationStatusChange rscc
-		WHERE rscc.reservationKey=r.reservationKey)
-AND rs.reservationStatusName NOT IN ('Canceled','Rejected')
-GROUP BY r.postKey
+       IF NEW.seatsCount > (
+           SELECT pasc.seatsCount FROM postAvailableSeatsCount pasc WHERE NEW.postKey = pasc.postKey
+       ) THEN
+           SET NEW.seatsCount = (
+               SELECT pasc.seatsCount FROM postAvailableSeatsCount pasc WHERE NEW.postKey = pasc.postKey
+           );
+       END IF;
+   END;
+;
+
+-- Reservation (Post, User)
+INSERT INTO Reservation (reservationDateTime, seatsCount, postKey, userKey) VALUES
+    ('2021-01-05 03:02:01', 3, 2, 1)
+;
+
+select * from ReservationStatus;
+
+INSERT INTO ReservationStatusChange (changeDateTime, reservationKey, reservationStatusKey) VALUES
+    ('2021-01-05 03:02:01', 6, 2)
+;
+
