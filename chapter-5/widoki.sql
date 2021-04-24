@@ -1,7 +1,9 @@
+# Wybiera średnią cenę za miejsce obliczoną na podstawie każdego ogłoszenia
 DROP VIEW avSeatPriceView;
 CREATE VIEW avSeatPriceView AS SELECT round(avg(seatPrice),2) AS 'Średnia cena za miejsce' FROM Post;
 SELECT * FROM avSeatPriceView;
 
+# Wybiera ogłoszenia ze statusem "Active" - aktywny
 DROP VIEW activePostView;
 CREATE VIEW activePostView AS SELECT * FROM Post p
 JOIN PostStatusChange psc ON p.postKey=psc.postKey
@@ -12,6 +14,7 @@ WHERE pscc.postKey=p.postKey
 GROUP BY pscc.postKey) AND ps.postStatusName='Active';
 SELECT * FROM activePostView;
 
+# Wybiera identyfikator ogłoszenia i liczbę wolnych miejsc dla niego
 DROP VIEW postAvailableSeatsCount;
 CREATE VIEW postAvailableSeatsCount AS SELECT p.postKey, p.seatsCount - (
     COALESCE (
@@ -33,6 +36,8 @@ CREATE VIEW postAvailableSeatsCount AS SELECT p.postKey, p.seatsCount - (
 FROM Post p;
 SELECT * FROM postAvailableSeatsCount;
 
+# Jeżeli użytkownik chce zarezerwować liczbę miejsc większą niż licza wolnych w ogłoszeniu,
+# to rezerowana jest liczba pozostałych wolnych miejsc
 CREATE TRIGGER validateSeatsCount BEFORE INSERT ON Reservation
 FOR EACH ROW
 	BEGIN
