@@ -21,11 +21,11 @@ DROP TABLE IF EXISTS PostStatusChange;
 DROP TABLE IF EXISTS PostStatus;
 DROP TABLE IF EXISTS PaymentStatusChange;
 DROP TABLE IF EXISTS PaymentStatus;
-DROP TABLE IF EXISTS `User`;
+DROP TABLE IF EXISTS "user";
 DROP TABLE IF EXISTS UserStatusChange;
 DROP TABLE IF EXISTS UserStatus;
 DROP TABLE IF EXISTS UserRole;
-DROP TABLE IF EXISTS `Role`;
+DROP TABLE IF EXISTS Role;
 SET foreign_key_checks = 1;
 
 -- Clear all tables
