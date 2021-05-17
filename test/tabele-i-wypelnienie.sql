@@ -2,25 +2,25 @@
 
 -- CarColor
 CREATE TABLE CarColor (
-    carColorKey SERIAL,
+    carColorKey INT IDENTITY(1,1),
     carColorName VARCHAR(40) NOT NULL
 );
 
 -- CarMark
 CREATE TABLE CarMark (
-    carMarkKey SERIAL,
+    carMarkKey INT IDENTITY(1,1),
     carMarkName VARCHAR(40) NOT NULL
 );
 
 -- CarType
 CREATE TABLE CarType(
-    carTypeKey SERIAL,
+    carTypeKey INT IDENTITY(1,1),
     carTypeName VARCHAR(20) NOT NULL
 );
 
 -- Car
 CREATE TABLE Car (
-    carKey SERIAL,
+    carKey INT IDENTITY(1,1),
     regNumber VARCHAR(20) NOT NULL,
     prodYear CHAR(4) NOT NULL,
     seatsCount INT NOT NULL,
@@ -32,8 +32,8 @@ CREATE TABLE Car (
 );
 
 -- User
-CREATE TABLE "user" (
-    userKey SERIAL,
+CREATE TABLE "User" (
+    userKey INT IDENTITY(1,1),
     username VARCHAR(20) NOT NULL,
     hashedPassword VARCHAR(100) NOT NULL,
     salt VARCHAR(100) NOT NULL,
@@ -48,38 +48,38 @@ CREATE TABLE "user" (
 
 -- UserStatus
 CREATE TABLE UserStatus (
-    userStatusKey SERIAL,
+    userStatusKey INT IDENTITY(1,1),
     userStatusName VARCHAR(20) NOT NULL,
     userStatusDescription VARCHAR(100)
 );
 
 -- UserStatusChange
 CREATE TABLE UserStatusChange (
-    userStatusChangeKey SERIAL,
-    changeDateTime TIMESTAMP NOT NULL,
+    userStatusChangeKey INT IDENTITY(1,1),
+    changeDateTime DATETIME NOT NULL,
     userKey INT NOT NULL,
     userStatusKey INT NOT NULL
 );
 
 -- PostStatus
 CREATE TABLE PostStatus (
-    postStatusKey SERIAL,
+    postStatusKey INT IDENTITY(1,1),
     postStatusName VARCHAR(20) NOT NULL
 );
 
 -- PostStatusChange
 CREATE TABLE PostStatusChange (
-    postStatusChangeKey SERIAL,
-    changeDateTime TIMESTAMP NOT NULL,
+    postStatusChangeKey INT IDENTITY(1,1),
+    changeDateTime DATETIME NOT NULL,
     postKey INT NOT NULL,
     postStatusKey INT NOT NULL
 );
 
 -- Post
 CREATE TABLE Post (
-    postKey SERIAL,
-    departureDateTime TIMESTAMP NOT NULL,
-    arrivalDateTime TIMESTAMP NOT NULL,
+    postKey INT IDENTITY(1,1),
+    departureDateTime DATETIME NOT NULL,
+    arrivalDateTime DATETIME NOT NULL,
     seatsCount INT NOT NULL,
     seatPrice DECIMAL(10, 2) NOT NULL,
     departureAddressKey INT NOT NULL,
@@ -89,7 +89,7 @@ CREATE TABLE Post (
 
 -- Address
 CREATE TABLE Address (
-    addressKey SERIAL,
+    addressKey INT IDENTITY(1,1),
     postCode VARCHAR(5) NOT NULL,
     street VARCHAR(20) NOT NULL,
     houseNumber VARCHAR(20) NOT NULL,
@@ -99,40 +99,40 @@ CREATE TABLE Address (
 
 -- City
 CREATE TABLE City (
-    cityKey SERIAL,
+    cityKey INT IDENTITY(1,1),
     cityName VARCHAR(20) NOT NULL,
     countryKey INT NOT NULL
 );
 
 -- Country
 CREATE TABLE Country (
-    countryKey SERIAL,
+    countryKey INT IDENTITY(1,1),
     countryName VARCHAR(20) NOT NULL
 );
 
 -- PaymentMethod
 CREATE TABLE PaymentMethod (
-    paymentMethodKey SERIAL,
+    paymentMethodKey INT IDENTITY(1,1),
     paymentMethodName VARCHAR(20) NOT NULL
 );
 
 -- PaymentStatus
 CREATE TABLE PaymentStatus (
-    paymentStatusKey SERIAL,
+    paymentStatusKey INT IDENTITY(1,1),
     paymentStatusName VARCHAR(20) NOT NULL
 );
 
 -- PaymentStatusChange
 CREATE TABLE PaymentStatusChange (
-    paymentStatusChangeKey SERIAL,
-    changeDateTime TIMESTAMP NOT NULL,
+    paymentStatusChangeKey INT IDENTITY(1,1),
+    changeDateTime DATETIME NOT NULL,
     paymentKey INT NOT NULL,
     paymentStatusKey INT NOT NULL
 );
 
 -- Payment
 CREATE TABLE Payment (
-    paymentKey SERIAL,
+    paymentKey INT IDENTITY(1,1),
     totalAmount DECIMAL(10, 2) NOT NULL,
     externalPaymentNumber VARCHAR(40) NOT NULL,
     paymentMethodKey INT NOT NULL,
@@ -141,22 +141,22 @@ CREATE TABLE Payment (
 
 -- ReservationStatus
 CREATE TABLE ReservationStatus (
-    reservationStatusKey SERIAL,
+    reservationStatusKey INT IDENTITY(1,1),
     reservationStatusName VARCHAR(20) NOT NULL
 );
 
 -- ReservationStatusChange
 CREATE TABLE ReservationStatusChange (
-    reservationStatusChangeKey SERIAL,
-    changeDateTime TIMESTAMP NOT NULL,
+    reservationStatusChangeKey INT IDENTITY(1,1),
+    changeDateTime DATETIME NOT NULL,
     reservationKey INT NOT NULL,
     reservationStatusKey INT NOT NULL
 );
 
 -- Reservation
 CREATE TABLE Reservation (
-    reservationKey SERIAL,
-    reservationDateTime TIMESTAMP NOT NULL,
+    reservationKey INT IDENTITY(1,1),
+    reservationDateTime DATETIME NOT NULL,
     seatsCount INT NOT NULL,
     postKey INT NOT NULL,
     userKey INT NOT NULL
@@ -164,52 +164,52 @@ CREATE TABLE Reservation (
 
 -- Role
 CREATE TABLE Role (
-    roleKey SERIAL,
+    roleKey INT IDENTITY(1,1),
     roleName VARCHAR(20) NOT NULL
 );
 
 -- UserRole
 CREATE TABLE UserRole (
-    userRoleKey SERIAL,
+    userRoleKey INT IDENTITY(1,1),
     userKey INT NOT NULL,
     roleKey INT NOT NULL
 );
 -- CarColor
 ALTER TABLE CarColor
     ADD CONSTRAINT carColor_PK PRIMARY KEY (carColorKey),
-    ADD CONSTRAINT carColor_name_UN UNIQUE (carColorName)
+    CONSTRAINT carColor_name_UN UNIQUE (carColorName)
 ;
 
 -- CarMark
 ALTER TABLE CarMark
     ADD CONSTRAINT carMark_PK PRIMARY KEY (carMarkKey),
-    ADD CONSTRAINT carMark_name_UN UNIQUE (carMarkName)
+    CONSTRAINT carMark_name_UN UNIQUE (carMarkName)
 ;
 
 -- CarType
 ALTER TABLE CarType
     ADD CONSTRAINT carType_PK PRIMARY KEY (carTypeKey),
-    ADD CONSTRAINT carType_name_UN UNIQUE (carTypeName)
+    CONSTRAINT carType_name_UN UNIQUE (carTypeName)
 ;
 
 -- Car
 ALTER TABLE Car
     ADD CONSTRAINT car_PK PRIMARY KEY (carKey),
-    ADD CONSTRAINT car_regNumber_UN UNIQUE (regNumber)
+    CONSTRAINT car_regNumber_UN UNIQUE (regNumber)
 ;
 
 -- User
-ALTER TABLE "user"
+ALTER TABLE "User"
     ADD CONSTRAINT user_PK PRIMARY KEY (userKey),
-    ADD CONSTRAINT user_username_UN UNIQUE (username),
-    ADD CONSTRAINT user_email_UN UNIQUE (email),
-    ADD CONSTRAINT user_phoneNumber_UN UNIQUE (phoneNumber)
+    CONSTRAINT user_username_UN UNIQUE (username),
+    CONSTRAINT user_email_UN UNIQUE (email),
+    CONSTRAINT user_phoneNumber_UN UNIQUE (phoneNumber)
 ;
 
 -- UserStatus
 ALTER TABLE UserStatus
     ADD CONSTRAINT userStatus_PK PRIMARY KEY (userStatusKey),
-    ADD CONSTRAINT userStatus_name_UN UNIQUE (userStatusName)
+    CONSTRAINT userStatus_name_UN UNIQUE (userStatusName)
 ;
 
 -- UserStatusChange
@@ -220,7 +220,7 @@ ALTER TABLE UserStatusChange
 -- PostStatus
 ALTER TABLE PostStatus
     ADD CONSTRAINT postStatus_PK PRIMARY KEY (postStatusKey),
-    ADD CONSTRAINT postStatus_name_UN UNIQUE (postStatusName)
+    CONSTRAINT postStatus_name_UN UNIQUE (postStatusName)
 ;
 
 -- PostStatusChange
@@ -241,25 +241,25 @@ ALTER TABLE Address
 -- Country
 ALTER TABLE Country
     ADD CONSTRAINT country_PK PRIMARY KEY (countryKey),
-    ADD CONSTRAINT country_name_UN UNIQUE (countryName)
+    CONSTRAINT country_name_UN UNIQUE (countryName)
 ;
 
 -- City
 ALTER TABLE City
     ADD CONSTRAINT city_PK PRIMARY KEY (cityKey),
-    ADD CONSTRAINT city_name_UN UNIQUE (cityName)
+    CONSTRAINT city_name_UN UNIQUE (cityName)
 ;
 
 -- PaymentMethod
 ALTER TABLE PaymentMethod
     ADD CONSTRAINT paymentMethod_PK PRIMARY KEY (paymentMethodKey),
-    ADD CONSTRAINT paymentMethod_name_UN UNIQUE (paymentMethodName)
+    CONSTRAINT paymentMethod_name_UN UNIQUE (paymentMethodName)
 ;
 
 -- PaymentStatus
 ALTER TABLE PaymentStatus
     ADD CONSTRAINT paymentStatus_PK PRIMARY KEY (paymentStatusKey),
-    ADD CONSTRAINT paymentStatus_name_UN UNIQUE (paymentStatusName)
+    CONSTRAINT paymentStatus_name_UN UNIQUE (paymentStatusName)
 ;
 
 -- PaymentStatusChange
@@ -275,7 +275,7 @@ ALTER TABLE Payment
 -- ReservationStatus
 ALTER TABLE ReservationStatus
     ADD CONSTRAINT reservationStatus_PK PRIMARY KEY (reservationStatusKey),
-    ADD CONSTRAINT reservationStatus_name_UN UNIQUE (reservationStatusName)
+    CONSTRAINT reservationStatus_name_UN UNIQUE (reservationStatusName)
 ;
 
 -- ReservationStatusChange
@@ -291,7 +291,7 @@ ALTER TABLE Reservation
 -- Role
 ALTER TABLE Role
     ADD CONSTRAINT role_PK PRIMARY KEY (roleKey),
-    ADD CONSTRAINT role_name_UQ UNIQUE (roleName)
+    CONSTRAINT role_name_UQ UNIQUE (roleName)
 ;
 
 -- UserRole
@@ -301,22 +301,22 @@ ALTER TABLE UserRole
 -- Car
 ALTER TABLE Car
     ADD CONSTRAINT car_user_FK FOREIGN KEY (UserKey) REFERENCES "user"(UserKey),
-    ADD CONSTRAINT car_carColor_FK FOREIGN KEY (carColorKey) REFERENCES CarColor(carColorKey),
-    ADD CONSTRAINT car_carMark_FK FOREIGN KEY (carMarkKey) REFERENCES CarMark(carMarkKey),
-    ADD CONSTRAINT car_carType_FK FOREIGN KEY (carTypeKey) REFERENCES CarType(carTypeKey)
+    CONSTRAINT car_carColor_FK FOREIGN KEY (carColorKey) REFERENCES CarColor(carColorKey),
+    CONSTRAINT car_carMark_FK FOREIGN KEY (carMarkKey) REFERENCES CarMark(carMarkKey),
+    CONSTRAINT car_carType_FK FOREIGN KEY (carTypeKey) REFERENCES CarType(carTypeKey)
 ;
 
 -- Post
 ALTER TABLE Post
     ADD CONSTRAINT post_car_FK FOREIGN KEY (carKey) REFERENCES Car(carKey),
-    ADD CONSTRAINT post_arrivalAddress_FK FOREIGN KEY (arrivalAddressKey) REFERENCES Address(addressKey),
-    ADD CONSTRAINT post_departureAddress_FK FOREIGN KEY (departureAddressKey) REFERENCES Address(addressKey)
+    CONSTRAINT post_arrivalAddress_FK FOREIGN KEY (arrivalAddressKey) REFERENCES Address(addressKey),
+    CONSTRAINT post_departureAddress_FK FOREIGN KEY (departureAddressKey) REFERENCES Address(addressKey)
 ;
 
 -- PostStatusChange
 ALTER TABLE PostStatusChange
     ADD CONSTRAINT postStatusChange_post_FK FOREIGN KEY (postKey) REFERENCES Post(postKey) ON DELETE CASCADE,
-    ADD CONSTRAINT postStatusChange_postStatus_FK FOREIGN KEY (postStatusKey) REFERENCES PostStatus(postStatusKey)
+    CONSTRAINT postStatusChange_postStatus_FK FOREIGN KEY (postStatusKey) REFERENCES PostStatus(postStatusKey)
 ;
 
 -- Address
@@ -332,42 +332,42 @@ ALTER TABLE City
 -- Payment
 ALTER TABLE Payment
     ADD CONSTRAINT payment_paymentMethod_FK FOREIGN KEY (paymentMethodKey) REFERENCES PaymentMethod(paymentMethodKey),
-    ADD CONSTRAINT payment_reservation_FK FOREIGN KEY (reservationKey) REFERENCES Reservation(reservationKey)
+    CONSTRAINT payment_reservation_FK FOREIGN KEY (reservationKey) REFERENCES Reservation(reservationKey)
 ;
 
 -- PaymentStatusChange
 ALTER TABLE PaymentStatusChange
     ADD CONSTRAINT paymentStatusChange_payment_FK FOREIGN KEY (paymentKey) REFERENCES Payment(paymentKey) ON DELETE CASCADE,
-    ADD CONSTRAINT paymentStatusChange_paymentStatus_FK FOREIGN KEY (paymentStatusKey) REFERENCES PaymentStatus(paymentStatusKey)
+    CONSTRAINT paymentStatusChange_paymentStatus_FK FOREIGN KEY (paymentStatusKey) REFERENCES PaymentStatus(paymentStatusKey)
 ;
 
 -- Reservation
 ALTER TABLE Reservation
     ADD CONSTRAINT reservation_post_FK FOREIGN KEY (postKey) REFERENCES Post(postKey),
-    ADD CONSTRAINT reservation_user_FK FOREIGN KEY (UserKey) REFERENCES "user"(UserKey)
+    CONSTRAINT reservation_user_FK FOREIGN KEY (UserKey) REFERENCES "user"(UserKey)
 ;
 
 -- ReservationStatusChange
 ALTER TABLE ReservationStatusChange
     ADD CONSTRAINT reservationStatusChange_reservation_FK FOREIGN KEY (reservationKey) REFERENCES Reservation(reservationKey) ON DELETE CASCADE,
-    ADD CONSTRAINT reservationStatusChange_reservationStatus_FK FOREIGN KEY (reservationStatusKey) REFERENCES ReservationStatus(reservationStatusKey)
+    CONSTRAINT reservationStatusChange_reservationStatus_FK FOREIGN KEY (reservationStatusKey) REFERENCES ReservationStatus(reservationStatusKey)
 ;
 
 -- User
-ALTER TABLE "user"
+ALTER TABLE "User"
     ADD CONSTRAINT user_address_FK FOREIGN KEY (addressKey) REFERENCES Address(addressKey)
 ;
 
 -- UserStatusChange
 ALTER TABLE UserStatusChange
     ADD CONSTRAINT userStatusChange_user_FK FOREIGN KEY (userKey) REFERENCES "user"(userKey) ON DELETE CASCADE,
-    ADD CONSTRAINT userStatusChange_userStatus_FK FOREIGN KEY (userStatusKey) REFERENCES UserStatus(userStatusKey)
+    CONSTRAINT userStatusChange_userStatus_FK FOREIGN KEY (userStatusKey) REFERENCES UserStatus(userStatusKey)
 ;
 
 -- UserRole
 ALTER TABLE UserRole
     ADD CONSTRAINT userRole_user_FK FOREIGN KEY (userKey) REFERENCES "user"(userKey),
-    ADD CONSTRAINT userRole_role_FK FOREIGN KEY (roleKey) REFERENCES Role(roleKey)
+    CONSTRAINT userRole_role_FK FOREIGN KEY (roleKey) REFERENCES Role(roleKey)
 ;
 -- CarColor (CarColorType)
 INSERT INTO CarColor (carColorName) VALUES 
@@ -446,26 +446,26 @@ INSERT INTO UserStatus (userStatusName, userStatusDescription) VALUES
 ;
 
 -- User (Address)
-INSERT INTO "user" (username, hashedPassword, salt, email, firstname, surname, dateOfBirth, phoneNumber, addressKey) VALUES 
+INSERT INTO "User" (username, hashedPassword, salt, email, firstname, surname, dateOfBirth, phoneNumber, addressKey) VALUES 
     ('kamilcinner', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
         'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'kamilcinner@blabla.car', 'Kamil', 'Cinner',
-        TO_DATE('01-01-1974', 'DD-MM-YYYY'), '482659314', 1),
+        CAST('01-01-1974' AS DATE), '482659314', 1),
 
     ('longBow137', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
         'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'longBow137@blabla.car', 'Legolas', 'Legolas',
-        TO_DATE('01-01-1974', 'DD-MM-YYYY'), '206489451', 2),
+        CAST('01-01-1974' AS DATE), '206489451', 2),
 
     ('sherman123', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
         'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'sherman123@blabla.car', 'Sherlock', 'Holmes',
-        TO_DATE('01-01-1974', 'DD-MM-YYYY'), '051095714', 3),
+        CAST('01-01-1974' AS DATE), '051095714', 3),
 
     ('magdalenalenart', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
         'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'magdalenalenart@blabla.car', 'Magdalena', 'Lenart',
-        TO_DATE('01-01-1974', 'DD-MM-YYYY'), '275629056', 4),
+        CAST('01-01-1974' AS DATE), '275629056', 4),
 
     ('adamlipinski', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
         'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'adamlipinski@blabla.car', 'Adam', 'Lipiński',
-        TO_DATE('01-01-1974', 'DD-MM-YYYY'), '018365932', 5)
+        CAST('01-01-1974' AS DATE), '018365932', 5)
 ;
 
 -- UserStatusChange (User, UserStatus)
