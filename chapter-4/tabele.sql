@@ -2,25 +2,25 @@
 
 -- CarColor
 CREATE TABLE CarColor (
-    carColorKey SERIAL,
+    carColorKey INT IDENTITY(1,1),
     carColorName VARCHAR(40) NOT NULL
 );
 
 -- CarMark
 CREATE TABLE CarMark (
-    carMarkKey SERIAL,
+    carMarkKey INT IDENTITY(1,1),
     carMarkName VARCHAR(40) NOT NULL
 );
 
 -- CarType
 CREATE TABLE CarType(
-    carTypeKey SERIAL,
+    carTypeKey INT IDENTITY(1,1),
     carTypeName VARCHAR(20) NOT NULL
 );
 
 -- Car
 CREATE TABLE Car (
-    carKey SERIAL,
+    carKey INT IDENTITY(1,1),
     regNumber VARCHAR(20) NOT NULL,
     prodYear CHAR(4) NOT NULL,
     seatsCount INT NOT NULL,
@@ -32,8 +32,8 @@ CREATE TABLE Car (
 );
 
 -- User
-CREATE TABLE "user" (
-    userKey SERIAL,
+CREATE TABLE "User" (
+    userKey INT IDENTITY(1,1),
     username VARCHAR(20) NOT NULL,
     hashedPassword VARCHAR(100) NOT NULL,
     salt VARCHAR(100) NOT NULL,
@@ -48,38 +48,38 @@ CREATE TABLE "user" (
 
 -- UserStatus
 CREATE TABLE UserStatus (
-    userStatusKey SERIAL,
+    userStatusKey INT IDENTITY(1,1),
     userStatusName VARCHAR(20) NOT NULL,
     userStatusDescription VARCHAR(100)
 );
 
 -- UserStatusChange
 CREATE TABLE UserStatusChange (
-    userStatusChangeKey SERIAL,
-    changeDateTime TIMESTAMP NOT NULL,
+    userStatusChangeKey INT IDENTITY(1,1),
+    changeDateTime DATETIME NOT NULL,
     userKey INT NOT NULL,
     userStatusKey INT NOT NULL
 );
 
 -- PostStatus
 CREATE TABLE PostStatus (
-    postStatusKey SERIAL,
+    postStatusKey INT IDENTITY(1,1),
     postStatusName VARCHAR(20) NOT NULL
 );
 
 -- PostStatusChange
 CREATE TABLE PostStatusChange (
-    postStatusChangeKey SERIAL,
-    changeDateTime TIMESTAMP NOT NULL,
+    postStatusChangeKey INT IDENTITY(1,1),
+    changeDateTime DATETIME NOT NULL,
     postKey INT NOT NULL,
     postStatusKey INT NOT NULL
 );
 
 -- Post
 CREATE TABLE Post (
-    postKey SERIAL,
-    departureDateTime TIMESTAMP NOT NULL,
-    arrivalDateTime TIMESTAMP NOT NULL,
+    postKey INT IDENTITY(1,1),
+    departureDateTime DATETIME NOT NULL,
+    arrivalDateTime DATETIME NOT NULL,
     seatsCount INT NOT NULL,
     seatPrice DECIMAL(10, 2) NOT NULL,
     departureAddressKey INT NOT NULL,
@@ -89,7 +89,7 @@ CREATE TABLE Post (
 
 -- Address
 CREATE TABLE Address (
-    addressKey SERIAL,
+    addressKey INT IDENTITY(1,1),
     postCode VARCHAR(5) NOT NULL,
     street VARCHAR(20) NOT NULL,
     houseNumber VARCHAR(20) NOT NULL,
@@ -99,40 +99,40 @@ CREATE TABLE Address (
 
 -- City
 CREATE TABLE City (
-    cityKey SERIAL,
+    cityKey INT IDENTITY(1,1),
     cityName VARCHAR(20) NOT NULL,
     countryKey INT NOT NULL
 );
 
 -- Country
 CREATE TABLE Country (
-    countryKey SERIAL,
+    countryKey INT IDENTITY(1,1),
     countryName VARCHAR(20) NOT NULL
 );
 
 -- PaymentMethod
 CREATE TABLE PaymentMethod (
-    paymentMethodKey SERIAL,
+    paymentMethodKey INT IDENTITY(1,1),
     paymentMethodName VARCHAR(20) NOT NULL
 );
 
 -- PaymentStatus
 CREATE TABLE PaymentStatus (
-    paymentStatusKey SERIAL,
+    paymentStatusKey INT IDENTITY(1,1),
     paymentStatusName VARCHAR(20) NOT NULL
 );
 
 -- PaymentStatusChange
 CREATE TABLE PaymentStatusChange (
-    paymentStatusChangeKey SERIAL,
-    changeDateTime TIMESTAMP NOT NULL,
+    paymentStatusChangeKey INT IDENTITY(1,1),
+    changeDateTime DATETIME NOT NULL,
     paymentKey INT NOT NULL,
     paymentStatusKey INT NOT NULL
 );
 
 -- Payment
 CREATE TABLE Payment (
-    paymentKey SERIAL,
+    paymentKey INT IDENTITY(1,1),
     totalAmount DECIMAL(10, 2) NOT NULL,
     externalPaymentNumber VARCHAR(40) NOT NULL,
     paymentMethodKey INT NOT NULL,
@@ -141,22 +141,22 @@ CREATE TABLE Payment (
 
 -- ReservationStatus
 CREATE TABLE ReservationStatus (
-    reservationStatusKey SERIAL,
+    reservationStatusKey INT IDENTITY(1,1),
     reservationStatusName VARCHAR(20) NOT NULL
 );
 
 -- ReservationStatusChange
 CREATE TABLE ReservationStatusChange (
-    reservationStatusChangeKey SERIAL,
-    changeDateTime TIMESTAMP NOT NULL,
+    reservationStatusChangeKey INT IDENTITY(1,1),
+    changeDateTime DATETIME NOT NULL,
     reservationKey INT NOT NULL,
     reservationStatusKey INT NOT NULL
 );
 
 -- Reservation
 CREATE TABLE Reservation (
-    reservationKey SERIAL,
-    reservationDateTime TIMESTAMP NOT NULL,
+    reservationKey INT IDENTITY(1,1),
+    reservationDateTime DATETIME NOT NULL,
     seatsCount INT NOT NULL,
     postKey INT NOT NULL,
     userKey INT NOT NULL
@@ -164,13 +164,13 @@ CREATE TABLE Reservation (
 
 -- Role
 CREATE TABLE Role (
-    roleKey SERIAL,
+    roleKey INT IDENTITY(1,1),
     roleName VARCHAR(20) NOT NULL
 );
 
 -- UserRole
 CREATE TABLE UserRole (
-    userRoleKey SERIAL,
+    userRoleKey INT IDENTITY(1,1),
     userKey INT NOT NULL,
     roleKey INT NOT NULL
 );

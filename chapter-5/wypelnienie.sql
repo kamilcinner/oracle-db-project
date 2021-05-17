@@ -75,26 +75,26 @@ INSERT INTO UserStatus (userStatusName, userStatusDescription) VALUES
 ;
 
 -- User (Address)
-INSERT INTO "user" (username, hashedPassword, salt, email, firstname, surname, dateOfBirth, phoneNumber, addressKey) VALUES 
+INSERT INTO "User" (username, hashedPassword, salt, email, firstname, surname, dateOfBirth, phoneNumber, addressKey) VALUES 
     ('kamilcinner', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
         'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'kamilcinner@blabla.car', 'Kamil', 'Cinner',
-        TO_DATE('01-01-1974', 'DD-MM-YYYY'), '482659314', 1),
+        CAST('01-01-1974' AS DATE), '482659314', 1),
 
     ('longBow137', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
         'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'longBow137@blabla.car', 'Legolas', 'Legolas',
-        TO_DATE('01-01-1974', 'DD-MM-YYYY'), '206489451', 2),
+        CAST('01-01-1974' AS DATE), '206489451', 2),
 
     ('sherman123', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
         'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'sherman123@blabla.car', 'Sherlock', 'Holmes',
-        TO_DATE('01-01-1974', 'DD-MM-YYYY'), '051095714', 3),
+        CAST('01-01-1974' AS DATE), '051095714', 3),
 
     ('magdalenalenart', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
         'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'magdalenalenart@blabla.car', 'Magdalena', 'Lenart',
-        TO_DATE('01-01-1974', 'DD-MM-YYYY'), '275629056', 4),
+        CAST('01-01-1974' AS DATE), '275629056', 4),
 
     ('adamlipinski', '08f56771b0f2ad3281f6bcd4c2221e32a62d312c16bf7d824f0f6f0cf458eb86',
         'dfsdfsdfsd8fs8df58sdfsdfs43433231fsdf23131231', 'adamlipinski@blabla.car', 'Adam', 'Lipiński',
-        TO_DATE('01-01-1974', 'DD-MM-YYYY'), '018365932', 5)
+        CAST('01-01-1974' AS DATE), '018365932', 5)
 ;
 
 -- UserStatusChange (User, UserStatus)

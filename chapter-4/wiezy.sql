@@ -1,39 +1,39 @@
 -- CarColor
 ALTER TABLE CarColor
     ADD CONSTRAINT carColor_PK PRIMARY KEY (carColorKey),
-    ADD CONSTRAINT carColor_name_UN UNIQUE (carColorName)
+    CONSTRAINT carColor_name_UN UNIQUE (carColorName)
 ;
 
 -- CarMark
 ALTER TABLE CarMark
     ADD CONSTRAINT carMark_PK PRIMARY KEY (carMarkKey),
-    ADD CONSTRAINT carMark_name_UN UNIQUE (carMarkName)
+    CONSTRAINT carMark_name_UN UNIQUE (carMarkName)
 ;
 
 -- CarType
 ALTER TABLE CarType
     ADD CONSTRAINT carType_PK PRIMARY KEY (carTypeKey),
-    ADD CONSTRAINT carType_name_UN UNIQUE (carTypeName)
+    CONSTRAINT carType_name_UN UNIQUE (carTypeName)
 ;
 
 -- Car
 ALTER TABLE Car
     ADD CONSTRAINT car_PK PRIMARY KEY (carKey),
-    ADD CONSTRAINT car_regNumber_UN UNIQUE (regNumber)
+    CONSTRAINT car_regNumber_UN UNIQUE (regNumber)
 ;
 
 -- User
-ALTER TABLE "user"
+ALTER TABLE "User"
     ADD CONSTRAINT user_PK PRIMARY KEY (userKey),
-    ADD CONSTRAINT user_username_UN UNIQUE (username),
-    ADD CONSTRAINT user_email_UN UNIQUE (email),
-    ADD CONSTRAINT user_phoneNumber_UN UNIQUE (phoneNumber)
+    CONSTRAINT user_username_UN UNIQUE (username),
+    CONSTRAINT user_email_UN UNIQUE (email),
+    CONSTRAINT user_phoneNumber_UN UNIQUE (phoneNumber)
 ;
 
 -- UserStatus
 ALTER TABLE UserStatus
     ADD CONSTRAINT userStatus_PK PRIMARY KEY (userStatusKey),
-    ADD CONSTRAINT userStatus_name_UN UNIQUE (userStatusName)
+    CONSTRAINT userStatus_name_UN UNIQUE (userStatusName)
 ;
 
 -- UserStatusChange
@@ -44,7 +44,7 @@ ALTER TABLE UserStatusChange
 -- PostStatus
 ALTER TABLE PostStatus
     ADD CONSTRAINT postStatus_PK PRIMARY KEY (postStatusKey),
-    ADD CONSTRAINT postStatus_name_UN UNIQUE (postStatusName)
+    CONSTRAINT postStatus_name_UN UNIQUE (postStatusName)
 ;
 
 -- PostStatusChange
@@ -65,25 +65,25 @@ ALTER TABLE Address
 -- Country
 ALTER TABLE Country
     ADD CONSTRAINT country_PK PRIMARY KEY (countryKey),
-    ADD CONSTRAINT country_name_UN UNIQUE (countryName)
+    CONSTRAINT country_name_UN UNIQUE (countryName)
 ;
 
 -- City
 ALTER TABLE City
     ADD CONSTRAINT city_PK PRIMARY KEY (cityKey),
-    ADD CONSTRAINT city_name_UN UNIQUE (cityName)
+    CONSTRAINT city_name_UN UNIQUE (cityName)
 ;
 
 -- PaymentMethod
 ALTER TABLE PaymentMethod
     ADD CONSTRAINT paymentMethod_PK PRIMARY KEY (paymentMethodKey),
-    ADD CONSTRAINT paymentMethod_name_UN UNIQUE (paymentMethodName)
+    CONSTRAINT paymentMethod_name_UN UNIQUE (paymentMethodName)
 ;
 
 -- PaymentStatus
 ALTER TABLE PaymentStatus
     ADD CONSTRAINT paymentStatus_PK PRIMARY KEY (paymentStatusKey),
-    ADD CONSTRAINT paymentStatus_name_UN UNIQUE (paymentStatusName)
+    CONSTRAINT paymentStatus_name_UN UNIQUE (paymentStatusName)
 ;
 
 -- PaymentStatusChange
@@ -99,7 +99,7 @@ ALTER TABLE Payment
 -- ReservationStatus
 ALTER TABLE ReservationStatus
     ADD CONSTRAINT reservationStatus_PK PRIMARY KEY (reservationStatusKey),
-    ADD CONSTRAINT reservationStatus_name_UN UNIQUE (reservationStatusName)
+    CONSTRAINT reservationStatus_name_UN UNIQUE (reservationStatusName)
 ;
 
 -- ReservationStatusChange
@@ -115,7 +115,7 @@ ALTER TABLE Reservation
 -- Role
 ALTER TABLE Role
     ADD CONSTRAINT role_PK PRIMARY KEY (roleKey),
-    ADD CONSTRAINT role_name_UQ UNIQUE (roleName)
+    CONSTRAINT role_name_UQ UNIQUE (roleName)
 ;
 
 -- UserRole
