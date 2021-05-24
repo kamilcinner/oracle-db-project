@@ -1,0 +1,5 @@
+CREATE LOGIN studLoginMs2
+WITH PASSWORD = 'Student1234';
+
+CREATE USER studMS2
+FOR LOGIN studLoginMs2;
